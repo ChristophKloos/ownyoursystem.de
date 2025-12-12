@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import '../styles/distropicker.css';
+import '../styles/mobile.css';
+---
+
+<BaseLayout title="Year of Linux" description="Not sure which Linux distro to choose? Use our interactive Distro Picker to find the best operating system for your specific needs and hardware.">
+<div class="quiz">
+  <div id="quiz-header">
+	<div id="quiz-subtitle"></div>
+    <div id="quiz-title"></div>
+    
+    <div class="progress">
+      <div id="quiz-progress" class="progressinner"></div>
+    </div>
+  </div>
+
+  <div class="quiz-container" id="quiz-container">
+      <div class="result-container" id="result-container"></div>
+      <div id="more-button-container"></div>
+      <div class="choice-container" id="choice-container"></div>
+  </div>
+</div>
+
+<script>
+      import "../scripts/distropicker.js";
+</script>
+
+</BaseLayout>
+

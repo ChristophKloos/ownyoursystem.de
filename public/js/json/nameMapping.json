@@ -1,0 +1,19 @@
+{
+  "Ubuntu+KDE": "Kubuntu",
+  "Ubuntu+XFCE": "Xubuntu",
+  "Ubuntu+GNOME": "Ubuntu",
+  "Ubuntu+LXQt": "Lubuntu",
+  "Fedora+GNOME": "Fedora Workstation",
+  "Fedora+XFCE": "Fedora XFCE Spin",
+  "Fedora+Cinnamon": "Fedora Cinnamon Spin",
+  "Fedora+MATE": "Fedora Mate-Compiz",
+  "Fedora Atomic+GNOME": "Fedora Silverblue",
+  "Fedora Atomic+KDE": "Fedora Kionite",
+  "Pop!_OS+Cosmic": "Pop!_OS",
+  "Zorin OS+GNOME": "Zorin OS Core",
+  "Zorin OS+XFCE": "Zorin OS Lite",
+  "Linux Mint+Cinnamon": "Linux Mint Cinnamon Edition",
+  "Linux Mint+XFCE": "Linux Mint XFCE Edition",
+  "Fedora+KDE": "Fedora KDE Plasma Desktop"
+}
+ 

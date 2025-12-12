@@ -1,0 +1,20 @@
+{
+  "name": "capricious-cycle",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "deploy": "node deploy.cjs",
+    "ship": "npm run build && npm run deploy && git add . && git commit -m \"Update & Deploy\" && git push"
+  },
+  "dependencies": {
+    "astro": "^5.16.0"
+  },
+  "devDependencies": {
+    "dotenv": "^17.2.3",
+    "ftp-deploy": "^2.4.7"
+  }
+}

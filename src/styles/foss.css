@@ -1,0 +1,69 @@
+#comparison-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-block, 60px); 
+    max-width: 900px;
+    margin: 32px auto;
+}
+
+.comparison-block {
+    background-color: var(--bg-card);
+    padding: 40px; 
+    border-radius: var(--radius-lg);
+    
+}
+
+.comparison-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: var(--spacing-inline, 40px);
+}
+
+.img-wrapper {
+    position: relative;
+    aspect-ratio: 16/9;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    margin-bottom: 16px;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.badge {
+    position: absolute;
+    top: var(--badge-offset, 10px);
+    right: var(--badge-offset, 10px);
+    z-index: 1;
+    color: white !important;
+    padding: 4px 8px;
+    font-size: var(--font-md);
+    background-color: black;
+    border-radius: var(--radius-lg);
+}
+
+.comp-description {
+    margin-top: 24px;
+    font-weight:400;
+    font-size: var(--font-sm);
+
+    
+}
+
+@media (max-width: 768px) {
+    .comparison-row {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    .comparison-block {
+        padding: 24px;
+    }
+}

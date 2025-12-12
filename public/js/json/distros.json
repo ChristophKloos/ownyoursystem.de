@@ -1,0 +1,422 @@
+[
+	{
+		"name": "Fedora",
+		"desktops": ["GNOME","KDE","XFCE","Cinnamon","i3","LXQt","MATE"],
+		"scores":	{
+			"Experience":	1.5,
+			"Gaming": 		2.5,
+			"Modern": 		3,
+			"Options": 		2.5,
+			"Keyboard": 	2,
+			"Pretty": 		2.5,
+			"Ins_Complex": 	1.5,
+			"PM_Terminal":	1.5,
+			"Privacy": 		3,
+			"Hard_Freedom": 2,
+			"Adventure": 	2,
+			"Upd_Regular": 	2.5,
+			"Nvidia": 		2.5,
+			"Extra_Score": 	3
+		}
+	},
+	{
+		"name": "Nobara",
+		"desktops": ["GNOME","KDE"],
+		"scores":	{
+			"Experience":	1,
+			"Gaming": 		3,
+			"Modern": 		2.5,
+			"Options": 		2,
+			"Keyboard": 	2,
+			"Pretty": 		2.5,
+			"Ins_Complex": 	1,
+			"PM_Terminal":	1,
+			"Privacy": 		3,
+			"Hard_Freedom": 1.5,
+			"Adventure": 	1.5,
+			"Upd_Regular": 	2,
+			"Nvidia": 		3,
+			"Extra_Score": 	2
+		}
+	},
+	{
+		"name": "Linux Mint",
+		"desktops": ["Cinnamon","XFCE","MATE"],
+		"scores":	{
+			"Experience":	1,
+			"Gaming": 		1.5,
+			"Modern": 		1.5,
+			"Options": 		2,
+			"Keyboard": 	1,
+			"Pretty": 		2,
+			"Ins_Complex": 	1,
+			"PM_Terminal":	1,
+			"Privacy": 		3,
+			"Hard_Freedom": 1.5,
+			"Adventure": 	1,
+			"Upd_Regular": 	1.5,
+			"Nvidia": 		2.5,
+			"Extra_Score": 	2
+		}
+	},
+	{
+		"name": "Linux Mint Debian Edition",
+		"desktops": ["Cinnamon","XFCE","MATE"],
+		"scores":	{
+			"Experience":	1,
+			"Gaming": 		1,
+			"Modern": 		1.5,
+			"Options": 		2,
+			"Keyboard": 	2,
+			"Pretty": 		2,
+			"Ins_Complex": 	1,
+			"PM_Terminal":	1,
+			"Privacy": 		3,
+			"Hard_Freedom": 1.5,
+			"Adventure": 	1,
+			"Upd_Regular": 	1,
+			"Nvidia": 		2,
+			"Extra_Score": 	1.5
+		}
+	},
+	{
+		"name": "Ubuntu",
+		"desktops": ["GNOME", "KDE", "XFCE","LXQt"],
+		"scores":	{
+			"Experience":	1,
+			"Gaming": 		1.5,
+			"Modern": 		2,
+			"Options": 		1,
+			"Keyboard": 	1,
+			"Pretty": 		3,
+			"Ins_Complex": 	1,
+			"PM_Terminal":	1,
+			"Privacy": 		1.5,
+			"Hard_Freedom": 	1,
+			"Adventure": 	1.5,
+			"Upd_Regular": 	1.5,
+			"Nvidia": 		2,
+			"Extra_Score": 	1
+		}
+	},
+	{
+		"name": "Pop!_OS",
+		"desktops": ["Cosmic"],
+		"scores":	{
+			"Experience":	1.5,
+			"Gaming": 		2.5,
+			"Modern": 		2,
+			"Options": 		1,
+			"Keyboard": 	1.2,
+			"Pretty": 		3,
+			"Ins_Complex": 	1,
+			"PM_Terminal":	1,
+			"Privacy": 		3,
+			"Hard_Freedom": 	1.5,
+			"Adventure": 	2,
+			"Upd_Regular": 	1,
+			"Nvidia": 		2.5,
+			"Extra_Score": 	1.5
+		}
+	},
+	{
+		"name": "Arch Linux",
+		"desktops": ["GNOME","KDE","XFCE","i3","Hyprland","MATE","Niri","Cosmic","LXDE", "DWM"],
+		"scores":	{
+			"Experience":	2.5,
+			"Gaming": 		3,
+			"Modern": 		2.5,
+			"Options": 		3,
+			"Keyboard": 	2,
+			"Pretty": 		2,
+			"Ins_Complex": 	2.5,
+			"PM_Terminal":	3,
+			"Privacy": 		3,
+			"Hard_Freedom": 3,
+			"Adventure": 	2,
+			"Upd_Regular": 	3,
+			"Nvidia": 		2.5,
+			"Extra_Score": 	3
+		}
+	},
+	{
+		"name": "Omarchy",
+		"desktops": ["Hyprland"],
+		"scores":	{
+			"Experience":	2.5,
+			"Gaming": 		3,
+			"Modern": 		2.5,
+			"Options": 		2,
+			"Keyboard": 	2,
+			"Pretty": 		2,
+			"Ins_Complex": 	2,
+			"PM_Terminal":	3,
+			"Privacy": 		3,
+			"Hard_Freedom": 2,
+			"Adventure": 	2.5,
+			"Upd_Regular": 	3,
+			"Nvidia": 		2.5,
+			"Extra_Score": 	1
+		}
+	},
+	{
+		"name": "CachyOS",
+		"desktops": ["GNOME","KDE","XFCE","Hyprland","MATE","Niri","Cosmic"],
+		"scores":	{
+			"Experience":	2.5,
+			"Gaming": 		3,
+			"Modern": 		2.5,
+			"Options": 		2.5,
+			"Keyboard": 	2,
+			"Pretty": 		2,
+			"Ins_Complex": 	2,
+			"PM_Terminal":	2,
+			"Privacy": 		3,
+			"Hard_Freedom": 	3,
+			"Adventure": 	2,
+			"Upd_Regular": 	3,
+			"Nvidia": 		3,
+			"Extra_Score": 	2.5
+		}
+	},
+	{
+		"name": "Debian",
+		"desktops": ["GNOME","KDE","XFCE","MATE","i3","LXQt"],
+		"scores":	{
+			"Experience":	3,
+			"Gaming": 		1.5,
+			"Modern": 		1,
+			"Options": 		2,
+			"Keyboard": 	2,
+			"Pretty": 		1.5,
+			"Ins_Complex": 	2,
+			"PM_Terminal":	2,
+			"Privacy": 		3,
+			"Hard_Freedom": 	1.5,
+			"Adventure": 	1,
+			"Upd_Regular": 	1,
+			"Nvidia": 		1.5,
+			"Extra_Score": 	3
+		}
+	},		
+	{
+		"name": "Bazzite",
+		"desktops": ["GNOME","KDE"],
+		"scores":	{
+			"Experience":	1,
+			"Gaming": 		3,
+			"Modern": 		3,
+			"Options": 		1,
+			"Keyboard": 	1,
+			"Pretty": 		3,
+			"Ins_Complex": 	1,
+			"PM_Terminal":	1,
+			"Privacy": 		3,
+			"Hard_Freedom": 	1,
+			"Adventure": 	1.5,
+			"Upd_Regular": 	2,
+			"Nvidia": 		3,
+			"Extra_Score": 	3
+		}
+	},		
+	{
+		"name": "Fedora Atomic",
+		"desktops": ["GNOME","KDE","Sway"],
+		"scores":	{
+			"Experience":	2,
+			"Gaming": 		2,
+			"Modern": 		3,
+			"Options": 		2,
+			"Keyboard": 	2,
+			"Pretty": 		3,
+			"Ins_Complex": 	2,
+			"PM_Terminal":	1,
+			"Privacy": 		3,
+			"Hard_Freedom": 	1.5,
+			"Adventure": 	2,
+			"Upd_Regular": 	3,
+			"Nvidia": 		2,
+			"Extra_Score": 	1.5
+		}
+	},
+	{
+		"name": "Gentoo",
+		"desktops": ["GNOME","KDE","XFCE","i3","Hyprland","MATE","Niri","Cosmic","LXDE"],
+		"scores":	{
+			"Experience":	3,
+			"Gaming": 		2,
+			"Modern": 		2.5,
+			"Options": 		3,
+			"Keyboard": 	2.5,
+			"Pretty": 		2,
+			"Ins_Complex": 	3,
+			"PM_Terminal":	3,
+			"Privacy": 		3,
+			"Hard_Freedom": 	3,
+			"Adventure": 	3,
+			"Upd_Regular": 	3,
+			"Nvidia": 		2,
+			"Extra_Score": 	1.5
+		}
+	},		
+	{
+		"name": "NixOS",
+		"desktops": ["GNOME","KDE","XFCE","i3","Hyprland","MATE","Niri","Cosmic","LXDE"],
+		"scores":	{
+			"Experience":	3,
+			"Gaming": 		2,
+			"Modern": 		2,
+			"Options": 		3,
+			"Keyboard": 	2.5,
+			"Pretty": 		2,
+			"Ins_Complex": 	3,
+			"PM_Terminal":	3,
+			"Privacy": 		3,
+			"Hard_Freedom": 	1,
+			"Adventure": 	2.5,
+			"Upd_Regular": 	2,
+			"Nvidia": 		2,
+			"Extra_Score": 	2
+		}
+	},
+	{
+			"name": "Void",
+			"desktops": ["KDE","XFCE","i3","Hyprland","MATE","LXDE","DWM"],
+			"scores":	{
+				"Experience":	2.5,
+				"Gaming": 		1.5,
+				"Modern": 		2,
+				"Options": 		3,
+				"Keyboard": 	2,
+				"Pretty": 		2,
+				"Ins_Complex": 	2.5,
+				"PM_Terminal":	3,
+				"Privacy": 		3,
+				"Hard_Freedom": 	3,
+				"Adventure": 	3,
+				"Upd_Regular": 	3,
+				"Nvidia": 		1,
+				"Extra_Score": 	2
+			}
+	},
+	{
+		"name": "Slackware",
+		"desktops": ["KDE","XFCE","i3","Hyprland","MATE","LXDE"],
+		"scores":	{
+			"Experience":	3,
+			"Gaming": 		1,
+			"Modern": 		1,
+			"Options": 		3,
+			"Keyboard": 	1,
+			"Pretty": 		1,
+			"Ins_Complex": 	3,
+			"PM_Terminal":	3,
+			"Privacy": 		3,
+			"Hard_Freedom": 	3,
+			"Adventure": 	3,
+			"Upd_Regular": 	1,
+			"Nvidia": 		1,
+			"Extra_Score": 	0.5
+		}
+	},		
+	{
+		"name": "Zorin OS",
+		"desktops": ["GNOME","XFCE"],
+		"scores":	{
+			"Experience":	1,
+			"Gaming": 		1,
+			"Modern": 		1.5,
+			"Options": 		3,
+			"Keyboard": 	1,
+			"Pretty": 		3,
+			"Ins_Complex": 	1,
+			"PM_Terminal":	1,
+			"Privacy": 		2,
+			"Hard_Freedom": 	2,
+			"Adventure": 	1,
+			"Upd_Regular": 	1,
+			"Nvidia": 		1.5,
+			"Extra_Score": 	0
+		}
+	},		
+	{
+		"name": "OpenSUSE Leap",
+		"desktops": ["GNOME","KDE","XFCE"],
+		"scores":	{
+			"Experience":	2,
+			"Gaming": 		2,
+			"Modern": 		2.5,
+			"Options": 		2,
+			"Keyboard": 	2,
+			"Pretty": 		2,
+			"Ins_Complex": 	2,
+			"PM_Terminal":	3,
+			"Privacy": 		3,
+			"Hard_Freedom": 	2,
+			"Adventure": 	2,
+			"Upd_Regular": 	1.5,
+			"Nvidia": 		1.5,
+			"Extra_Score": 	2
+		}
+	},
+	{
+		"name": "OpenSUSE Tumbleweed",
+		"desktops": ["GNOME","KDE","XFCE"],
+		"scores":	{
+			"Experience":	2,
+			"Gaming": 		2,
+			"Modern": 		2.5,
+			"Options": 		2,
+			"Keyboard": 	2,
+			"Pretty": 		2,
+			"Ins_Complex": 	2,
+			"PM_Terminal":	3,
+			"Privacy": 		3,
+			"Hard_Freedom": 	2,
+			"Adventure": 	2,
+			"Upd_Regular": 	3,
+			"Nvidia": 		1.7,
+			"Extra_Score": 	2
+		}
+	},
+	{
+		"name": "EndeavourOS",
+		"desktops": ["GNOME","KDE","MATE"],
+		"scores":	{
+			"Experience":	2.52,
+			"Gaming": 		3,
+			"Modern": 		2,
+			"Options": 		3,
+			"Keyboard": 	2,
+			"Pretty": 		3,
+			"Ins_Complex": 	2,
+			"PM_Terminal":	2,
+			"Privacy": 		3,
+			"Hard_Freedom": 	2.5,
+			"Adventure": 	2,
+			"Upd_Regular": 	2.5,
+			"Nvidia": 		3,
+			"Extra_Score": 	2
+		}
+	},				
+	{
+		"name": "Manjaro",
+		"desktops": ["GNOME","XFCE","KDE","MATE"],
+		"scores":	{
+			"Experience":	2.5,
+			"Gaming": 		3,
+			"Modern": 		2,
+			"Options": 		3,
+			"Keyboard": 	2,
+			"Pretty": 		2,
+			"Ins_Complex": 	2,
+			"PM_Terminal":	3,
+			"Privacy": 		3,
+			"Hard_Freedom": 	3,
+			"Adventure": 	1.5,
+			"Upd_Regular": 	3,
+			"Nvidia": 		3,
+			"Extra_Score": 	0
+		}				
+	}	
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "id": "q1",
+    "title": "Erfahrung",
+    "question": "Wie vertraut bist du mit Linux?",
+    "options": [
+      { "text": "<b>Anfänger</b> - noch keine Erfahrung", "value": "1" },
+      { "text": "<b>Mittel</b> - schon mal damit gearbeitet", "value": "2" },
+      { "text": "<b>Fortgeschritten</b> - gute Kenntnisse", "value": "3" }
+    ]
+  },
+  {
+    "id": "q2",
+    "title": "Gaming",
+    "question": "Wie wichtig ist dir Gaming?",
+    "options": [
+      { "text": "<b>Gar nicht</b> - kein Interesse", "value": "1" },
+      { "text": "<b>Leichte Games</b> - Hauptsächlich Retro und Indie-Games", "value": "2" },
+      { "text": "<b>Triple A</b> -  Ich spiele oft grafisch intensive Spiele", "value": "3" }
+    ]
+  },
+  {
+    "id": "q3",
+    "title": "Features",
+    "question": "Nutzt du moderne grafische features?",
+    "options": [
+      { "text": "<b>Nein</b> - Mein Monitor-Setup ist eher pragmatisch", "value": "1" },
+      { "text": "<b>Ja</b> - Hohe Auflösung und Bildfrequenz", "value": "2" },
+      { "text": "<b>Erweiterte</b> - Variable Refresh Rate und HDR", "value": "3" }
+    ]
+  },
+  {
+    "id": "q4",
+    "title": "Customization",
+    "question": "Wie konfigurierbar soll die Oberfläche sein?",
+    "options": [
+      { "text": "<b>Simpel</b> - Es soll einfach funktionieren", "value": "1" },
+      { "text": "<b>Neutral</b> - Ich bin neutral eingestellt", "value": "2" },
+      { "text": "<b>Viele Optionen</b> - Ich möchte jedes Detail einstellen können", "value": "3" }
+    ]
+  },
+  {
+    "id": "q5",
+    "title": "Tastatur",
+    "question": "Möchtest du dein System lieber per Maus oder Tastatur bedienen?",
+    "options": [
+      { "text": "<b>Maus</b> - Ich möchte das System per Maus bedienen", "value": "1" },
+      { "text": "<b>Neutral</b> - Ich bin neutral eingestellt", "value": "2" },
+      { "text": "<b>Tastatur</b> - Ich möchte mein System hauptsächlich per Keyboard-Shortcuts bedienen", "value": "3" }
+    ]
+  },
+  {
+    "id": "q6",
+    "title": "Design",
+    "question": "Ist dir ein modernes Design wichtig?",
+    "options": [
+      { "text": "<b>Nein</b> - Performance ist mir wichtig, Design ist mir egal", "value": "1" },
+      { "text": "<b>Neutral</b> - Ich bin neutral eingestellt", "value": "2" },
+      { "text": "<b>Ja</b> - Die Oberfläche sollte modern aussehen", "value": "3" }
+    ]
+  },
+  {
+    "id": "q7",
+    "title": "Einrichtung",
+    "question": "Wie tiefgehend soll die Installation des Systems sein?",
+    "options": [
+      { "text": "<b>Simpel</b> - Ich möchte schnell ein funktionierendes System haben", "value": "1" },
+      { "text": "<b>Neutral</b> - Ich bin neutral eingestellt", "value": "2" },
+      { "text": "<b>Komplex</b> - Ich möchte selbst entscheiden, welche Features das System hat", "value": "3" }
+    ]
+  },
+  {
+    "id": "q8",
+    "title": "Paketmanagement",
+    "question": "Wie komplex darf die Installation von Programmen sein?",
+    "options": [
+      { "text": "<b>Simpel</b> - So simpel wie möglich", "value": "1" },
+      { "text": "<b>Neutral</b> - Ich bin neutral eingestellt", "value": "2" },
+      { "text": "<b>Komplex</b> - Ich habe kein Problem damit, Programme per Terminal zu installieren", "value": "3" }
+    ]
+  },
+  {
+    "id": "q9",
+    "title": "Privatsphäre",
+    "question": "Wie wichtig ist dir Privatsphäre?",
+    "options": [
+      { "text": "<b>Nicht wichtig</b> - Mir macht Telemetrie und Datensammlung nichts aus", "value": "1" },
+      { "text": "<b>Neutral</b> - Ich bin neutral eingestellt", "value": "2" },
+      { "text": "<b>Sehr wichtig</b> - Meine Daten sollen das System nicht verlassen", "value": "3" }
+    ]
+  },
+  {
+    "id": "q10",
+    "title": "Konfigurierbarkeit",
+    "question": "Möchtest du ein Kugelsicheres System oder Konfigurierbarkeit?",
+    "options": [
+      { "text": "<b>Kugelsicher</b> - Ich möchte ein System, das einfach funktioniert", "value": "1" },
+      { "text": "<b>Neutral</b> - Ich bin neutral eingestellt", "value": "2" },
+      { "text": "<b>Konfigurierbar</b> - Ich möchte tief ins system eingreifen", "value": "3" }
+    ]
+  },
+  {
+    "id": "q11",
+    "title": "Abenteuer",
+    "question": "Wie abenteuerlustig bist du?",
+    "options": [
+      { "text": "<b>Gar nicht</b> - Ich möchte ein möglichst langweiliges System", "value": "1" },
+      { "text": "<b>Neutral</b> - Ich bin neutral eingestellt", "value": "2" },
+      { "text": "<b>Sehr</b> - Ich möchte ein interessantes System", "value": "3" }
+    ]
+  },
+  {
+    "id": "q12",
+    "title": "Updates",
+    "question": "Wie regelmäßig möchtest du Updaten?",
+    "options": [
+      { "text": "<b>Selten</b> - So selten wie möglich", "value": "1" },
+      { "text": "<b>Neutral</b> - Ich bin neutral eingestellt", "value": "2" },
+      { "text": "<b>Häufig</b> - Ich möchte die neusten Features sobald sie verfügbar sind", "value": "3" }
+    ]
+  },
+  {
+    "id": "q13",
+    "title": "Nvidia",
+    "question": "Hast du eine Nvidia Grafikkarte?",
+    "options": [
+      { "text": "<b>Nein</b> - Ich benutze eine AMD oder Intel GPU", "value": "1" },
+      { "text": "<b>Ja</b> - Ich benutze eine ältere Nvidia-Karte (pre RTX)", "value": "2" },
+      { "text": "<b>Ja</b> - Ich benutze eine aktuelle Nvidia-Karte (RTX-Serie)", "value": "3" }
+    ]
+  }
+]

@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import '../styles/resources.css';
+import '../styles/gradients.css';
+import '../styles/mobile.css';
+---
+
+<BaseLayout title="Year of Linux">
+
+<h1>Resources</h1>
+<p>Places to keep bookmarked</p>
+  <div class="pt1">
+    <div class="bentobox">
+      
+      <div class="bentotile linux4noobs " onclick="location.href='http://www.reddit.com/r/linux4noobs';">
+        <div class="bentocontent"> <h1>r/linux4noobs on Reddit</h1><p>Made explicitly for new users</p></div>
+      </div>
+      <div class="bentotile protondb " onclick="location.href='https://www.protondb.com/';">
+        <div class="bentocontent"> <h1>ProtonDB</h1><p>Check the compatibility of your game library</p></div>
+      </div>
+      <div class="bentotile endof10 " onclick="location.href='https://endof10.org/';">
+        <div class="bentocontent"> <h1>EndOf10</h1><p>Get more info about the discontinuation of Windows 10</p></div>
+      </div>
+      <div class="bentotile archwiki " onclick="location.href='https://wiki.archlinux.org/title/Main_page';">
+        <div class="bentocontent"> <h1>Arch Wiki</h1><p>Get deeper knowledge of Linux</p></div>
+      </div>
+       <div class="bentotile distrowatch " onclick="location.href='https://distrowatch.com/';">
+        <div class="bentocontent"> <h1>DistroWatch</h1><p>Be up to date with the newest Distro Trends</p></div>
+      </div>
+      
+      
+    </div>
+  <script src="/js/carousel.js" defer></script>
+</div>
+
+</BaseLayout>

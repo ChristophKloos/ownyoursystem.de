@@ -1,0 +1,51 @@
+<div id="sidebar-container" class="sidebar-container">
+  <div class="sidebarbackdrop"></div>
+  <div class="sidebarwrapper">
+    <h4>Own Your System</h4>
+    <a href="/" class="sidebaritem"><img src="/ui/sidebar/1home.svg">Home</a>
+
+    <div class="nav-group">
+      <div class="parent-row">
+        <a href="/distropicker" class="sidebaritem"><img src="/ui/sidebar/2distropick.svg">Distro Picker</a>
+        <button class="toggle-btn" aria-label="Toggle Menu"></button>
+      </div>
+      <div class="sub-menu">
+        <a href="/distrolist" class="sidebaritem sub">Distro Ratings</a>
+        <a href="/delist" class="sidebaritem sub">Desktop Ratings</a>
+      </div>
+    </div>
+
+    <a href="/gallery" class="sidebaritem"><img src="/ui/sidebar/3gallery.svg">Setup Gallery</a>
+    <a href="/foss" class="sidebaritem"><img src="/ui/sidebar/4apps.svg">Open Source Apps</a>
+    <a href="/rules" class="sidebaritem"><img src="/ui/sidebar/5rules.svg">Best Practices</a>
+
+    <div class="nav-group">
+      <div class="parent-row">
+        <a href="/resources" class="sidebaritem"><img src="/ui/sidebar/6wiki.svg">Wikis & Resources</a>
+        <button class="toggle-btn" aria-label="Toggle Menu"></button>
+      </div>
+      <div class="sub-menu">
+        <a href="https://endof10.org/" class="sidebaritem sub">End Of 10</a>
+        <a href="https://www.protondb.com/" class="sidebaritem sub">ProtonDB</a>
+        <a href="https://wiki.archlinux.org/title/Main_page" class="sidebaritem sub">Arch Wiki</a>
+        <a href="http://www.reddit.com/r/linux4noobs" class="sidebaritem sub">linux4noobs</a>
+        <a href="https://distrowatch.com/" class="sidebaritem sub">DistroWatch</a>
+      </div>
+    </div>
+
+    <a href="/about" class="sidebaritem bottom">About This Website</a>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggles = document.querySelectorAll('.toggle-btn');
+
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        const group = e.target.closest('.nav-group');
+        group.classList.toggle('active');
+      });
+    });
+  });
+</script>

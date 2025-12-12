@@ -1,0 +1,132 @@
+[
+  {
+    "id": "q1",
+    "title": "Experience Needed",
+    "question": "How much experience using Linux do you have?",
+    "options": [
+      { "text": "<b>Beginner</b> - I have never used it", "value": "1" },
+      { "text": "<b>Intermediate</b> - I have used it before", "value": "2" },
+      { "text": "<b>Pro</b> - I have a lot of experience", "value": "3" }
+    ]
+  },
+  {
+    "id": "q2",
+    "title": "Gaming",
+    "question": "How important is gaming?",
+    "options": [
+      { "text": "<b>Not at all</b> - I have no interest in gaming", "value": "1" },
+      { "text": "<b>Light gaming</b> - I play retro and indie games", "value": "2" },
+      { "text": "<b>Triple A</b> -  I play the latest and greatest blockbusters", "value": "3" }
+    ]
+  },
+  {
+    "id": "q3",
+    "title": "Graphical Features",
+    "question": "Do you use modern graphical features?",
+    "options": [
+      { "text": "<b>No</b> - My setup is pretty average", "value": "1" },
+      { "text": "<b>Yes</b> - High framerate and resolution", "value": "2" },
+      { "text": "<b>Enhanced</b> - Variable framerate and HDR", "value": "3" }
+    ]
+  },
+  {
+    "id": "q4",
+    "title": "Customization",
+    "question": "How customizable should the interface be?",
+    "options": [
+      { "text": "<b>Simple</b> - It should be preconfigured", "value": "1" },
+      { "text": "<b>Neutral</b> - I am neutral on this", "value": "2" },
+      { "text": "<b>Many options</b> - I want to customize every detail", "value": "3" }
+    ]
+  },
+  {
+    "id": "q5",
+    "title": "Keyboard Focus",
+    "question": "Do you want to control your system via keyboard or mouse?",
+    "options": [
+      { "text": "<b>Mouse</b> - I am mostly a mouse user", "value": "1" },
+      { "text": "<b>Neutral</b> - I am neutral on this", "value": "2" },
+      { "text": "<b>Keyboard</b> - I have no trouble learning a lot of keyboard shortcuts", "value": "3" }
+    ]
+  },
+  {
+    "id": "q6",
+    "title": "Design",
+    "question": "Is modern UI design important to you?",
+    "options": [
+      { "text": "<b>No</b> - performance is my priority, I dont care about design", "value": "1" },
+      { "text": "<b>Neutral</b> - I am neutral on this", "value": "2" },
+      { "text": "<b>Yes</b> - the interface should look modern", "value": "3" }
+    ]
+  },
+  {
+    "id": "q7",
+    "title": "Minimalism",
+    "question": "Do you want to decide for yourself what features get installed?",
+    "options": [
+      { "text": "<b>Simple</b> - I want to quickly have a running system", "value": "1" },
+      { "text": "<b>Neutral</b> - I am neutral on this", "value": "2" },
+      { "text": "<b>Complex</b> - I want to decide what features my system should have", "value": "3" }
+    ]
+  },
+  {
+    "id": "q8",
+    "title": "Package Complexity",
+    "question": "How complex can the installation of programs be",
+    "options": [
+      { "text": "<b>Simple</b> - As simple as possible", "value": "1" },
+      { "text": "<b>Neutral</b> - I am neutral on this", "value": "2" },
+      { "text": "<b>Complex</b> - I have no troubles using the terminal for installs", "value": "3" }
+    ]
+  },
+  {
+    "id": "q9",
+    "title": "Privacy",
+    "question": "How important is privacy to you?",
+    "options": [
+      { "text": "<b>Not imporant</b> - I don't care about privacy", "value": "1" },
+      { "text": "<b>Neutral</b> - I am neutral on this", "value": "2" },
+      { "text": "<b>Important</b> - I don't want any data to leave my system", "value": "3" }
+    ]
+  },
+  {
+    "id": "q10",
+    "title": "Flexibility",
+    "question": "Do you value a bulletproof or a flexible system?",
+    "options": [
+      { "text": "<b>Bulletproof</b> - I want an unbreakable system at the expense of full control", "value": "1" },
+      { "text": "<b>Neutral</b> - I am neutral on this", "value": "2" },
+      { "text": "<b>Flexibility</b> - I want full control of my system", "value": "3" }
+    ]
+  },
+  {
+    "id": "q11",
+    "title": "Adventure",
+    "question": "Do you want an interesting system?",
+    "options": [
+      { "text": "<b>No</b> - I want a boring system that just works", "value": "1" },
+      { "text": "<b>Neutral</b> - I am neutral on this", "value": "2" },
+      { "text": "<b>Yes</b> - I want an interesting system", "value": "3" }
+    ]
+  },
+  {
+    "id": "q12",
+    "title": "Update Interval",
+    "question": "How regular should updates be?",
+    "options": [
+      { "text": "<b>Rare</b> - I want rare but bigger updates", "value": "1" },
+      { "text": "<b>Neutral</b> - I am neutral on this", "value": "2" },
+      { "text": "<b>Regular</b> - I want new features as soon as they're avaliable", "value": "3" }
+    ]
+  },
+  {
+    "id": "q13",
+    "title": "Nvidia Support",
+    "question": "Do you use an Nvidia GPU",
+    "options": [
+      { "text": "<b>No</b> - I use AMD or Intel", "value": "1" },
+      { "text": "<b>Yes</b> - I use an older Nvidia card (pre RTX)", "value": "2" },
+      { "text": "<b>Yes</b> - I use a current Nvidia card (RTX-Serie)", "value": "3" }
+    ]
+  }
+]

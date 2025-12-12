@@ -1,0 +1,50 @@
+---
+const { title = "Own Your System" } = Astro.props;
+import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
+import '../styles/scheme.css';
+import '../styles/design.css';
+import '../styles/header.css';
+import '../styles/mobile.css';
+import '../styles/sidebar.css';
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <script>
+    if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('load', function() {
+  window.scrollTo(0, 0);
+});
+
+  </script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+  <title>Own Your System</title>
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+</head>
+
+<body>
+
+  <Sidebar />
+  <Header />
+
+  <main>
+    <slot />
+  </main>
+
+
+<script>
+      import "../scripts/home.js";
+      import "../scripts/sidebar.js";
+</script>
+</body>
+</html>

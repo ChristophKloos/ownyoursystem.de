@@ -1,0 +1,75 @@
+@media (max-width: 960px){
+.pt1{
+	margin-top: -64px;
+}
+.distropicker {
+  grid-column: span 4;
+  grid-row: span 1;
+}
+.carousel {
+  grid-column: span 4;
+  grid-row: span 1;
+}
+.compare{
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.rules{
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.resources{
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.protondb{
+  grid-column: span 2;
+  grid-row: span 1;
+}
+.description p{
+  margin: 32px;
+  
+}
+
+.quiz-container {
+  padding:32px;
+}
+label:hover {
+  transform:translateY(-2px);
+  background: var(--bg-card);
+
+}
+.frage p{
+  margin-top:16px;
+}
+
+    
+
+    .legend-section h2 {
+      margin-top: 8px;
+      margin-bottom: 8px;
+     
+    }
+
+    .legend-grid {
+      gap: 0!important;
+    }
+
+    .legend-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+        background: transparent!important;
+        padding:8px;
+       box-shadow: none;
+       text-align: left;
+     
+    }
+    .stat-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.1rem;
+  width: 100%;
+}
+}
