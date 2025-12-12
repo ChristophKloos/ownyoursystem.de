@@ -14,7 +14,10 @@ const config = {
     include: ["*", "**/*"],
     deleteRemote: false,
     forcePasv: true,
-    secure: true
+    secure: true,
+    tlsOptions: {
+        rejectUnauthorized: false
+    }
 };
 
 ftpDeploy.deploy(config)
