@@ -13,9 +13,10 @@ const config = {
     remoteRoot: "/httpdocs/",
     include: ["*", "**/*"],
     deleteRemote: false,
-    forcePasv: true
+    forcePasv: true,
+    secure: true
 };
 
 ftpDeploy.deploy(config)
-    .then(res => console.log("FTP Upload erfolgreich beendet"))
+    .then(res => console.log("FTP Upload finished"))
     .catch(err => console.error(err));
