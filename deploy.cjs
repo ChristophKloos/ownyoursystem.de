@@ -15,11 +15,22 @@ const config = {
     deleteRemote: false,
     forcePasv: true,
     secure: true,
-    tlsOptions: {
+    secureOptions: {
         rejectUnauthorized: false
     }
 };
 
+ftpDeploy.on("uploading", (data) => {
+    console.log("Upload: " + data.filename);
+});
+
+ftpDeploy.on("log", (data) => {
+    console.log("Log: " + data);
+});
+
 ftpDeploy.deploy(config)
-    .then(res => console.log("FTP Upload finished"))
-    .catch(err => console.error(err));
+    .then(res => console.log("Finished"))
+    .catch(err => {
+        console.error(err);
+        process.exit(1);
+    });
