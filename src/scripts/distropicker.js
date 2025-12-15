@@ -165,6 +165,7 @@ function evaluateQuiz() {
 
       results.push({ 
         distro: distro.name, 
+        description: distro.description,
         desktop, 
         rawScore: raw, 
         matchScore: match,
@@ -230,14 +231,19 @@ async function displayResults(results) {
       card.classList.add("result-card");
 
       const key = `${res.distro}+${res.desktop}`;
-      const displayName = nameMapping[key] || `${res.distro} ${res.desktop}`;
 
       const header = document.createElement("div");
       header.className = "result-header";
 
       const nameTitle = document.createElement("p");
       nameTitle.className = "result-name";
-      nameTitle.textContent = displayName;
+      
+      if (nameMapping[key]) {
+        nameTitle.innerHTML = nameMapping[key];
+      } else {
+        nameTitle.innerHTML = `<strong>${res.distro}</strong> ${res.desktop}`;
+      }
+
       header.appendChild(nameTitle);
 
       const arrowImg = document.createElement("img");
@@ -265,6 +271,15 @@ async function displayResults(results) {
       const detailsContainer = document.createElement("div");
       detailsContainer.className = "stats-container";
       detailsContainer.style.display = "none";
+
+      if (res.description) {
+        const descP = document.createElement("p");
+        descP.className = "result-desc";
+
+        descP.style.margin = "0";
+        descP.textContent = res.description;
+        detailsContainer.appendChild(descP);
+      }
 
       orderedKeys.forEach(k => {
         const val = res.rawScore[k] !== undefined ? res.rawScore[k] : 0;

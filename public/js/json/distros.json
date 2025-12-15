@@ -1,6 +1,7 @@
 [
 	{
 		"name": "Fedora",
+		"description": "Fedora is a polished, easy to use operating system for laptop and desktop computers.",
 		"desktops": ["GNOME","KDE","XFCE","Cinnamon","i3","LXQt","MATE"],
 		"scores":	{
 			"Experience":	1.5,
@@ -21,6 +22,7 @@
 	},
 	{
 		"name": "Nobara",
+		"description":"The Nobara Project, is a modified version of Fedora Linux with user-friendly fixes added to it.",
 		"desktops": ["GNOME","KDE"],
 		"scores":	{
 			"Experience":	1,
@@ -41,6 +43,7 @@
 	},
 	{
 		"name": "Linux Mint",
+		"description": "Linux Mint is designed to work out of the box and comes fully equipped with the apps most people need.",
 		"desktops": ["Cinnamon","XFCE","MATE"],
 		"scores":	{
 			"Experience":	1,
@@ -60,8 +63,9 @@
 		}
 	},
 	{
-		"name": "Linux Mint Debian Edition",
-		"desktops": ["Cinnamon","XFCE","MATE"],
+		"name": "LMDE",
+		"description":"LMDE aims to be as similar as possible to Linux Mint, but without using Ubuntu. The package base is provided by Debian instead.",
+		"desktops": ["Cinnamon"],
 		"scores":	{
 			"Experience":	1,
 			"Gaming": 		1,
@@ -81,6 +85,7 @@
 	},
 	{
 		"name": "Ubuntu",
+		"description":"The open source desktop operating system that powers millions of PCs and laptops around the world.",
 		"desktops": ["GNOME", "KDE", "XFCE","LXQt"],
 		"scores":	{
 			"Experience":	1,
@@ -101,6 +106,7 @@
 	},
 	{
 		"name": "Pop!_OS",
+		"description":"Pop!_OS is designed to remove obstacles from your plate. Apps and windows respond quickly to your actions, and multi-monitor use feels intuitive and smooth.",
 		"desktops": ["Cosmic"],
 		"scores":	{
 			"Experience":	1.5,
@@ -121,6 +127,7 @@
 	},
 	{
 		"name": "Arch Linux",
+		"description":"A lightweight and flexible Linux distribution that tries to Keep It Simple.",
 		"desktops": ["GNOME","KDE","XFCE","i3","Hyprland","MATE","Niri","Cosmic","LXDE", "DWM"],
 		"scores":	{
 			"Experience":	2.5,
@@ -141,6 +148,7 @@
 	},
 	{
 		"name": "Omarchy",
+		"description":"Beautiful, Modern & Opinionated Distribution based on Arch Linux",
 		"desktops": ["Hyprland"],
 		"scores":	{
 			"Experience":	2.5,
@@ -161,6 +169,7 @@
 	},
 	{
 		"name": "CachyOS",
+		"description":"A distribution based on Arch Linux, with Gaming optimizations and tools included.",
 		"desktops": ["GNOME","KDE","XFCE","Hyprland","MATE","Niri","Cosmic"],
 		"scores":	{
 			"Experience":	2.5,
@@ -181,6 +190,7 @@
 	},
 	{
 		"name": "Debian",
+		"description":"Debian is a Linux distribution that's composed entirely of free and open-source software.",
 		"desktops": ["GNOME","KDE","XFCE","MATE","i3","LXQt"],
 		"scores":	{
 			"Experience":	3,
@@ -201,6 +211,7 @@
 	},		
 	{
 		"name": "Bazzite",
+		"description":"Bazzite makes gaming and everyday use smoother and simpler across desktop PCs, handhelds, tablets, and home theater PCs.",
 		"desktops": ["GNOME","KDE"],
 		"scores":	{
 			"Experience":	1,
@@ -221,6 +232,7 @@
 	},		
 	{
 		"name": "Fedora Atomic",
+		"description":"Immutable distro based on Fedora.",
 		"desktops": ["GNOME","KDE","Sway"],
 		"scores":	{
 			"Experience":	2,
@@ -241,6 +253,7 @@
 	},
 	{
 		"name": "Gentoo",
+		"description":"Gentoo, a highly flexible, source-based Linux distribution. Similar to Arch Linux but you'll need to compile a lot.",
 		"desktops": ["GNOME","KDE","XFCE","i3","Hyprland","MATE","Niri","Cosmic","LXDE"],
 		"scores":	{
 			"Experience":	3,
@@ -261,6 +274,7 @@
 	},		
 	{
 		"name": "NixOS",
+		"description":"Nix is a tool that takes a unique approach to package management and system configuration. Learn how to make reproducible, declarative and reliable systems.",
 		"desktops": ["GNOME","KDE","XFCE","i3","Hyprland","MATE","Niri","Cosmic","LXDE"],
 		"scores":	{
 			"Experience":	3,
@@ -281,6 +295,7 @@
 	},
 	{
 			"name": "Void",
+			"description":"Unlike trillions of other existing distros, Void is not a modification of an existing distribution. Void's package manager and build system have been written from scratch.",
 			"desktops": ["KDE","XFCE","i3","Hyprland","MATE","LXDE","DWM"],
 			"scores":	{
 				"Experience":	2.5,
@@ -301,6 +316,7 @@
 	},
 	{
 		"name": "Slackware",
+		"description":"A very traditional but interesting Distribution.",
 		"desktops": ["KDE","XFCE","i3","Hyprland","MATE","LXDE"],
 		"scores":	{
 			"Experience":	3,
@@ -312,7 +328,7 @@
 			"Ins_Complex": 	3,
 			"PM_Terminal":	3,
 			"Privacy": 		3,
-			"Hard_Freedom": 	3,
+			"Hard_Freedom": 3,
 			"Adventure": 	3,
 			"Upd_Regular": 	1,
 			"Nvidia": 		1,
@@ -321,6 +337,7 @@
 	},		
 	{
 		"name": "Zorin OS",
+		"description":"A distribution aimed at new users. Has questionable marketing.",
 		"desktops": ["GNOME","XFCE"],
 		"scores":	{
 			"Experience":	1,
@@ -341,6 +358,7 @@
 	},		
 	{
 		"name": "OpenSUSE Leap",
+		"description":"Builds on its hybrid approach of combining source from SUSE Linux Enterprise (SLE) with community developments, delivering a level of stability unmatched by other Linux distributions.",
 		"desktops": ["GNOME","KDE","XFCE"],
 		"scores":	{
 			"Experience":	2,
@@ -361,6 +379,7 @@
 	},
 	{
 		"name": "OpenSUSE Tumbleweed",
+		"description":"With Tumbleweed you don't have to take difficult decisions about things you value, either freedom or safety, either control or security, technology or stability -- Tumbleweed lets you have your cake and eat it too!",
 		"desktops": ["GNOME","KDE","XFCE"],
 		"scores":	{
 			"Experience":	2,
@@ -372,7 +391,7 @@
 			"Ins_Complex": 	2,
 			"PM_Terminal":	3,
 			"Privacy": 		3,
-			"Hard_Freedom": 	2,
+			"Hard_Freedom": 2,
 			"Adventure": 	2,
 			"Upd_Regular": 	3,
 			"Nvidia": 		1.7,
@@ -381,6 +400,7 @@
 	},
 	{
 		"name": "EndeavourOS",
+		"description":"Start your Endeavour with a lightweight Arch-based, terminal centric system ready to personalise and a stellar community at your side.",
 		"desktops": ["GNOME","KDE","MATE"],
 		"scores":	{
 			"Experience":	2.52,
@@ -392,7 +412,7 @@
 			"Ins_Complex": 	2,
 			"PM_Terminal":	2,
 			"Privacy": 		3,
-			"Hard_Freedom": 	2.5,
+			"Hard_Freedom": 2.5,
 			"Adventure": 	2,
 			"Upd_Regular": 	2.5,
 			"Nvidia": 		3,
@@ -401,6 +421,7 @@
 	},				
 	{
 		"name": "Manjaro",
+		"description":"Taking the raw power and flexibility of Arch Linux and making it more accessible for a greater audience.",
 		"desktops": ["GNOME","XFCE","KDE","MATE"],
 		"scores":	{
 			"Experience":	2.5,
@@ -412,7 +433,7 @@
 			"Ins_Complex": 	2,
 			"PM_Terminal":	3,
 			"Privacy": 		3,
-			"Hard_Freedom": 	3,
+			"Hard_Freedom": 3,
 			"Adventure": 	1.5,
 			"Upd_Regular": 	3,
 			"Nvidia": 		3,

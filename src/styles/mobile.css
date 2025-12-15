@@ -32,17 +32,8 @@
   
 }
 
-.quiz-container {
-  padding:32px;
-}
-label:hover {
-  transform:translateY(-2px);
-  background: var(--bg-card);
 
-}
-.frage p{
-  margin-top:16px;
-}
+
 
     
 

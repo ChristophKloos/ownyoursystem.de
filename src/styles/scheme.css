@@ -31,7 +31,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Switzer", sans-serif;
-  font-weight:500;
   -webkit-tap-highlight-color: transparent;
   animation-timing-function: cubic-bezier(0.3, 0.0, 0.8, 0.15);
 }

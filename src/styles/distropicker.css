@@ -84,7 +84,7 @@ body{
 }
 
 .choice {
-  margin-top:51.2px;
+  margin-top:32px;
   animation:flyInRight 0.5s forwards, fadeInOut 0.5s forwards;
 }
 
@@ -127,10 +127,12 @@ input[type="radio"]:checked + label {
 .frage p {
     font-size:var(--font-md)!important;
     color: var(--text-dark);
+    opacity:0;
     font-weight: 600!important;
     animation: fadeInOut 0.2s forwards;
     animation-timing-function: ease;
   animation-timing-function: ease;
+  animation-delay:0.2s;
 }
 label {
   display: flex;
@@ -165,7 +167,7 @@ label:hover {
 
 .result-card {
   cursor: pointer;
-  font-weight: 400;
+
    transition: transform 0.3s ease;
 }
 
@@ -178,7 +180,7 @@ label:hover {
 
 .result-name {
   margin: 0;
-  font-weight: 500;
+  font-weight:inherit!important;
   font-size: var(--font-md);
   color: var(--text-dark);
 }
@@ -226,4 +228,9 @@ label:hover {
 
 .frage p img{
   transform:translate(0, -2px);
+}
+
+.result-desc{
+  margin:10px 0px 20px 0px;
+  padding-bottom:30px;
 }
