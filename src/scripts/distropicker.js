@@ -1,4 +1,4 @@
-const INITIAL_RESULT_COUNT = 3;
+const INITIAL_RESULT_COUNT = 4;
 
 let questions = [];
 let currentIndex = 0;
@@ -19,17 +19,10 @@ async function loadQuiz() {
   ]);
 
   questions = await qResp.json();
-  console.log("Fragen geladen:", questions);
-
   distros = await dResp.json();
-  console.log("Distros geladen:", distros);
-
   desktops = await deResp.json();
-  console.log("Desktops geladen:", desktops);
 
   desktopModifiers = desktops.desktops || desktops;
-  const desktopKeys = Object.keys(desktopModifiers); 
-  console.log("Desktops in keys umgewandelt:", desktopKeys);
   
   showQuestion(currentIndex);
 }
@@ -66,7 +59,7 @@ function showQuestion(index){
   const frage = document.createElement('div');
   frage.classList.add('frage');
   
-  frage.innerHTML = `<p><img src="/ui/question/${q.icon}" alt="" class="question-icon" style="vertical-align: middle; margin-right: 10px;">${q.question}</p>`;
+  frage.innerHTML = `<img src="/ui/question/${q.icon}" alt="" class="question-icon"><p>${q.question}</p>`;
 
   part.appendChild(frage);
 
@@ -135,6 +128,9 @@ function evaluateQuiz() {
     distro.desktops.forEach(desktop => {
 
       let raw = { ...distro.scores };
+      
+      let extraPoints = raw.Extra_Score || 0;
+      delete raw.Extra_Score;
 
       if (desktopModifiers[desktop]) {
         Object.entries(desktopModifiers[desktop]).forEach(([key, mod]) => {
@@ -161,7 +157,8 @@ function evaluateQuiz() {
         }
       });
 
-      const total = Object.values(match).reduce((a, b) => a + b, 0);
+      const matchSum = Object.values(match).reduce((a, b) => a + b, 0);
+      const total = matchSum + extraPoints;
 
       results.push({ 
         distro: distro.name, 
@@ -176,8 +173,6 @@ function evaluateQuiz() {
   });
 
   results.sort((a, b) => b.total - a.total);
-  console.log("Alle Ergebnisse:", results);
-  console.log("Top 5:", results.slice(0, 5));
   displayResults(results);
 }
 
@@ -286,6 +281,8 @@ async function displayResults(results) {
         const qId = map[k];
         const qObj = questions.find(i => i.id === qId);
         
+        const userVal = answers[qId] !== undefined ? answers[qId] : 0;
+
         const row = document.createElement("div");
         row.className = "stat-row";
 
@@ -299,11 +296,18 @@ async function displayResults(results) {
 
         const pWrap = document.createElement("div");
         pWrap.className = "progress small";
+        
         const pFill = document.createElement("div");
-        pFill.className = "progressinner";
-        pFill.style.width = `${(val / 3) * 100}%`;
+        pFill.classList.add("progressinner", "distro-value");
+        pFill.style.width = `${20 + (Math.max(0, (val - 1) / 2) * 60)}%`;
+
+        const pUser = document.createElement("div");
+        pUser.classList.add("progressinner", "user-value");
+        pUser.style.width = `${20 + (Math.max(0, (userVal - 1) / 2) * 60)}%`;
         
         pWrap.appendChild(pFill);
+        pWrap.appendChild(pUser);
+
         row.appendChild(label);
         row.appendChild(valLabel);
         row.appendChild(pWrap);

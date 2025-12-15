@@ -69,18 +69,18 @@
     "id": "q7",
     "title": "Minimalism",
     "icon": "7minimalism.svg",
-    "question": "Do you want to decide for yourself what features get installed?",
+    "question": "Is minimalism important to you?",
     "options": [
-      { "text": "<b>Simple</b> - I want to quickly have a running system", "value": "1" },
+      { "text": "<b>No</b> - I don't care about the amount of preinstalled programs", "value": "1" },
       { "text": "<b>Neutral</b> - I am neutral on this", "value": "2" },
-      { "text": "<b>Complex</b> - I want to decide what features my system should have", "value": "3" }
+      { "text": "<b>Yes</b> - I want a minimal base system I can build on top of", "value": "3" }
     ]
   },
   {
     "id": "q8",
     "title": "Package Complexity",
     "icon": "8install.svg",
-    "question": "How complex can the installation of programs be",
+    "question": "How complex can the installation of programs be?",
     "options": [
       { "text": "<b>Simple</b> - As simple as possible", "value": "1" },
       { "text": "<b>Neutral</b> - I am neutral on this", "value": "2" },

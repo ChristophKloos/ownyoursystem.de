@@ -21,9 +21,12 @@
   --shadow-big:  0px 14px 15px -13px rgba(0, 0, 0, 0.15);
   /*--FONT SIZE*/
   --font-sm: 13.5px;
-  --font-md: 15.8px;
+  --font-md: 16.5px;
   --font-lg: 25.6px;
   --font-xl: 45.1px;
+
+
+  interpolate-size: allow-keywords;
 }
 
 * {
@@ -54,7 +57,7 @@
   --shadow-hard: 0px 3.5px 14px -11px rgba(0, 0, 0, 0.7);
   }
 
-  .header img, .arrow-icon, .sidebarbtn, .frage p img{
+  .header img, .arrow-icon, .sidebarbtn, .frage img{
     filter: invert(1)!important;
   }
   
