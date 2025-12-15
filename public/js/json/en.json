@@ -2,6 +2,7 @@
   {
     "id": "q1",
     "title": "Experience Needed",
+    "icon": "1experience.svg",
     "question": "How much experience using Linux do you have?",
     "options": [
       { "text": "<b>Beginner</b> - I have never used it", "value": "1" },
@@ -12,6 +13,7 @@
   {
     "id": "q2",
     "title": "Gaming",
+    "icon": "2gaming.svg",
     "question": "How important is gaming?",
     "options": [
       { "text": "<b>Not at all</b> - I have no interest in gaming", "value": "1" },
@@ -22,6 +24,7 @@
   {
     "id": "q3",
     "title": "Graphical Features",
+    "icon": "3graphical.svg",
     "question": "Do you use modern graphical features?",
     "options": [
       { "text": "<b>No</b> - My setup is pretty average", "value": "1" },
@@ -32,6 +35,7 @@
   {
     "id": "q4",
     "title": "Customization",
+    "icon": "4customizable.svg",
     "question": "How customizable should the interface be?",
     "options": [
       { "text": "<b>Simple</b> - It should be preconfigured", "value": "1" },
@@ -42,6 +46,7 @@
   {
     "id": "q5",
     "title": "Keyboard Focus",
+    "icon": "5keyboard.svg",
     "question": "Do you want to control your system via keyboard or mouse?",
     "options": [
       { "text": "<b>Mouse</b> - I am mostly a mouse user", "value": "1" },
@@ -52,6 +57,7 @@
   {
     "id": "q6",
     "title": "Design",
+    "icon": "6modern.svg",
     "question": "Is modern UI design important to you?",
     "options": [
       { "text": "<b>No</b> - performance is my priority, I dont care about design", "value": "1" },
@@ -62,6 +68,7 @@
   {
     "id": "q7",
     "title": "Minimalism",
+    "icon": "7minimalism.svg",
     "question": "Do you want to decide for yourself what features get installed?",
     "options": [
       { "text": "<b>Simple</b> - I want to quickly have a running system", "value": "1" },
@@ -72,6 +79,7 @@
   {
     "id": "q8",
     "title": "Package Complexity",
+    "icon": "8install.svg",
     "question": "How complex can the installation of programs be",
     "options": [
       { "text": "<b>Simple</b> - As simple as possible", "value": "1" },
@@ -82,6 +90,7 @@
   {
     "id": "q9",
     "title": "Privacy",
+    "icon": "9privacy.svg",
     "question": "How important is privacy to you?",
     "options": [
       { "text": "<b>Not imporant</b> - I don't care about privacy", "value": "1" },
@@ -92,6 +101,7 @@
   {
     "id": "q10",
     "title": "Flexibility",
+    "icon": "10flexible.svg",
     "question": "Do you value a bulletproof or a flexible system?",
     "options": [
       { "text": "<b>Bulletproof</b> - I want an unbreakable system at the expense of full control", "value": "1" },
@@ -102,6 +112,7 @@
   {
     "id": "q11",
     "title": "Adventure",
+    "icon": "11interesting.svg",
     "question": "Do you want an interesting system?",
     "options": [
       { "text": "<b>No</b> - I want a boring system that just works", "value": "1" },
@@ -112,6 +123,7 @@
   {
     "id": "q12",
     "title": "Update Interval",
+    "icon": "12update.svg",
     "question": "How regular should updates be?",
     "options": [
       { "text": "<b>Rare</b> - I want rare but bigger updates", "value": "1" },
@@ -122,7 +134,8 @@
   {
     "id": "q13",
     "title": "Nvidia Support",
-    "question": "Do you use an Nvidia GPU",
+    "icon": "13nvidia.svg",
+    "question": "Do you use an Nvidia GPU?",
     "options": [
       { "text": "<b>No</b> - I use AMD or Intel", "value": "1" },
       { "text": "<b>Yes</b> - I use an older Nvidia card (pre RTX)", "value": "2" },

@@ -21,7 +21,7 @@
   --shadow-big:  0px 14px 15px -13px rgba(0, 0, 0, 0.15);
   /*--FONT SIZE*/
   --font-sm: 13.5px;
-  --font-md: 16.8px;
+  --font-md: 15.8px;
   --font-lg: 25.6px;
   --font-xl: 45.1px;
 }
@@ -54,10 +54,8 @@
   --shadow-soft: 0px 10px 30px -5px rgba(0, 0, 0, 0.12);
   --shadow-hard: 0px 3.5px 14px -11px rgba(0, 0, 0, 0.7);
   }
-  .sidebarbtn{
-    filter: invert(1);
-  }
-  .header img{
+
+  .header img, .arrow-icon, .sidebarbtn, .frage p img{
     filter: invert(1)!important;
   }
   

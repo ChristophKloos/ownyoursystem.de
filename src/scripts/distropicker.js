@@ -44,18 +44,29 @@ function showQuestion(index){
   const headerSubtitle = document.getElementById("quiz-subtitle");
   const headerProgress = document.getElementById("quiz-progress");
 
-  if(headerTitle) headerTitle.textContent = q.title;
-  if(headerSubtitle) headerSubtitle.textContent = `${index + 1} / ${questions.length}`;
+  if(headerTitle) {
+    headerTitle.textContent = q.title;
+    headerTitle.style.display = "";
+  }
+  if(headerSubtitle) {
+    headerSubtitle.textContent = `${index + 1} / ${questions.length}`;
+    headerSubtitle.style.display = "";
+  }
 
   const progressValue = ((index) / questions.length) * 100;
-  if(headerProgress) headerProgress.style.width = progressValue + "%";
+  if(headerProgress) {
+    headerProgress.style.width = progressValue + "%";
+    headerProgress.style.display = "";
+    if(headerProgress.parentElement) headerProgress.parentElement.style.display = "";
+  }
 
   const part = document.createElement('div');
   part.classList.add('part');
 
   const frage = document.createElement('div');
   frage.classList.add('frage');
-  frage.innerHTML = `<p>${q.question}</p>`;
+  
+  frage.innerHTML = `<p><img src="/ui/question/${q.icon}" alt="" class="question-icon" style="vertical-align: middle; margin-right: 10px;">${q.question}</p>`;
 
   part.appendChild(frage);
 
@@ -170,11 +181,29 @@ function evaluateQuiz() {
 }
 
 async function displayResults(results) {
+  const headerTitle = document.getElementById("quiz-title");
+  const headerSubtitle = document.getElementById("quiz-subtitle");
+  const headerProgress = document.getElementById("quiz-progress");
+
+  if(headerTitle) headerTitle.style.display = "none";
+  if(headerSubtitle) headerSubtitle.style.display = "none";
+  if(headerProgress) {
+    headerProgress.style.display = "none";
+    if(headerProgress.parentElement && headerProgress.parentElement.classList.contains('progress')) {
+      headerProgress.parentElement.style.display = "none";
+    }
+  }
+
   const resp = await fetch('/js/json/nameMapping.json');
   const nameMapping = await resp.json();
-
-  const quizHeader = document.getElementById("quiz-header");
-  if(quizHeader) quizHeader.style.display = "none";
+  
+  const map = {
+    "Experience": "q1", "Gaming": "q2", "Modern": "q3", "Options": "q4",
+    "Keyboard": "q5", "Pretty": "q6", "Ins_Complex": "q7", "PM_Terminal": "q8",
+    "Privacy": "q9", "Hard_Freedom": "q10", "Adventure": "q11",
+    "Upd_Regular": "q12", "Nvidia": "q13"
+  };
+  const orderedKeys = Object.keys(map);
 
   const container = document.getElementById("quiz-container");
   container.innerHTML = "";
@@ -183,11 +212,6 @@ async function displayResults(results) {
   title.textContent = "Results";
   container.appendChild(title);
 
-  const legend = document.createElement("p");
-  legend.classList.add('result');
-  legend.innerHTML = "Here are your Results:<br>Distribution and desktop environment<br><br>";
-  container.appendChild(legend);
-
   const list = document.createElement("div");
   list.id = "results-list";
   container.appendChild(list);
@@ -195,11 +219,9 @@ async function displayResults(results) {
   const btn = document.createElement("button");
   btn.textContent = "More";
   btn.className = "more-btn";
-  btn.style.marginTop = "20px";
   container.appendChild(btn);
 
   let shown = INITIAL_RESULT_COUNT;
-  const chunk = 10;
   const maxTotal = Math.max(...results.map(r => r.total));
 
   function renderRange(start, end) {
@@ -207,54 +229,97 @@ async function displayResults(results) {
       const card = document.createElement("div");
       card.classList.add("result-card");
 
-      const normalized = res.total / maxTotal;
-      const exaggeration = Math.pow(normalized, 16);
-      const progress = Math.min(100, exaggeration * 100);
-
       const key = `${res.distro}+${res.desktop}`;
       const displayName = nameMapping[key] || `${res.distro} ${res.desktop}`;
 
-      card.innerHTML = `
-        <p class="result">${displayName}</p>
-        <div class="progress white">
-          <div class="progressinner" style="width:0"></div>
-        </div>
-      `;
+      const header = document.createElement("div");
+      header.className = "result-header";
+
+      const nameTitle = document.createElement("p");
+      nameTitle.className = "result-name";
+      nameTitle.textContent = displayName;
+      header.appendChild(nameTitle);
+
+      const arrowImg = document.createElement("img");
+      arrowImg.src = "/ui/arrow.svg";
+      arrowImg.className = "arrow-icon";
+      arrowImg.alt = "toggle";
+      header.appendChild(arrowImg);
+
+      card.appendChild(header);
+
+      const mainProgressWrap = document.createElement("div");
+      mainProgressWrap.className = "progress white";
+      const mainBar = document.createElement("div");
+      mainBar.className = "progressinner main-bar";
+      mainBar.style.width = "0%";
+      mainProgressWrap.appendChild(mainBar);
+      card.appendChild(mainProgressWrap);
+
+      const normalized = res.total / maxTotal;
+      const exaggeration = Math.pow(normalized, 16);
+      setTimeout(() => {
+        mainBar.style.width = `${Math.min(100, exaggeration * 100)}%`;
+      }, 50 * (idx + 1));
+
+      const detailsContainer = document.createElement("div");
+      detailsContainer.className = "stats-container";
+      detailsContainer.style.display = "none";
+
+      orderedKeys.forEach(k => {
+        const val = res.rawScore[k] !== undefined ? res.rawScore[k] : 0;
+        const qId = map[k];
+        const qObj = questions.find(i => i.id === qId);
+        
+        const row = document.createElement("div");
+        row.className = "stat-row";
+
+        const label = document.createElement("span");
+        label.className = "stat-label";
+        label.textContent = qObj ? qObj.title : k;
+
+        const valLabel = document.createElement("span");
+        valLabel.className = "stat-value";
+        valLabel.textContent = "";
+
+        const pWrap = document.createElement("div");
+        pWrap.className = "progress small";
+        const pFill = document.createElement("div");
+        pFill.className = "progressinner";
+        pFill.style.width = `${(val / 3) * 100}%`;
+        
+        pWrap.appendChild(pFill);
+        row.appendChild(label);
+        row.appendChild(valLabel);
+        row.appendChild(pWrap);
+        detailsContainer.appendChild(row);
+      });
+
+      card.appendChild(detailsContainer);
+
+      card.addEventListener("click", () => {
+        const isHidden = detailsContainer.style.display === "none";
+        detailsContainer.style.display = isHidden ? "block" : "none";
+        if (isHidden) {
+          arrowImg.classList.add("rotated");
+        } else {
+          arrowImg.classList.remove("rotated");
+        }
+      });
 
       list.appendChild(card);
-      const bar = card.querySelector(".progressinner");
-      setTimeout(() => {
-        bar.style.width = `${progress}%`;
-      }, 50 * (idx + 1)); 
     });
   }
 
   renderRange(0, Math.min(shown, results.length));
 
-  function finish() {
-    btn.remove();
-    title.remove();
-    legend.remove();
-    
-    if(quizHeader) quizHeader.style.display = "none";
-    
-    const wrapper = document.getElementById("quiz-wrapper");
-    if (wrapper) wrapper.style.display = "none";
-  }
-
-  function onMore() {
+  btn.addEventListener("click", () => {
     const start = shown;
-    const end = Math.min(shown + chunk, results.length);
-    
-    if (start < end) {
-      renderRange(start, end);
-      shown = end;
-    }
-    
+    const end = Math.min(shown + 10, results.length);
+    renderRange(start, end);
+    shown = end;
     if (shown >= results.length) btn.remove();
-  }
-
-  if (results.length <= shown) btn.remove();
+  });
   
-  btn.addEventListener("click", onMore);
+  if (results.length <= shown) btn.remove();
 }
