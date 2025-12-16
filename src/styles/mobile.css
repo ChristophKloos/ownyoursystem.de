@@ -57,10 +57,8 @@
        text-align: left;
      
     }
-    .stat-row {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.1rem;
-  width: 100%;
-}
+    .quiz{
+      padding:0;
+    }
+
 }
