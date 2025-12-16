@@ -296,7 +296,7 @@ async function displayResults(results) {
 
       // Animation
       const normalized = res.total / maxTotal;
-      const exaggeration = Math.pow(normalized, 16); 
+      const exaggeration = Math.pow(normalized, 8); 
       setTimeout(() => {
         mainBar.style.width = `${Math.min(100, exaggeration * 100)}%`;
       }, 50 * (idx + 1));

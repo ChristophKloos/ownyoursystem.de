@@ -1,7 +1,7 @@
 {
   "desktops": {
     "GNOME": {
-      "Experience": 0.8,
+      "Experience": 0.5,
       "Gaming": 0.3,
       "Modern": 0.9,
       "Options": -0.5,
@@ -152,7 +152,7 @@
       "Options": 1.0,
       "Keyboard": 1.2,
       "Pretty": 0.3,
-      "Ins_Complex": 0.8,
+      "Ins_Complex": 0.6,
       "PM_Terminal": 0.7,
       "Privacy": 0.3,
       "Hard_Freedom": 0.6,
@@ -191,7 +191,7 @@
       "Adventure": 1.1,
       "Upd_Regular": -0.6,
       "Nvidia": 0.3,
-      "Extra_Score": 0.9
+      "Extra_Score": 0.4
     },
     "Sway": {
       "Experience": 0.7,
