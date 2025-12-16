@@ -439,5 +439,47 @@
             "Nvidia": 2.7,
             "Extra_Score": 1.8
         }
+    },
+    {
+        "name": "Garuda",
+        "description": "Garuda Linux is a performance-oriented, Arch-based distribution designed for gamers and enthusiasts that combines a visually striking neon aesthetic with user-friendly GUI tools and automatic system snapshots.",
+        "desktops": ["GNOME", "XFCE", "KDE", "i3", "Sway", "Cinnamon"],
+        "scores": {
+            "Experience": 1.5,
+            "Gaming": 2.9,
+            "Modern": 2.4,
+            "Options": 2.0,
+            "Keyboard": 1.5,
+            "Pretty": 2.5,
+            "Ins_Complex": 1.4,
+            "PM_Terminal": 1.5,
+            "Privacy": 2.3,
+            "Hard_Freedom": 1.8,
+            "Adventure": 2.1,
+            "Upd_Regular": 2.3,
+            "Nvidia": 2.8,
+            "Extra_Score": 1.1
+        }
+    },
+    {
+        "name": "Rocky Linux",
+        "description": "Rocky Linux is a community-driven, enterprise-grade operating system designed to serve as a rock-solid, binary-compatible downstream alternative to Red Hat Enterprise Linux (RHEL), created as a spiritual successor to the original CentOS.",
+        "desktops": ["GNOME", "KDE"],
+        "scores": {
+            "Experience": 2.1,
+            "Gaming": 1.1,
+            "Modern": 2.0,
+            "Options": 1.4,
+            "Keyboard": 1.5,
+            "Pretty": 2.0,
+            "Ins_Complex": 2.0,
+            "PM_Terminal": 2.1,
+            "Privacy": 2.3,
+            "Hard_Freedom": 1.4,
+            "Adventure": 1.2,
+            "Upd_Regular": 1.1,
+            "Nvidia": 1.2,
+            "Extra_Score": 0.9
+        }
     }
 ]

@@ -7,13 +7,14 @@
       "Options": -0.5,
       "Keyboard": -0.3,
       "Pretty": 1.1,
-      "Ins_Complex": -0.9,
+      "Ins_Complex": -0.5,
       "PM_Terminal": -0.4,
       "Privacy": -0.2,
       "Hard_Freedom": -0.5,
       "Adventure": -0.5,
       "Upd_Regular": 0.6,
-      "Nvidia": 0.2
+      "Nvidia": 0.2,
+      "Extra_Score": 2.1
     },
     "Cosmic": {
       "Experience": 0.3,
@@ -28,7 +29,9 @@
       "Hard_Freedom": 0.3,
       "Adventure": 0.7,
       "Upd_Regular": 0.8,
-      "Nvidia": 0.1
+      "Nvidia": 0.1,
+      "Extra_Score": 0.9
+      
     },
     "KDE": {
       "Experience": -0.2,
@@ -43,7 +46,8 @@
       "Hard_Freedom": 0.3,
       "Adventure": 0.3,
       "Upd_Regular": 0.5,
-      "Nvidia": 0.5
+      "Nvidia": 0.5,
+      "Extra_Score": 2.1
     },
     "XFCE": {
       "Experience": -0.1,
@@ -58,7 +62,8 @@
       "Hard_Freedom": 0.3,
       "Adventure": -0.7,
       "Upd_Regular": -0.4,
-      "Nvidia": 0.6
+      "Nvidia": 0.6,
+      "Extra_Score": 1.7
     },
     "Cinnamon": {
       "Experience": -0.8,
@@ -73,22 +78,24 @@
       "Hard_Freedom": 0.0,
       "Adventure": -0.6,
       "Upd_Regular": -0.2,
-      "Nvidia": 0.5
+      "Nvidia": 0.5,
+      "Extra_Score": 1.9
     },
     "MATE": {
-      "Experience": 0.3,
-      "Gaming": -0.4,
+      "Experience": -0.3,
+      "Gaming": -0.5,
       "Modern": -0.8,
       "Options": 0.2,
       "Keyboard": -0.8,
       "Pretty": -0.9,
-      "Ins_Complex": 0.0,
-      "PM_Terminal": 0.0,
+      "Ins_Complex": 0.2,
+      "PM_Terminal": 0.2,
       "Privacy": 0.3,
       "Hard_Freedom": 0.3,
       "Adventure": -0.4,
       "Upd_Regular": -0.3,
-      "Nvidia": 0.5
+      "Nvidia": -0.1,
+      "Extra_Score": 0.2
     },
     "LXDE": {
       "Experience": 0.1,
@@ -103,7 +110,8 @@
       "Hard_Freedom": 0.5,
       "Adventure": -0.3,
       "Upd_Regular": -0.6,
-      "Nvidia": 0.5
+      "Nvidia": 0.5,
+      "Extra_Score": 0
     },
     "LXQt": {
       "Experience": -0.1,
@@ -118,7 +126,8 @@
       "Hard_Freedom": 0.3,
       "Adventure": 0.0,
       "Upd_Regular": -0.2,
-      "Nvidia": 0.4
+      "Nvidia": 0.4,
+      "Extra_Score": 0.6
     },
     "i3": {
       "Experience": 0.9,
@@ -133,7 +142,8 @@
       "Hard_Freedom": 0.6,
       "Adventure": 0.6,
       "Upd_Regular": -0.4,
-      "Nvidia": 0.4
+      "Nvidia": 0.4,
+      "Extra_Score": 0.5
     },
     "Hyprland": {
       "Experience": 0.9,
@@ -148,7 +158,8 @@
       "Hard_Freedom": 0.6,
       "Adventure": 0.8,
       "Upd_Regular": 0.9,
-      "Nvidia": 0.0
+      "Nvidia": 0.0,
+      "Extra_Score": 1.1
     },
     "Niri": {
       "Experience": 0.6,
@@ -163,7 +174,8 @@
       "Hard_Freedom": 0.5,
       "Adventure": 1.0,
       "Upd_Regular": 0.6,
-      "Nvidia": 0.0
+      "Nvidia": 0.0,
+      "Extra_Score": 1.2
     },
     "DWM": {
       "Experience": 1.2,
@@ -178,7 +190,8 @@
       "Hard_Freedom": 1.2,
       "Adventure": 1.1,
       "Upd_Regular": -0.6,
-      "Nvidia": 0.3
+      "Nvidia": 0.3,
+      "Extra_Score": 0.9
     },
     "Sway": {
       "Experience": 0.7,
@@ -193,7 +206,8 @@
       "Hard_Freedom": 0.7,
       "Adventure": 0.8,
       "Upd_Regular": 0.2,
-      "Nvidia": -0.4
+      "Nvidia": -0.4,
+      "Extra_Score": 0.8
     }
   }
 }

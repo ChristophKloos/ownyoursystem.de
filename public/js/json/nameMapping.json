@@ -6,7 +6,7 @@
   "Fedora+GNOME": "<b>Fedora</b> Workstation",
   "Fedora+XFCE": "<b>Fedora</b> XFCE Spin",
   "Fedora+Cinnamon": "<b>Fedora</b> Cinnamon Spin",
-  "Fedora+MATE": "<b>Fedora</b> Mate-Compiz",
+  "Fedora+MATE": "<b>Fedora</b> Mate-Compiz Spin",
   "Fedora Atomic+GNOME": "<b>Fedora</b> Silverblue",
   "Fedora Atomic+KDE": "<b>Fedora</b> Kionite",
   "Pop!_OS+Cosmic": "<b>Pop!_OS</b>",
@@ -14,6 +14,7 @@
   "Zorin OS+XFCE": "<b>Zorin OS</b> Lite",
   "Linux Mint+Cinnamon": "<b>Linux Mint</b> Cinnamon Edition",
   "Linux Mint+XFCE": "<b>Linux Mint</b> XFCE Edition",
-  "Fedora+KDE": "<b>Fedora</b> KDE Plasma Desktop"
+  "Fedora+KDE": "<b>Fedora</b> KDE Plasma Desktop",
+  "Garuda+KDE": "<b>Garuda</b> Dr460nized"
 }
  

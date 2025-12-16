@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadQuiz();
 });
 
+// --- 1. DATA LOADING ---
 async function loadQuiz() {
   const [qResp, dResp, deResp] = await Promise.all([
     fetch('/js/json/en.json'),
@@ -22,17 +23,20 @@ async function loadQuiz() {
   distros = await dResp.json();
   desktops = await deResp.json();
 
+  // Handle structure: { "desktops": { ... } } vs { ... }
   desktopModifiers = desktops.desktops || desktops;
   
   showQuestion(currentIndex);
 }
 
+// --- 2. SHOW QUESTIONS ---
 function showQuestion(index){
   const container = document.getElementById('quiz-container');
   container.innerHTML = "";
 
   const q = questions[index];
  
+  // Update Header UI (Title, Progress)
   const headerTitle = document.getElementById("quiz-title");
   const headerSubtitle = document.getElementById("quiz-subtitle");
   const headerProgress = document.getElementById("quiz-progress");
@@ -53,16 +57,16 @@ function showQuestion(index){
     if(headerProgress.parentElement) headerProgress.parentElement.style.display = "";
   }
 
+  // Question Content
   const part = document.createElement('div');
   part.classList.add('part');
 
   const frage = document.createElement('div');
   frage.classList.add('frage');
-  
   frage.innerHTML = `<img src="/ui/question/${q.icon}" alt="" class="question-icon"><p>${q.question}</p>`;
-
   part.appendChild(frage);
 
+  // Options
   const choice = document.createElement('div');
   choice.classList.add('choice');
 
@@ -78,11 +82,13 @@ function showQuestion(index){
     label.htmlFor = inputId;
     label.innerHTML = opt.text;
 
+    // Restore previous answer state
     if (answers[q.id] !== undefined && answers[q.id] == opt.value) {
       input.checked = true;
       label.classList.add('active');
     }
 
+    // Handle Selection
     input.addEventListener('change', () => {
       const allLabels = choice.querySelectorAll('label');
       allLabels.forEach(l => l.classList.remove('active'));
@@ -90,6 +96,7 @@ function showQuestion(index){
 
       answers[q.id] = parseInt(input.value);
 
+      // Auto-advance with delay
       setTimeout(() => {
         if (currentIndex + 1 < questions.length) {
           currentIndex++;
@@ -106,6 +113,7 @@ function showQuestion(index){
 
   part.appendChild(choice);
 
+  // Back Button
   if (index > 0) {
     const backBtn = document.createElement('button');
     backBtn.textContent = "Back";
@@ -121,25 +129,41 @@ function showQuestion(index){
   container.appendChild(part);
 }
 
+// --- 3. EVALUATION LOGIC (FIXED) ---
 function evaluateQuiz() {
   const results = [];
 
   distros.forEach(distro => {
     distro.desktops.forEach(desktop => {
 
+      // A. Copy Distro Scores
       let raw = { ...distro.scores };
       
-      let extraPoints = raw.Extra_Score || 0;
+      // B. Extract & Remove Distro Extra Score (so it doesn't affect matching)
+      let distroExtra = Number(raw.Extra_Score || 0);
       delete raw.Extra_Score;
 
-      if (desktopModifiers[desktop]) {
-        Object.entries(desktopModifiers[desktop]).forEach(([key, mod]) => {
+      // C. Extract Desktop Modifiers & Extra Score
+      let desktopExtra = 0;
+      const mods = desktopModifiers[desktop];
+
+      if (mods) {
+        // Explicitly extract Extra_Score from desktop modifiers
+        if (mods.Extra_Score !== undefined) {
+          desktopExtra = Number(mods.Extra_Score);
+        }
+
+        // Apply modifiers to base scores (exclude Extra_Score key)
+        Object.entries(mods).forEach(([key, mod]) => {
+          if (key === "Extra_Score") return; 
           if (raw[key] !== undefined) raw[key] += mod;
         });
       }
 
+      // D. Clamp scores to 0-3 range (Business Logic)
       Object.keys(raw).forEach(k => raw[k] = Math.max(0, Math.min(3, raw[k])));
 
+      // E. Calculate Match Score (User Answer Comparison)
       let match = { ...raw };
 
       Object.entries(answers).forEach(([qid, ans]) => {
@@ -152,13 +176,17 @@ function evaluateQuiz() {
 
         const field = map[qid];
         if (field && match[field] !== undefined) {
+          // Algorithm: 3 points max per category, subtract difference
           const diff = Math.abs(ans - raw[field]);
           match[field] = Math.max(0, Math.min(3, 3 - diff));
         }
       });
 
+      // F. Final Summation
       const matchSum = Object.values(match).reduce((a, b) => a + b, 0);
-      const total = matchSum + extraPoints;
+      
+      // FIXED: Add both extra scores strictly at the end
+      const total = matchSum + distroExtra + desktopExtra;
 
       results.push({ 
         distro: distro.name, 
@@ -172,11 +200,14 @@ function evaluateQuiz() {
     });
   });
 
+  // Sort Descending
   results.sort((a, b) => b.total - a.total);
   displayResults(results);
 }
 
+// --- 4. DISPLAY RESULTS ---
 async function displayResults(results) {
+  // Clear Quiz UI
   const headerTitle = document.getElementById("quiz-title");
   const headerSubtitle = document.getElementById("quiz-subtitle");
   const headerProgress = document.getElementById("quiz-progress");
@@ -190,6 +221,7 @@ async function displayResults(results) {
     }
   }
 
+  // Helper Mapping
   const resp = await fetch('/js/json/nameMapping.json');
   const nameMapping = await resp.json();
   
@@ -204,6 +236,7 @@ async function displayResults(results) {
   const container = document.getElementById("quiz-container");
   container.innerHTML = "";
 
+  // Result Header
   const title = document.createElement("h1");
   title.textContent = "Results";
   container.appendChild(title);
@@ -212,6 +245,7 @@ async function displayResults(results) {
   list.id = "results-list";
   container.appendChild(list);
 
+  // Pagination Button
   const btn = document.createElement("button");
   btn.textContent = "More";
   btn.className = "more-btn";
@@ -220,6 +254,7 @@ async function displayResults(results) {
   let shown = INITIAL_RESULT_COUNT;
   const maxTotal = Math.max(...results.map(r => r.total));
 
+  // Render Logic
   function renderRange(start, end) {
     results.slice(start, end).forEach((res, idx) => {
       const card = document.createElement("div");
@@ -227,6 +262,7 @@ async function displayResults(results) {
 
       const key = `${res.distro}+${res.desktop}`;
 
+      // Card Header
       const header = document.createElement("div");
       header.className = "result-header";
 
@@ -249,6 +285,7 @@ async function displayResults(results) {
 
       card.appendChild(header);
 
+      // Main Score Bar
       const mainProgressWrap = document.createElement("div");
       mainProgressWrap.className = "progress white";
       const mainBar = document.createElement("div");
@@ -257,12 +294,14 @@ async function displayResults(results) {
       mainProgressWrap.appendChild(mainBar);
       card.appendChild(mainProgressWrap);
 
+      // Animation
       const normalized = res.total / maxTotal;
-      const exaggeration = Math.pow(normalized, 16);
+      const exaggeration = Math.pow(normalized, 16); 
       setTimeout(() => {
         mainBar.style.width = `${Math.min(100, exaggeration * 100)}%`;
       }, 50 * (idx + 1));
 
+      // Detailed Stats (Accordion)
       const detailsContainer = document.createElement("div");
       detailsContainer.className = "stats-container";
       detailsContainer.style.display = "none";
@@ -270,7 +309,6 @@ async function displayResults(results) {
       if (res.description) {
         const descP = document.createElement("p");
         descP.className = "result-desc";
-
         descP.style.margin = "0";
         descP.textContent = res.description;
         detailsContainer.appendChild(descP);
@@ -297,10 +335,12 @@ async function displayResults(results) {
         const pWrap = document.createElement("div");
         pWrap.className = "progress small";
         
+        // System Value (Gray/Main)
         const pFill = document.createElement("div");
         pFill.classList.add("progressinner", "distro-value");
         pFill.style.width = `${20 + (Math.max(0, (val - 1) / 2) * 60)}%`;
 
+        // User Value (Target)
         const pUser = document.createElement("div");
         pUser.classList.add("progressinner", "user-value");
         pUser.style.width = `${20 + (Math.max(0, (userVal - 1) / 2) * 60)}%`;
@@ -316,6 +356,7 @@ async function displayResults(results) {
 
       card.appendChild(detailsContainer);
 
+      // Toggle Event
       card.addEventListener("click", () => {
         const isHidden = detailsContainer.style.display === "none";
         detailsContainer.style.display = isHidden ? "block" : "none";
@@ -332,6 +373,7 @@ async function displayResults(results) {
 
   renderRange(0, Math.min(shown, results.length));
 
+  // "More" Button Logic
   btn.addEventListener("click", () => {
     const start = shown;
     const end = Math.min(shown + 10, results.length);
