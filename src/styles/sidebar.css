@@ -120,7 +120,7 @@ h4{
 
 .toggle-btn::after {
   content: '';
-  border: solid currentColor;
+  border: solid var(--text-link);
   border-width: 0 2px 2px 0;
   padding: 3px;
   transform: rotate(45deg);
