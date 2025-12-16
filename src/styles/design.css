@@ -94,3 +94,54 @@ a:hover{
 
    opacity:1;
 }
+
+#image-modal {
+    position: fixed;
+    inset: 0;
+    background-color: var(--bg-translucent);
+	backdrop-filter: blur(40px);
+	box-shadow:var(--shadow-hard);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    display: flex;
+}
+
+#image-modal.hidden {
+       display: flex;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#image-modal.flex {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+#modal-image {
+    max-width: 90vw;
+    max-height: 80vh;
+    object-fit: contain;
+    cursor: default;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+#image-modal.flex #modal-image {
+    transform: scale(1);
+}
+
+
+#modal-caption {
+    text-align: center;
+    color: var(--text-dark);
+    margin-top: 15px;
+    font-size: var(--font-md);
+}

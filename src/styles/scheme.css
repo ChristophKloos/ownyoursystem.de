@@ -57,8 +57,12 @@
   --shadow-hard: 0px 3.5px 14px -11px rgba(0, 0, 0, 0.7);
   }
 
-  .header img, .arrow-icon, .sidebarbtn, .frage img{
+  .header img, .arrow-icon, .sidebarbtn, .frage img, .distro-icon{
     filter: invert(1)!important;
+  }
+
+  .quiz-container button {
+    color:var(--bg-dark)!important;
   }
   
   

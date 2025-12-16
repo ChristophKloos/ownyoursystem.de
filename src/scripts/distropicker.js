@@ -7,6 +7,9 @@ let distros = [];
 let desktops = [];
 let desktopModifiers = {};
 
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   loadQuiz();
 });
@@ -25,7 +28,7 @@ async function loadQuiz() {
 
   // Handle structure: { "desktops": { ... } } vs { ... }
   desktopModifiers = desktops.desktops || desktops;
-  
+   
   showQuestion(currentIndex);
 }
 
@@ -129,7 +132,7 @@ function showQuestion(index){
   container.appendChild(part);
 }
 
-// --- 3. EVALUATION LOGIC (FIXED) ---
+// --- 3. EVALUATION LOGIC ---
 function evaluateQuiz() {
   const results = [];
 
@@ -139,7 +142,7 @@ function evaluateQuiz() {
       // A. Copy Distro Scores
       let raw = { ...distro.scores };
       
-      // B. Extract & Remove Distro Extra Score (so it doesn't affect matching)
+      // B. Extract & Remove Distro Extra Score
       let distroExtra = Number(raw.Extra_Score || 0);
       delete raw.Extra_Score;
 
@@ -148,22 +151,20 @@ function evaluateQuiz() {
       const mods = desktopModifiers[desktop];
 
       if (mods) {
-        // Explicitly extract Extra_Score from desktop modifiers
         if (mods.Extra_Score !== undefined) {
           desktopExtra = Number(mods.Extra_Score);
         }
 
-        // Apply modifiers to base scores (exclude Extra_Score key)
         Object.entries(mods).forEach(([key, mod]) => {
           if (key === "Extra_Score") return; 
           if (raw[key] !== undefined) raw[key] += mod;
         });
       }
 
-      // D. Clamp scores to 0-3 range (Business Logic)
+      // D. Clamp scores
       Object.keys(raw).forEach(k => raw[k] = Math.max(0, Math.min(3, raw[k])));
 
-      // E. Calculate Match Score (User Answer Comparison)
+      // E. Calculate Match Score
       let match = { ...raw };
 
       Object.entries(answers).forEach(([qid, ans]) => {
@@ -176,7 +177,6 @@ function evaluateQuiz() {
 
         const field = map[qid];
         if (field && match[field] !== undefined) {
-          // Algorithm: 3 points max per category, subtract difference
           const diff = Math.abs(ans - raw[field]);
           match[field] = Math.max(0, Math.min(3, 3 - diff));
         }
@@ -185,11 +185,12 @@ function evaluateQuiz() {
       // F. Final Summation
       const matchSum = Object.values(match).reduce((a, b) => a + b, 0);
       
-      // FIXED: Add both extra scores strictly at the end
       const total = matchSum + distroExtra + desktopExtra;
 
       results.push({ 
-        distro: distro.name, 
+        distro: distro.name,
+        icon: distro.icon, 
+        link: distro.link, 
         description: distro.description,
         desktop, 
         rawScore: raw, 
@@ -207,7 +208,6 @@ function evaluateQuiz() {
 
 // --- 4. DISPLAY RESULTS ---
 async function displayResults(results) {
-  // Clear Quiz UI
   const headerTitle = document.getElementById("quiz-title");
   const headerSubtitle = document.getElementById("quiz-subtitle");
   const headerProgress = document.getElementById("quiz-progress");
@@ -221,7 +221,6 @@ async function displayResults(results) {
     }
   }
 
-  // Helper Mapping
   const resp = await fetch('/js/json/nameMapping.json');
   const nameMapping = await resp.json();
   
@@ -236,16 +235,19 @@ async function displayResults(results) {
   const container = document.getElementById("quiz-container");
   container.innerHTML = "";
 
-  // Result Header
-  const title = document.createElement("h1");
+  const title = document.createElement("h2");
   title.textContent = "Results";
   container.appendChild(title);
+
+  const subtitle = document.createElement("p");
+  subtitle.className = "resultsub";
+  subtitle.textContent = "Click on an entry for a detailed breakdown.";
+  container.appendChild(subtitle);
 
   const list = document.createElement("div");
   list.id = "results-list";
   container.appendChild(list);
 
-  // Pagination Button
   const btn = document.createElement("button");
   btn.textContent = "More";
   btn.className = "more-btn";
@@ -254,26 +256,41 @@ async function displayResults(results) {
   let shown = INITIAL_RESULT_COUNT;
   const maxTotal = Math.max(...results.map(r => r.total));
 
-  // Render Logic
   function renderRange(start, end) {
     results.slice(start, end).forEach((res, idx) => {
       const card = document.createElement("div");
       card.classList.add("result-card");
 
       const key = `${res.distro}+${res.desktop}`;
+      const mappingEntry = nameMapping[key];
 
-      // Card Header
       const header = document.createElement("div");
       header.className = "result-header";
+
+      if (res.icon) {
+        const iconImg = document.createElement("img");
+        iconImg.src = `/ui/distro/${res.icon}`;
+        iconImg.alt = `${res.distro} Logo`;
+        iconImg.className = "distro-icon"; 
+        header.appendChild(iconImg);
+      }
 
       const nameTitle = document.createElement("p");
       nameTitle.className = "result-name";
       
-      if (nameMapping[key]) {
-        nameTitle.innerHTML = nameMapping[key];
-      } else {
-        nameTitle.innerHTML = `<strong>${res.distro}</strong> ${res.desktop}`;
+      let displayName = `<strong>${res.distro}</strong> ${res.desktop}`;
+      let customScreenshot = null;
+
+      if (mappingEntry) {
+        if (typeof mappingEntry === 'object' && mappingEntry.name) {
+             displayName = mappingEntry.name;
+             if (mappingEntry.screenshot) customScreenshot = mappingEntry.screenshot;
+        } else if (typeof mappingEntry === 'string') {
+             displayName = mappingEntry;
+        }
       }
+      
+      nameTitle.innerHTML = displayName;
 
       header.appendChild(nameTitle);
 
@@ -285,7 +302,6 @@ async function displayResults(results) {
 
       card.appendChild(header);
 
-      // Main Score Bar
       const mainProgressWrap = document.createElement("div");
       mainProgressWrap.className = "progress white";
       const mainBar = document.createElement("div");
@@ -294,17 +310,26 @@ async function displayResults(results) {
       mainProgressWrap.appendChild(mainBar);
       card.appendChild(mainProgressWrap);
 
-      // Animation
       const normalized = res.total / maxTotal;
       const exaggeration = Math.pow(normalized, 8); 
       setTimeout(() => {
         mainBar.style.width = `${Math.min(100, exaggeration * 100)}%`;
       }, 50 * (idx + 1));
 
-      // Detailed Stats (Accordion)
       const detailsContainer = document.createElement("div");
       detailsContainer.className = "stats-container";
       detailsContainer.style.display = "none";
+
+      const dtMods = desktopModifiers[res.desktop];
+      let finalImgSrc = null;
+
+      if (customScreenshot) {
+         finalImgSrc = `/img/desktops/${customScreenshot}`;
+      } else if (dtMods && dtMods.Screenshot) {
+         finalImgSrc = `/img/desktops/${dtMods.Screenshot}`;
+      }
+      
+     
 
       if (res.description) {
         const descP = document.createElement("p");
@@ -313,6 +338,28 @@ async function displayResults(results) {
         descP.textContent = res.description;
         detailsContainer.appendChild(descP);
       }
+
+       if (finalImgSrc) {
+          const imgContainer = document.createElement("div");
+          imgContainer.className = "gallery-item-container";
+          imgContainer.style.marginBottom = "1em";
+          
+          const imgCaption = "Images do may not perfectly represent this distro and desktop combination. Sourced from wikimedia (creative commons)";
+
+          imgContainer.innerHTML = `<img src="${finalImgSrc}" class="gallery-item-image" alt="Desktop Preview">`;
+          
+          imgContainer.onclick = (e) => {
+             e.stopPropagation(); 
+             if (window.openModal) window.openModal(finalImgSrc, imgCaption);
+          };
+          detailsContainer.appendChild(imgContainer);
+      }
+
+        const descIMG = document.createElement("p");
+        descIMG.className = "result-desc";
+        descIMG.style.margin = "0";
+        descIMG.textContent = "Screenshot do may not perfectly represent this distro and desktop combination. Sourced from wikimedia (creative commons)";
+        detailsContainer.appendChild(descIMG);
 
       orderedKeys.forEach(k => {
         const val = res.rawScore[k] !== undefined ? res.rawScore[k] : 0;
@@ -335,12 +382,10 @@ async function displayResults(results) {
         const pWrap = document.createElement("div");
         pWrap.className = "progress small";
         
-        // System Value (Gray/Main)
         const pFill = document.createElement("div");
         pFill.classList.add("progressinner", "distro-value");
         pFill.style.width = `${20 + (Math.max(0, (val - 1) / 2) * 60)}%`;
 
-        // User Value (Target)
         const pUser = document.createElement("div");
         pUser.classList.add("progressinner", "user-value");
         pUser.style.width = `${20 + (Math.max(0, (userVal - 1) / 2) * 60)}%`;
@@ -354,10 +399,21 @@ async function displayResults(results) {
         detailsContainer.appendChild(row);
       });
 
+      if (res.link) {
+        const linkBtn = document.createElement("a");
+        linkBtn.href = res.link;
+        linkBtn.target = "_blank";
+        linkBtn.rel = "noopener noreferrer";
+        linkBtn.textContent = "Official Website";
+        linkBtn.className = "distro-link";
+        detailsContainer.appendChild(linkBtn);
+      }
+
       card.appendChild(detailsContainer);
 
-      // Toggle Event
-      card.addEventListener("click", () => {
+      card.addEventListener("click", (e) => {
+        if (e.target.classList.contains('distro-link')) return;
+
         const isHidden = detailsContainer.style.display === "none";
         detailsContainer.style.display = isHidden ? "block" : "none";
         if (isHidden) {
@@ -373,7 +429,6 @@ async function displayResults(results) {
 
   renderRange(0, Math.min(shown, results.length));
 
-  // "More" Button Logic
   btn.addEventListener("click", () => {
     const start = shown;
     const end = Math.min(shown + 10, results.length);
