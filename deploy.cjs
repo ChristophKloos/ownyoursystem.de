@@ -54,7 +54,6 @@ async function uploadDirectory(client, localDir, remoteDir) {
     try {
         await client.ensureDir(remoteDir);
     } catch (e) {
-        // ignore
     }
 
     for (const file of files) {
@@ -79,6 +78,10 @@ async function run() {
 
         console.log("Connecting to FTP...");
         await client.access(config);
+        
+        console.log("Clearing remote directory...");
+        await client.cd(remoteRoot);
+        await client.clearWorkingDir();
         
         console.log("Starting upload...");
         await uploadDirectory(client, localRoot, remoteRoot);
