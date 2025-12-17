@@ -11,7 +11,8 @@
     "ship": "npm run build && npm run deploy && git add . && git commit -m \"Update & Deploy\" && git push"
   },
   "dependencies": {
-    "astro": "^5.16.0"
+    "astro": "^5.16.0",
+    "basic-ftp": "^5.0.5"
   },
   "devDependencies": {
     "dotenv": "^17.2.3",

@@ -16,7 +16,7 @@
     "icon": "2gaming.svg",
     "question": "How important is gaming?",
     "options": [
-      { "text": "<b>Not at all</b> - I have no interest in gaming", "value": "1" },
+      { "text": "<b>Not at all</b> - I don't game", "value": "1" },
       { "text": "<b>Light gaming</b> - I play retro and indie games", "value": "2" },
       { "text": "<b>Triple A</b> -  I play the latest and greatest blockbusters", "value": "3" }
     ]
@@ -27,7 +27,7 @@
     "icon": "3graphical.svg",
     "question": "Do you use modern graphical features?",
     "options": [
-      { "text": "<b>No</b> - My setup is pretty average", "value": "1" },
+      { "text": "<b>No</b> - My setup can't handle it", "value": "1" },
       { "text": "<b>Yes</b> - High framerate and resolution", "value": "2" },
       { "text": "<b>Enhanced</b> - Variable framerate and HDR", "value": "3" }
     ]
