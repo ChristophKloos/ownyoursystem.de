@@ -13,8 +13,9 @@
   --text-muted: #3d3846;
   --text-link: #2e75cc;
   /*--RADIUS*/
-  --radius-lg: 32px;
+  --radius-lg: 46px;
   --radius-md: 16px;
+  --radius-sm: 8px;
   /*--SHADOWS*/
   --shadow-soft: 0px 15px 36px -30px rgba(0, 0, 0, 0.08);
   --shadow-hard: 0px 3.5px 12px -10px rgba(0, 0, 0, 0.244);
@@ -62,7 +63,7 @@
   }
 
   .quiz-container button {
-    color:var(--bg-dark)!important;
+  color:var(--bg-dark)!important;
   }
   
   

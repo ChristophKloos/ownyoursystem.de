@@ -39,10 +39,8 @@ function showQuestion(index){
 
   const q = questions[index];
  
-  // Update Header UI (Title, Progress)
   const headerTitle = document.getElementById("quiz-title");
   const headerSubtitle = document.getElementById("quiz-subtitle");
-  const headerProgress = document.getElementById("quiz-progress");
 
   if(headerTitle) {
     headerTitle.textContent = q.title;
@@ -53,21 +51,31 @@ function showQuestion(index){
     headerSubtitle.style.display = "";
   }
 
-  const progressValue = ((index) / questions.length) * 100;
-  if(headerProgress) {
-    headerProgress.style.width = progressValue + "%";
-    headerProgress.style.display = "";
-    if(headerProgress.parentElement) headerProgress.parentElement.style.display = "";
-  }
-
-  // Question Content
   const part = document.createElement('div');
   part.classList.add('part');
 
   const frage = document.createElement('div');
   frage.classList.add('frage');
   frage.innerHTML = `<img src="/ui/question/${q.icon}" alt="" class="question-icon"><p>${q.question}</p>`;
+const progressContainer = document.createElement('div');
+  progressContainer.className = "progress";
+
+  const progressBar = document.createElement('div');
+  progressBar.id = "quiz-progress";
+  progressBar.className = "progressinner";
+  
+  const prevValue = index > 0 ? ((index - 1) / questions.length) * 100 : 0;
+  progressBar.style.width = `${prevValue}%`;
+
+  progressContainer.appendChild(progressBar);
+  frage.appendChild(progressContainer);
+
   part.appendChild(frage);
+
+  setTimeout(() => {
+    const progressValue = ((index) / questions.length) * 100;
+    progressBar.style.width = `${progressValue}%`;
+  }, 50);
 
   // Options
   const choice = document.createElement('div');
@@ -235,14 +243,18 @@ async function displayResults(results) {
   const container = document.getElementById("quiz-container");
   container.innerHTML = "";
 
+  const header = document.createElement("div");
+  header.className = "resultheader";
+  container.appendChild(header);
+
   const title = document.createElement("h2");
   title.textContent = "Results";
-  container.appendChild(title);
+  header.appendChild(title);
 
   const subtitle = document.createElement("p");
   subtitle.className = "resultsub";
   subtitle.textContent = "Click on an entry for a detailed breakdown.";
-  container.appendChild(subtitle);
+  header.appendChild(subtitle);
 
   const list = document.createElement("div");
   list.id = "results-list";
