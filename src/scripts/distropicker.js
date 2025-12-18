@@ -64,7 +64,7 @@ const progressContainer = document.createElement('div');
   progressBar.id = "quiz-progress";
   progressBar.className = "progressinner";
   
-  const prevValue = index > 0 ? ((index - 1) / questions.length) * 100 : 0;
+  const prevValue = index > 0 ? ((index) / questions.length) * 100 : 0;
   progressBar.style.width = `${prevValue}%`;
 
   progressContainer.appendChild(progressBar);
@@ -73,7 +73,7 @@ const progressContainer = document.createElement('div');
   part.appendChild(frage);
 
   setTimeout(() => {
-    const progressValue = ((index) / questions.length) * 100;
+    const progressValue = ((index+1) / questions.length) * 100;
     progressBar.style.width = `${progressValue}%`;
   }, 50);
 
