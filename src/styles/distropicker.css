@@ -83,22 +83,7 @@ body{
   transform: rotate(-90deg);
 }
 
-.more-btn {
-   position:absolute;
-  bottom:32px;
-  right:32px;
-  width:auto;
-  border-radius:32px;
-  background:linear-gradient(135deg,var(--bg-primary),var(--bg-primary-dark));
-  color:var(--bg-light);
-  border:none;
-  cursor:pointer;
-  font-size:var(--font-sm);
-  font-weight:600;
-  padding:19.2px 25.6px;
-  transition:all 0.15s ease;
-  margin-top:164px;
-}
+
 
 .frage .progress {
   position:absolute;
@@ -130,6 +115,10 @@ body{
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
   transition:width 1s ease;
+}
+
+.user-value, .distro-value{
+  transition:none!important;
 }
 
 .choice {
@@ -330,24 +319,35 @@ label:hover {
   flex-shrink: 0;     
 }
 
+.distro-link, .more-btn{
+  font-weight: 600;
+  opacity:0.8;
+  padding: 8px 16px;
+  border-radius: var(--radius-lg);
+  cursor:pointer;
+  font-size: var(--font-sm);
+  text-decoration: none;
+  border:none;
+  color: var(--text-dark);
+  background-color: transparent;
+}
+
 .distro-link {
   display: flex;
   width: fit-content;
   margin: 32px auto 10px auto;
   justify-content: center;
   align-items: center;
-  padding: 8px 16px;
-  border-radius: var(--radius-lg);
-  background-color: transparent;
-  color: var(--text-dark);
   text-align: center;
-  font-size: var(--font-sm);
-  text-decoration: none;
-  opacity:0.8;
-  font-weight: 600;
 }
 
-.distro-link:hover{
+.more-btn {
+   position:absolute;
+  bottom:32px;
+  right:32px;
+  width:auto;
+}
+.distro-link:hover, .more-btn:hover{
 background-color: var(--bg-card);
 opacity:1;
 
@@ -371,7 +371,7 @@ margin-top: 8px;
 }
 
 #results-list{
-  margin-bottom: 64px;
+  margin-bottom:100px;
 }
 
 .gallery-item-image {
