@@ -108,6 +108,10 @@ a:hover{
     display: flex;
 }
 
+sub{
+  font-size: var(--font-sm);
+}
+
 #image-modal.hidden {
        display: flex;
     opacity: 0;

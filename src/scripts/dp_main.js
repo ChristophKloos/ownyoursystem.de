@@ -11,7 +11,7 @@ let state = {
   answers: {}
 };
 
-async function init() {
+async function Startquiz() {
   const data = await fetchData();
   state = { ...state, ...data };
   showCurrent();
@@ -44,4 +44,9 @@ function handleAnswer(qId, value) {
   }, 250);
 }
 
-document.addEventListener("DOMContentLoaded", init);
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("start-btn");
+  if (btn) {
+    btn.addEventListener("click", Startquiz);
+  }
+});
