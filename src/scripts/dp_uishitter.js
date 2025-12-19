@@ -51,7 +51,13 @@ export function renderQuestion(index, questions, answers, onAnswer, onNav) {
     label.innerHTML = opt.text;
     if (input.checked) label.classList.add('active');
 
-    input.addEventListener('change', () => onAnswer(q.id, parseInt(input.value)));
+    label.addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      input.checked = true;
+      choice.querySelectorAll('label').forEach(l => l.classList.remove('active'));
+      label.classList.add('active');
+      onAnswer(q.id, parseInt(input.value));
+    });
 
     choice.appendChild(input);
     choice.appendChild(label);
