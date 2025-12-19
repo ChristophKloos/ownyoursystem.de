@@ -1,4 +1,15 @@
 Options -Indexes
+RewriteEngine On
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^distro\.ownyoursystem\.de$ [NC]
+RewriteCond %{REQUEST_URI} !^/distropicker/
+RewriteRule ^(.*)$ /distropicker/$1 [L]
+
+RewriteCond %{HTTP_HOST} ^distro\.ownyoursystem\.de$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /distropicker/index.html [L]
 
 AddType image/svg+xml .svg
 AddType image/svg+xml .svgz

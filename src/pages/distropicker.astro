@@ -4,44 +4,20 @@ import '../styles/distropicker.css';
 import '../styles/mobile.css';
 ---
 
-<BaseLayout title="Find the perfect Linux Distro" description="Not sure which Linux distro to choose? Use this interactive Distro Picker to find the best operating system for your specific needs and hardware.">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Linux Distro Quiz",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "Web",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "EUR"
-  },
-  "description": "Ein interaktives Tool, um die passende Linux-Distribution basierend auf Gaming, Privatsphäre und Erfahrung zu finden."
-}
-
-
-
-</script>
+<BaseLayout title="Find the perfect Linux Distro" description="...">
   <div class="quiz">
-  <div id="quiz-header">
-	<div id="quiz-subtitle"></div>
-    <div id="quiz-title"></div>
-    
-   
+    <div id="quiz-header">
+      <div id="quiz-subtitle"></div>
+      <div id="quiz-title"></div>
+    </div>
+    <div class="quiz-container" id="quiz-container">
+        <div class="result-container" id="result-container"></div>
+        <div id="more-button-container"></div>
+        <div class="choice-container" id="choice-container"></div>
+    </div>
   </div>
 
-  <div class="quiz-container" id="quiz-container">
-      <div class="result-container" id="result-container"></div>
-      <div id="more-button-container"></div>
-      <div class="choice-container" id="choice-container"></div>
-  </div>
-</div>
-
-
-<script>
-      import "../scripts/distropicker.js";
-</script>
-
+  <script>
+    import "../scripts/dp_main.js";
+  </script>
 </BaseLayout>
-
