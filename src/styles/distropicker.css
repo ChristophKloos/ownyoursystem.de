@@ -133,7 +133,6 @@ body{
 
 .choice {
   margin-top:38px;
-  animation:flyInRight 0.5s forwards, fadeInOut 0.5s forwards;
 }
 
 input[type="radio"] {
@@ -382,4 +381,23 @@ margin-top: 8px;
   border-radius: 10px;
   box-shadow: var(--shadow-soft);
 
+}
+
+
+@keyframes flyInLeft {
+  from { transform: translateX(-30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes flyInRight {
+  from { transform: translateX(30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.choice.slide-left {
+  animation: flyInLeft 0.4s ease-out forwards;
+}
+
+.choice.slide-right {
+  animation: flyInRight 0.4s ease-out forwards;
 }

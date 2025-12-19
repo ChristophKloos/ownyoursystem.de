@@ -1,6 +1,6 @@
 import { INITIAL_RESULT_COUNT, REVERSE_MAP } from './dp_config.js';
 
-export function renderQuestion(index, questions, answers, onAnswer, onNav) {
+export function renderQuestion(index, questions, answers, onAnswer, onNav, direction = 'forward') {
   const container = document.getElementById('quiz-container');
   const q = questions[index];
   container.innerHTML = "";
@@ -24,12 +24,12 @@ export function renderQuestion(index, questions, answers, onAnswer, onNav) {
   frage.appendChild(progress);
 
   if (index > 0) {
-    const btn = createNavBtn("/ui/arrow.svg", "back-btn", () => onNav(index - 1));
+    const btn = createNavBtn("/ui/arrow.svg", "back-btn", () => onNav(index - 1, 'back'));
     frage.appendChild(btn);
   }
 
   if (index < questions.length - 1) {
-    const btn = createNavBtn("/ui/arrow.svg", "forward-btn", () => onNav(index + 1));
+    const btn = createNavBtn("/ui/arrow.svg", "forward-btn", () => onNav(index + 1, 'forward'));
     frage.appendChild(btn);
   }
 
@@ -37,6 +37,7 @@ export function renderQuestion(index, questions, answers, onAnswer, onNav) {
 
   const choice = document.createElement('div');
   choice.classList.add('choice');
+  choice.classList.add(direction === 'back' ? 'slide-left' : 'slide-right');
 
   q.options.forEach((opt, i) => {
     const input = document.createElement('input');

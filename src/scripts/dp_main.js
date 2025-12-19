@@ -17,13 +17,17 @@ async function init() {
   showCurrent();
 }
 
-function showCurrent() {
+function showCurrent(direction = 'forward') {
   renderQuestion(
     state.currentIndex, 
     state.questions, 
     state.answers, 
     handleAnswer, 
-    (idx) => { state.currentIndex = idx; showCurrent(); }
+    (idx, dir) => { 
+      state.currentIndex = idx; 
+      showCurrent(dir); 
+    },
+    direction
   );
 }
 
@@ -32,7 +36,7 @@ function handleAnswer(qId, value) {
   setTimeout(() => {
     if (state.currentIndex + 1 < state.questions.length) {
       state.currentIndex++;
-      showCurrent();
+      showCurrent('forward');
     } else {
       const results = calculateResults(state.distros, state.desktops, state.answers);
       renderResults(results, state.questions, state.nameMapping, state.desktops, state.answers);
