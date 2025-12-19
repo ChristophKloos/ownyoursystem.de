@@ -64,16 +64,42 @@ const progressContainer = document.createElement('div');
   progressBar.id = "quiz-progress";
   progressBar.className = "progressinner";
   
-  const prevValue = index > 0 ? ((index) / questions.length) * 100 : 0;
+  const prevValue = index > 0 ? ((index - 1) / questions.length) * 100 : 0;
   progressBar.style.width = `${prevValue}%`;
 
   progressContainer.appendChild(progressBar);
   frage.appendChild(progressContainer);
 
+if (index > 0) {
+  const backBtn = document.createElement('button');
+  const backImg = document.createElement('img');
+  backImg.src = "/ui/arrow.svg";
+  backBtn.appendChild(backImg);
+  backBtn.classList.add('nav-btn', 'back-btn');
+  backBtn.addEventListener('click', () => {
+    currentIndex--;
+    showQuestion(currentIndex);
+  });
+  frage.appendChild(backBtn);
+}
+
+if (index < questions.length - 1) {
+  const nextBtn = document.createElement('button');
+  const nextImg = document.createElement('img');
+  nextImg.src = "/ui/arrow.svg";
+  nextBtn.appendChild(nextImg);
+  nextBtn.classList.add('nav-btn', 'forward-btn');
+  nextBtn.addEventListener('click', () => {
+    currentIndex++;
+    showQuestion(currentIndex);
+  });
+  frage.appendChild(nextBtn);
+}
+
   part.appendChild(frage);
 
   setTimeout(() => {
-    const progressValue = ((index+1) / questions.length) * 100;
+    const progressValue = ((index) / questions.length) * 100;
     progressBar.style.width = `${progressValue}%`;
   }, 50);
 
@@ -124,18 +150,6 @@ const progressContainer = document.createElement('div');
 
   part.appendChild(choice);
 
-  // Back Button
-  if (index > 0) {
-    const backBtn = document.createElement('button');
-    backBtn.textContent = "Back";
-    backBtn.classList.add('back-btn');
-    backBtn.style.marginTop = "15px"; 
-    backBtn.addEventListener('click', () => {
-      currentIndex--;
-      showQuestion(currentIndex);
-    });
-    part.appendChild(backBtn);
-  }
 
   container.appendChild(part);
 }

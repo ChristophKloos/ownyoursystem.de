@@ -512,20 +512,20 @@
         "description": "Rocky Linux is a community-driven, enterprise-grade operating system designed to serve as a rock-solid, binary-compatible downstream alternative to Red Hat Enterprise Linux (RHEL), created as a spiritual successor to the original CentOS.",
         "desktops": ["GNOME", "KDE"],
         "scores": {
-            "Experience": 2.1,
-            "Gaming": 1.1,
+            "Experience": 2.5,
+            "Gaming": 1.0,
             "Modern": 2.0,
             "Options": 1.4,
             "Keyboard": 1.5,
             "Pretty": 2.0,
-            "Ins_Complex": 2.0,
+            "Ins_Complex": 2.5,
             "PM_Terminal": 2.1,
             "Privacy": 2.3,
-            "Hard_Freedom": 1.4,
-            "Adventure": 1.2,
+            "Hard_Freedom": 1.1,
+            "Adventure": 1.0,
             "Upd_Regular": 1.1,
-            "Nvidia": 1.2,
-            "Extra_Score": 0.9
+            "Nvidia": 1.0,
+            "Extra_Score": 0.2
         }
     }
 ]
