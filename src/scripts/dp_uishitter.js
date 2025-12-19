@@ -19,9 +19,21 @@ export function renderQuestion(index, questions, answers, onAnswer, onNav, direc
   progress.className = "progress";
   const bar = document.createElement('div');
   bar.className = "progressinner";
-  bar.style.width = `${(index / questions.length) * 100}%`;
+
+  const prevIndex = direction === 'forward' ? Math.max(0, index - 1) : index + 1;
+  const startWidth = (prevIndex / questions.length) * 100;
+  const targetWidth = (index / questions.length) * 100;
+
+  bar.style.width = `${startWidth}%`;
+  
   progress.appendChild(bar);
   frage.appendChild(progress);
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      bar.style.width = `${targetWidth}%`;
+    });
+  });
 
   if (index > 0) {
     const btn = createNavBtn("/ui/arrow.svg", "back-btn", () => onNav(index - 1, 'back'));
@@ -174,8 +186,6 @@ function createResultCard(res, maxTotal, questions, nameMapping, desktopModifier
     details.appendChild(imgCont);
   }
 
-  details.innerHTML += `<p class="result-desc">Screenshot do may not perfectly represent this distro and desktop combination.</p>`;
-
   Object.entries(REVERSE_MAP).forEach(([field, qId]) => {
     const val = res.rawScore[field] || 0;
     const userVal = answers[qId] || 0;
@@ -187,11 +197,20 @@ function createResultCard(res, maxTotal, questions, nameMapping, desktopModifier
       <span class="stat-label">${qObj ? qObj.title : field}</span>
       <span class="stat-value"></span>
       <div class="progress small">
-        <div class="progressinner distro-value" style="width: ${20 + (Math.max(0, (val - 1) / 2) * 60)}%"></div>
-        <div class="progressinner user-value" style="width: ${20 + (Math.max(0, (userVal - 1) / 2) * 60)}%"></div>
+        <div class="progressinner distro-value" style="width: 20%"></div>
+        <div class="progressinner user-value" style="width: 20%"></div>
       </div>
     `;
     details.appendChild(row);
+
+    card.addEventListener('click', () => {
+      const dBar = row.querySelector(".distro-value");
+      const uBar = row.querySelector(".user-value");
+      setTimeout(() => {
+        dBar.style.width = `${20 + (Math.max(0, (val - 1) / 2) * 60)}%`;
+        uBar.style.width = `${20 + (Math.max(0, (userVal - 1) / 2) * 60)}%`;
+      }, 50);
+    }, { once: true });
   });
 
   if (res.link) {

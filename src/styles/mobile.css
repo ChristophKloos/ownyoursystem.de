@@ -68,6 +68,7 @@
       touch-action: manipulation;
       width:100%!important;
       padding:5px!important;
+      min-height:800px;
     }
     .frage, .resultheader {
       min-height:180px;
@@ -77,7 +78,10 @@
     .resultheader{
        min-height:0px;
     }
- 
+    .quiz-container{
+      min-height: 530px;
+    }
+  
 
 
 

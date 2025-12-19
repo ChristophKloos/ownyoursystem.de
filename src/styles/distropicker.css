@@ -116,7 +116,8 @@ body{
   height:10px;
   background:var(--bg-card);
   overflow: hidden;
-  margin-top:19.2px;
+  margin-top:8px;
+  margin-bottom:8px;
   border-radius:32px;
 }
 
@@ -190,7 +191,7 @@ label, .result-card{
   margin: 0 32px 16px 32px;
   background:var(--bg-light);
   color: var(--text-muted);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   font-size: var(--font-sm);
   box-shadow: var(--shadow-hard);
   transition:all 0.25s ease;
@@ -199,7 +200,8 @@ label, .result-card{
 
 .result-card {
   display:block;
-
+  padding-top: 16px;
+  padding-bottom: 16px;
   margin-bottom:15px;
 
 
@@ -235,7 +237,7 @@ label:hover {
 .result-header {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 
