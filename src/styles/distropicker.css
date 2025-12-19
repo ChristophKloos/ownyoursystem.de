@@ -1,6 +1,10 @@
 body{
    background: var(--bg-dark)!important;
 }
+html {
+  interpolate-size: allow-keywords;
+  
+}
 
 .quiz {
   display: flex;
@@ -36,6 +40,10 @@ body{
   text-align: left;
   margin: 0;
   padding-bottom:24px;
+
+
+  display: block;
+  height: auto;
 }
 
 
