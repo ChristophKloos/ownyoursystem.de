@@ -48,8 +48,7 @@ export function renderQuestion(index, questions, answers, onAnswer, onNav, direc
   part.appendChild(frage);
 
   const choice = document.createElement('div');
-  choice.classList.add('choice');
-  choice.classList.add(direction === 'back' ? 'slide-left' : 'slide-right');
+  choice.className = `choice ${direction === 'back' ? 'slide-left' : 'slide-right'}`;
 
   q.options.forEach((opt, i) => {
     const input = document.createElement('input');
@@ -57,12 +56,14 @@ export function renderQuestion(index, questions, answers, onAnswer, onNav, direc
     input.name = q.id;
     input.id = `${q.id}_${i}`;
     input.value = opt.value;
-    input.checked = answers[q.id] === opt.value;
+    
+    const isSelected = answers[q.id] == opt.value;
+    input.checked = isSelected;
 
     const label = document.createElement('label');
     label.htmlFor = input.id;
     label.innerHTML = opt.text;
-    if (input.checked) label.classList.add('active');
+    if (isSelected) label.classList.add('active');
 
     label.addEventListener('mousedown', (e) => {
       e.preventDefault();
@@ -188,7 +189,7 @@ function createResultCard(res, maxTotal, questions, nameMapping, desktopModifier
 
   Object.entries(REVERSE_MAP).forEach(([field, qId]) => {
     const val = res.rawScore[field] || 0;
-    const userVal = answers[qId] || 0;
+    const userVal = (answers[qId] !== undefined && answers[qId] !== null) ? answers[qId] : 2;
     const qObj = questions.find(q => q.id === qId);
 
     const row = document.createElement("div");

@@ -24,10 +24,10 @@ export function calculateResults(distros, desktopModifiers, answers) {
       Object.keys(raw).forEach(k => raw[k] = Math.max(0, Math.min(3, raw[k])));
 
       let match = { ...raw };
-      Object.entries(answers).forEach(([qid, ans]) => {
-        const field = QUESTION_MAP[qid];
-        if (field && match[field] !== undefined) {
-          const diff = Math.abs(ans - raw[field]);
+      Object.entries(QUESTION_MAP).forEach(([qid, field]) => {
+        if (match[field] !== undefined) {
+          const userAns = (answers[qid] !== undefined && answers[qid] !== null) ? answers[qid] : 2;
+          const diff = Math.abs(userAns - raw[field]);
           match[field] = Math.max(0, Math.min(3, 3 - diff));
         }
       });
