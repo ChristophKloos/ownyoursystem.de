@@ -1,50 +1,102 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import '../styles/home.css';
-import '../styles/gradients.css';
-import '../styles/mobile.css';
+import "../styles/home.css";
+import "../styles/gradients.css";
+import "../styles/mobile.css";
 ---
 
-<BaseLayout title="Year of Linux" description="The ultimate guide to Linux. Find the perfect distribution, learn essential best practices, and explore the world of open source software. We also have an automated Distro Picker.">
+<BaseLayout
+    title="Year of Linux"
+    description="The ultimate guide to Linux. Find the perfect distribution, learn essential best practices, and explore the world of open source software. We also have an automated Distro Picker."
+>
+    <div class="pt1">
+        <div class="bentobox">
+            <div class="bentotile description" onclick="location.href='';">
+                <div class="bentocontent">
+                    <h1 class="pop">Make your switch to Linux.</h1><p>
+                        This webite will give you tools and resources for a
+                        smooth shift to open source software.<br /><b
+                            >100% ad free. 100% tracking free.</b
+                        > No AI generated content.
+                    </p>
+                </div>
+            </div>
 
-  <div class="pt1">
-    <div class="bentobox">
-      <div class="bentotile description" onclick="location.href='';">
-        <div class="bentocontent"> <h1 class="pop">Make your switch to Linux.</h1><p>This webite will give you tools and resources for a smooth shift to open source software.<br><b>100% ad free. 100% tracking free.</b> No AI generated content.</p></div>
-      </div>
+            <div
+                class="bentotile distropicker gr_purple"
+                onclick="location.href='https://distro.ownyoursystem.de';"
+            >
+                <div class="bentocontent forcewhite">
+                    <h1>Make your System fit your habits.</h1><p>
+                        Find the right Distro with our automated <a
+                            href="distropicker">Linux Distro Picker</a
+                        >.
+                    </p>
+                </div>
+            </div>
 
-      <div class="bentotile distropicker gr_purple" onclick="location.href='https://distro.ownyoursystem.de';">
-        <div class="bentocontent forcewhite"> <h1>Make your System fit your habits.</h1><p>Find the right Distro with our automated <a href="distropicker">Linux Distro Picker</a>.</p></div>
-      </div>
-      
-      
-      <div class="bentotile carousel" onclick="location.href='gallery';">
-        <div class="bentocontent forcewhite"> <video id="img_spark" poster="/img/spark.webp" src="/img/spark.webm" muted playsinline preload="auto"></video><h1>Inspiration for your System.</h1><p>Visit our setup gallery to find it.</p></div>
-        <p class="carouselattrib"></p>
-        <img class="carouselimg">
-      </div>
+            <div class="bentotile carousel" onclick="location.href='gallery';">
+                <div class="bentocontent forcewhite">
+                    <video
+                        id="img_spark"
+                        poster="/img/spark.webp"
+                        src="/img/spark.webm"
+                        muted
+                        playsinline
+                        preload="auto"></video><h1>
+                        Inspiration for your System.
+                    </h1><p>Visit our setup gallery to find it.</p>
+                </div>
+                <p class="carouselattrib"></p>
+                <img class="carouselimg" />
+            </div>
 
-      <div class="bentotile compare" onclick="location.href='foss';">
-        <div class="bentocontent"> <video id="img_hrt" poster="/img/hrt_desat.webp" src="/img/hrt_desat.webm" muted playsinline preload="auto"></video><h1>Apps To Love</h1><p>Powerful open source apps on Linux.</p></div>
-      </div>
+            <div class="bentotile compare" onclick="location.href='foss';">
+                <div class="bentocontent">
+                    <video
+                        id="img_hrt"
+                        poster="/img/hrt_desat.webp"
+                        src="/img/hrt_desat.webm"
+                        muted
+                        playsinline
+                        preload="auto"></video><h1>Apps To Love</h1><p>
+                        Powerful open source apps on Linux.
+                    </p>
+                </div>
+            </div>
 
-      <div class="bentotile rules" onclick="location.href='rules';">
-        <div class="bentocontent"> <h1>Good To Know</h1><p>Good habits for your Linux transition.</p></div>
-      </div>
+            <div class="bentotile rules" onclick="location.href='rules';">
+                <div class="bentocontent">
+                    <h1>Good To Know</h1><p>
+                        Good habits for your Linux transition.
+                    </p>
+                </div>
+            </div>
 
-      <div class="bentotile resources" onclick="location.href='resources';">
-        <div class="bentocontent"> <h1>Resources</h1><p>Check out community resources for more info.</p></div>
-      </div>
-       <div class="bentotile protondb" onclick="location.href='https://www.protondb.com/';">
-        <div class="bentocontent"> <h1>ProtonDB</h1><p>Check if your games are Linux compatible.</p></div>
-      </div>
+            <div
+                class="bentotile resources"
+                onclick="location.href='resources';"
+            >
+                <div class="bentocontent">
+                    <h1>Resources</h1><p>
+                        Check out community resources for more info.
+                    </p>
+                </div>
+            </div>
+            <div
+                class="bentotile protondb"
+                onclick="location.href='https://www.protondb.com/';"
+            >
+                <div class="bentocontent">
+                    <h1>ProtonDB</h1><p>
+                        Check if your games are Linux compatible.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            import "../scripts/carousel.js";
+        </script>
     </div>
-
-<script>
-      import "../scripts/carousel.js";
-</script>
-
-</div>
-
-
 </BaseLayout>

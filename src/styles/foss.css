@@ -1,16 +1,15 @@
 #comparison-list {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-block, 60px); 
+    gap: var(--spacing-block, 60px);
     max-width: 900px;
     margin: 32px auto;
 }
 
 .comparison-block {
     background-color: var(--bg-card);
-    padding: 40px; 
+    padding: 40px;
     border-radius: var(--radius-lg);
-    
 }
 
 .comparison-row {
@@ -50,10 +49,8 @@
 
 .comp-description {
     margin-top: 24px;
-    font-weight:400;
+    font-weight: 400;
     font-size: var(--font-sm);
-
-    
 }
 
 @media (max-width: 768px) {
@@ -62,7 +59,7 @@
         flex-direction: column;
         gap: 24px;
     }
-    
+
     .comparison-block {
         padding: 24px;
     }

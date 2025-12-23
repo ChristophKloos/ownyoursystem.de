@@ -1,16 +1,17 @@
-import { QUESTION_MAP } from './dp_config.js';
+import { QUESTION_MAP } from "./dp_config.js";
 
 export function calculateResults(distros, desktopModifiers, answers) {
   const results = [];
 
-  distros.forEach(distro => {
-    distro.desktops.forEach(desktop => {
+  distros.forEach((distro) => {
+    distro.desktops.forEach((desktop) => {
       let raw = { ...distro.scores };
       let distroExtra = Number(raw.Extra_Score || 0);
       delete raw.Extra_Score;
 
       let desktopExtra = 0;
-      const mods = desktopModifiers[desktop] || desktopModifiers.desktops?.[desktop];
+      const mods =
+        desktopModifiers[desktop] || desktopModifiers.desktops?.[desktop];
 
       if (mods) {
         desktopExtra = Number(mods.Extra_Score || 0);
@@ -21,12 +22,17 @@ export function calculateResults(distros, desktopModifiers, answers) {
         });
       }
 
-      Object.keys(raw).forEach(k => raw[k] = Math.max(0, Math.min(3, raw[k])));
+      Object.keys(raw).forEach(
+        (k) => (raw[k] = Math.max(0, Math.min(3, raw[k]))),
+      );
 
       let match = { ...raw };
       Object.entries(QUESTION_MAP).forEach(([qid, field]) => {
         if (match[field] !== undefined) {
-          const userAns = (answers[qid] !== undefined && answers[qid] !== null) ? answers[qid] : 2;
+          const userAns =
+            answers[qid] !== undefined && answers[qid] !== null
+              ? answers[qid]
+              : 2;
           const diff = Math.abs(userAns - raw[field]);
           match[field] = Math.max(0, Math.min(3, 3 - diff));
         }
@@ -43,7 +49,7 @@ export function calculateResults(distros, desktopModifiers, answers) {
         desktop,
         rawScore: raw,
         matchScore: match,
-        total
+        total,
       });
     });
   });

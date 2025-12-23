@@ -1,88 +1,75 @@
-@media (max-width: 960px){
-.pt1{
-	margin-top: -64px;
-}
-.distropicker {
-  grid-column: span 4;
-  grid-row: span 1;
-}
-.carousel {
-  grid-column: span 4;
-  grid-row: span 1;
-}
-.compare{
-  grid-column: span 2;
-  grid-row: span 2;
-}
-.rules{
-  grid-column: span 2;
-  grid-row: span 2;
-}
+@media (max-width: 960px) {
+    .pt1 {
+        margin-top: -64px;
+    }
+    .distropicker {
+        grid-column: span 4;
+        grid-row: span 1;
+    }
+    .carousel {
+        grid-column: span 4;
+        grid-row: span 1;
+    }
+    .compare {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    .rules {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
 
-.resources{
-  grid-column: span 2;
-  grid-row: span 2;
-}
-.protondb{
-  grid-column: span 2;
-  grid-row: span 1;
-}
-.description p{
-  margin: 32px;
-  
-}
-
-
-
-
-    
+    .resources {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    .protondb {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    .description p {
+        margin: 32px;
+    }
 
     .legend-section h2 {
-      margin-top: 8px;
-      margin-bottom: 8px;
-     
+        margin-top: 8px;
+        margin-bottom: 8px;
     }
 
     .legend-grid {
-      gap: 0!important;
+        gap: 0 !important;
     }
 
     .legend-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-        background: transparent!important;
-        padding:8px;
-       box-shadow: none;
-       text-align: left;
-     
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        background: transparent !important;
+        padding: 8px;
+        box-shadow: none;
+        text-align: left;
     }
-    .quiz-container{
-      touch-action: manipulation;
-      width:94%!important;
-      max-width:94%!important;
-      
-   
+    .quiz-container {
+        touch-action: manipulation;
+        width: 94% !important;
+        max-width: 94% !important;
     }
-    .quiz{
-      touch-action: manipulation;
-      width:100%!important;
-      padding:5px!important;
-      min-height:800px;
+    .quiz {
+        touch-action: manipulation;
+        width: 100% !important;
+        padding: 5px !important;
+        min-height: 800px;
     }
-    .frage, .resultheader {
-      min-height:180px;
-      padding: 16px 64px 32px 64px;
-      margin-bottom:32px;
-}
-    .resultheader{
-       min-height:0px;
+    .frage,
+    .resultheader {
+        min-height: 180px;
+        padding: 16px 64px 32px 64px;
+        margin-bottom: 32px;
     }
-    .quiz-container{
-      min-height: 530px;
+    .resultheader {
+        min-height: 0px;
     }
-  
-
-
-
+    .quiz-container {
+        min-height: 530px;
+    }
 }

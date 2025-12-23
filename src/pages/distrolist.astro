@@ -1,118 +1,130 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import '../styles/distropicker.css';
-import '../styles/distrolist.css';
-import '../styles/mobile.css';
+import "../styles/distropicker.css";
+import "../styles/distrolist.css";
+import "../styles/mobile.css";
 ---
 
 <BaseLayout title="All Distributions">
-    
+    <div class="container">
+        <h1>Distribution Overview</h1>
+        <p>
+            Raw scores without desktop environment modifiers.<br />Keep in mind
+            that higher scores are not always better.
+        </p>
 
-  <div class="container">
-    <h1>Distribution Overview</h1>
-    <p>Raw scores without desktop environment modifiers.<br>Keep in mind that higher scores are not always better.</p>
-    
-    <div class="legend-section">
-      <h2>Full Questions</h2>
-      <div id="legend-grid" class="legend-grid"></div>
+        <div class="legend-section">
+            <h2>Full Questions</h2>
+            <div id="legend-grid" class="legend-grid"></div>
+        </div>
+
+        <div id="distro-grid" class="distro-grid"></div>
     </div>
 
-    <div id="distro-grid" class="distro-grid"></div>
-  </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const [distroResp, questionsResp] = await Promise.all([
+                fetch("/js/json/distros.json"),
+                fetch("/js/json/en.json"),
+            ]);
 
-  <script>
-    document.addEventListener("DOMContentLoaded", async () => {
-      const [distroResp, questionsResp] = await Promise.all([
-        fetch('/js/json/distros.json'),
-        fetch('/js/json/en.json')
-      ]);
-      
-      const distros = await distroResp.json();
-      const questions = await questionsResp.json();
-      
-      const map = {
-        "Experience": "q1", "Gaming": "q2", "Modern": "q3", "Options": "q4",
-        "Keyboard": "q5", "Pretty": "q6", "Ins_Complex": "q7", "PM_Terminal": "q8",
-        "Privacy": "q9", "Hard_Freedom": "q10", "Adventure": "q11",
-        "Upd_Regular": "q12", "Nvidia": "q13"
-      };
+            const distros = await distroResp.json();
+            const questions = await questionsResp.json();
 
-      const legendContainer = document.getElementById('legend-grid');
-      
-      Object.entries(map).forEach(([key, qId]) => {
-        const q = questions.find(item => item.id === qId);
-        if (q) {
-          const item = document.createElement('div');
-          item.className = 'legend-item';
-          
-          const keySpan = document.createElement('span');
-          keySpan.className = 'legend-key';
-          keySpan.textContent = q.title;
-          
-          const questionSpan = document.createElement('span');
-          questionSpan.className = 'legend-question';
-          questionSpan.textContent = q.question;
-          
-          item.appendChild(keySpan);
-          item.appendChild(questionSpan);
-          legendContainer.appendChild(item);
-        }
-      });
+            const map = {
+                Experience: "q1",
+                Gaming: "q2",
+                Modern: "q3",
+                Options: "q4",
+                Keyboard: "q5",
+                Pretty: "q6",
+                Ins_Complex: "q7",
+                PM_Terminal: "q8",
+                Privacy: "q9",
+                Hard_Freedom: "q10",
+                Adventure: "q11",
+                Upd_Regular: "q12",
+                Nvidia: "q13",
+            };
 
-      const container = document.getElementById('distro-grid');
-      const orderedKeys = Object.keys(map);
-      orderedKeys.push("Extra_Score");
+            const legendContainer = document.getElementById("legend-grid");
 
-      distros.forEach(distro => {
-        const card = document.createElement('div');
-        card.className = 'distro-card';
+            Object.entries(map).forEach(([key, qId]) => {
+                const q = questions.find((item) => item.id === qId);
+                if (q) {
+                    const item = document.createElement("div");
+                    item.className = "legend-item";
 
-        const title = document.createElement('h2');
-        title.textContent = distro.name;
-        card.appendChild(title);
+                    const keySpan = document.createElement("span");
+                    keySpan.className = "legend-key";
+                    keySpan.textContent = q.title;
 
-        const statsContainer = document.createElement('div');
-        statsContainer.className = 'stats-container';
+                    const questionSpan = document.createElement("span");
+                    questionSpan.className = "legend-question";
+                    questionSpan.textContent = q.question;
 
-        orderedKeys.forEach(key => {
-          const value = distro.scores[key] !== undefined ? distro.scores[key] : 0;
-          const qId = map[key];
-          const q = questions.find(item => item.id === qId);
+                    item.appendChild(keySpan);
+                    item.appendChild(questionSpan);
+                    legendContainer.appendChild(item);
+                }
+            });
 
-          const row = document.createElement('div');
-          row.className = 'stat-row';
+            const container = document.getElementById("distro-grid");
+            const orderedKeys = Object.keys(map);
+            orderedKeys.push("Extra_Score");
 
-          const label = document.createElement('span');
-          label.className = 'stat-label';
-          label.textContent = q ? q.title : key.replace('_', ' ');
+            distros.forEach((distro) => {
+                const card = document.createElement("div");
+                card.className = "distro-card";
 
-          const valLabel = document.createElement('span');
-          valLabel.className = 'stat-value';
-          valLabel.textContent = value;
+                const title = document.createElement("h2");
+                title.textContent = distro.name;
+                card.appendChild(title);
 
-          const barWrapper = document.createElement('div');
-          barWrapper.className = 'progress';
+                const statsContainer = document.createElement("div");
+                statsContainer.className = "stats-container";
 
-          const barFill = document.createElement('div');
-          barFill.className = 'progressinner';
-          
-          const percentage = ((value - 0.5) / 3) * 100;
-          
-          setTimeout(() => {
-             barFill.style.width = `${Math.max(0, Math.min(100, percentage))}%`;
-          }, 100);
+                orderedKeys.forEach((key) => {
+                    const value =
+                        distro.scores[key] !== undefined
+                            ? distro.scores[key]
+                            : 0;
+                    const qId = map[key];
+                    const q = questions.find((item) => item.id === qId);
 
-          barWrapper.appendChild(barFill);
-          row.appendChild(label);
-          row.appendChild(valLabel);
-          row.appendChild(barWrapper);
-          statsContainer.appendChild(row);
+                    const row = document.createElement("div");
+                    row.className = "stat-row";
+
+                    const label = document.createElement("span");
+                    label.className = "stat-label";
+                    label.textContent = q ? q.title : key.replace("_", " ");
+
+                    const valLabel = document.createElement("span");
+                    valLabel.className = "stat-value";
+                    valLabel.textContent = value;
+
+                    const barWrapper = document.createElement("div");
+                    barWrapper.className = "progress";
+
+                    const barFill = document.createElement("div");
+                    barFill.className = "progressinner";
+
+                    const percentage = ((value - 0.5) / 3) * 100;
+
+                    setTimeout(() => {
+                        barFill.style.width = `${Math.max(0, Math.min(100, percentage))}%`;
+                    }, 100);
+
+                    barWrapper.appendChild(barFill);
+                    row.appendChild(label);
+                    row.appendChild(valLabel);
+                    row.appendChild(barWrapper);
+                    statsContainer.appendChild(row);
+                });
+
+                card.appendChild(statsContainer);
+                container.appendChild(card);
+            });
         });
-
-        card.appendChild(statsContainer);
-        container.appendChild(card);
-      });
-    });
-  </script>
-
+    </script>
 </BaseLayout>

@@ -1,22 +1,21 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import '../styles/gallery.css';
+import "../styles/gallery.css";
 ---
 
 <BaseLayout title="Linux Gallery">
-
-<h1>Linux Gallery</h1>
-<p>Official material and some of my favorites from Reddit</p>
+    <h1>Linux Gallery</h1>
+    <p>Official material and some of my favorites from Reddit</p>
     <div id="gallery-container"></div>
 
     <div id="image-modal" class="hidden" onclick="closeModal()">
         <div onclick="event.stopPropagation()">
-            <img id="modal-image" src="" alt="">
+            <img id="modal-image" src="" alt="" />
             <div id="modal-caption"></div>
         </div>
     </div>
 
-<script>
-      import "../scripts/gallery.js";
-</script>
+    <script>
+        import "../scripts/gallery.js";
+    </script>
 </BaseLayout>

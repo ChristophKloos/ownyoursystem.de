@@ -1,4 +1,4 @@
- .header {
+.header {
     position: fixed;
     top: 0;
     width: 100%;
@@ -11,28 +11,26 @@
     justify-content: center;
     align-items: center;
     gap: 16px;
-    
-  }
+}
 
-  .header img {
+.header img {
     height: 32px;
     width: auto;
-   
-  }
-#sidebarbtn {
-  position: absolute;
-  left: 20px;
-  height: 42px;
-  width: 42px;
-  padding: 13px;
-  box-sizing: border-box;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 50;
 }
-#logo{
-  cursor:pointer;
+#sidebarbtn {
+    position: absolute;
+    left: 20px;
+    height: 42px;
+    width: 42px;
+    padding: 13px;
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 50;
+}
+#logo {
+    cursor: pointer;
 }
 /*
 #sidebarbtn svg {

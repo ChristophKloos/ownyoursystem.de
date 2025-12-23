@@ -1,41 +1,46 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import '../styles/distropicker.css';
-import '../styles/mobile.css';
+import "../styles/distropicker.css";
+import "../styles/mobile.css";
 ---
 
-<BaseLayout title="Linux Distro Picker" description="Find the perfect Linux setup based on your workflow and preferences.">
-  <div class="quiz">
-    <div id="quiz-header">
-      <div id="quiz-subtitle"></div>
-      <div id="quiz-title"></div>
-    </div>
-    <div class="quiz-container" id="quiz-container">
-      <div class="frage">
-            <img src="/ui/radar.webp" id="radar">
-           <h1>Find Your Perfect Linux Distribution</h1>
-           </div>
-          <div class="startpage" id="startpage">
-            
-      <p>
-    Linux is all about choice, but finding the right start can be overwhelming. 
-    This <strong>community project</strong> helps you navigate the ecosystem by 
-    matching your workflow with the right desktop environment and distribution.<br><br>
-  
-    It’s a quick 13-question journey. <strong>Privacy-first, no tracking, and no ads</strong>. 
-    Just a simple tool to help you discover a setup that feels like home.
-  </p>
+<BaseLayout
+    title="Linux Distro Picker"
+    description="Find the perfect Linux setup based on your workflow and preferences."
+>
+    <div class="quiz">
+        <div id="quiz-header">
+            <div id="quiz-subtitle"></div>
+            <div id="quiz-title"></div>
+        </div>
+        <div class="quiz-container" id="quiz-container">
+            <div class="frage">
+                <img src="/ui/radar.webp" id="radar" />
+                <h1>Find Your Perfect Linux Distribution</h1>
+            </div>
+            <div class="startpage" id="startpage">
+                <p>
+                    Linux is all about choice, but finding the right start can
+                    be overwhelming. This <strong>community project</strong> helps
+                    you navigate the ecosystem by matching your workflow with the
+                    right desktop environment and distribution.<br /><br />
 
-            <button onclick="Startquiz();" id="start-btn">Start</button>
-          </div>
-        <div class="result-container" id="result-container"></div>
-        <div id="more-button-container"></div>
-        <div class="choice-container" id="choice-container"></div>
-    </div>
-  </div>
+                    It’s a quick 13-question journey. <strong
+                        >Privacy-first, no tracking, and no ads</strong
+                    >. Just a simple tool to help you discover a setup that
+                    feels like home.
+                </p>
 
-  <script>
-    import "../scripts/dp_main.js";
-    import "../scripts/dp_resize.js";
-  </script>
+                <button onclick="Startquiz();" id="start-btn">Start</button>
+            </div>
+            <div class="result-container" id="result-container"></div>
+            <div id="more-button-container"></div>
+            <div class="choice-container" id="choice-container"></div>
+        </div>
+    </div>
+
+    <script>
+        import "../scripts/dp_main.js";
+        import "../scripts/dp_resize.js";
+    </script>
 </BaseLayout>

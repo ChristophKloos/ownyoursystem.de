@@ -1,80 +1,108 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import '../styles/rules.css';
+import "../styles/rules.css";
 ---
 
 <BaseLayout title="Year of Linux">
+    <h1>Good To Know</h1>
+    <p>Good habits for your Linux transition.</p>
 
-<h1>Good To Know</h1>
-<p>Good habits for your Linux transition.</p>
+    <div class="rulecard">
+        <h2><span class="pop num">1</span> Linux is not Windows</h2>
+        <ul style="list-style-type:disc;">
+            <li>Linux was not created to be a 1:1 replacement for Windows.</li>
+            <li>
+                Don't expect everything to work the same and keep and open mind.
+            </li>
+        </ul>
+    </div>
 
-<div class="rulecard">
-	<h2><span class="pop num">1</span> Linux is not Windows</h2>
-	<ul style="list-style-type:disc;">
-		<li>Linux was not created to be a 1:1 replacement for Windows.</li>
-		<li>Don't expect everything to work the same and keep and open mind.</li>
-	</ul>
-</div>
+    <div class="rulecard">
+        <h2><span class="pop num">2</span>The community is your best friend</h2>
+        <ul style="list-style-type:disc;">
+            <li>
+                The community poured all their knowledge into Wikis, for free.
+            </li>
+            <li>
+                <b>Do not</b> use LLMs as they will gladly break your system.
+            </li>
+            <li>
+                Instead ask on forums and subreddits and provide enough
+                information.
+            </li>
+        </ul>
+    </div>
 
-<div class="rulecard">
-	<h2><span class="pop num">2</span>The community is your best friend</h2>
-	<ul style="list-style-type:disc;">
-		<li>The community poured all their knowledge into Wikis, for free.</li>
-		<li><b>Do not</b> use LLMs as they will gladly break your system.</li>
-		<li>Instead ask on forums and subreddits and provide enough information.</li>
-	</ul>
-</div>
+    <div class="rulecard">
+        <h2>
+            <span class="pop num">3</span>You don't download programs off
+            websites
+        </h2>
+        <ul style="list-style-type:disc;">
+            <li>It's strongly discouraged to get installers off websites.</li>
+            <li>
+                You can use your preinstalled <b>Software Store</b> or the terminal.
+            </li>
+            <li>Set up Flathub for a bigger selection of apps.</li>
+        </ul>
+    </div>
 
-<div class="rulecard">
-	<h2><span class="pop num">3</span>You don't download programs off websites</h2>
-	<ul style="list-style-type:disc;">
-		<li>It's strongly discouraged to get installers off websites.</li>
-		<li>You can use your preinstalled <b>Software Store</b> or the terminal.</li>
-		<li>Set up Flathub for a bigger selection of apps.</li>
-	</ul>
-</div>
+    <div class="rulecard">
+        <h2><span class="pop num">4</span>Drivers come preinstalled</h2>
+        <ul style="list-style-type:disc;">
+            <li>With a few exceptions you won't need to install any drivers</li>
+            <li>
+                If you have new hardware that isn't supported by your Distro try
+                a more up to date one like Fedora. It might be fixed already.
+            </li>
+        </ul>
+    </div>
 
-<div class="rulecard">
-	<h2><span class="pop num">4</span>Drivers come preinstalled</h2>
-	<ul style="list-style-type:disc;">
-		<li>With a few exceptions you won't need to install any drivers</li>
-		<li>If you have new hardware that isn't supported by your Distro try
-		a more up to date one like Fedora. It might be fixed already.</li>
-	</ul>
-</div>
+    <div class="rulecard">
+        <h2><span class="pop num">5</span>Things will break</h2>
+        <ul style="list-style-type:disc;">
+            <li>
+                Be sure to create a backup of your important files before
+                experimenting with your system.
+            </li>
+            <li>
+                Many distros have a snapshot system that can recover to an
+                earlier state.
+            </li>
+        </ul>
+    </div>
 
-<div class="rulecard">
-	<h2><span class="pop num">5</span>Things will break</h2>
-	<ul style="list-style-type:disc;">
-		<li>Be sure to create a backup of your important files before experimenting with your system.</li>
-		<li>Many distros have a snapshot system that can recover to an earlier state.</li>
-	</ul>
-</div>
+    <div class="rulecard">
+        <h2><span class="pop num">6</span>Don't forget to update</h2>
+        <ul style="list-style-type:disc;">
+            <li>Linux does not bother you with automatic updates.</li>
+            <li>
+                The burden of keeping your system up to date is on the user.
+            </li>
+            <li>You can set up reminders or automate updates yourself.</li>
+        </ul>
+    </div>
 
-<div class="rulecard">
-	<h2><span class="pop num">6</span>Don't forget to update</h2>
-	<ul style="list-style-type:disc;">
-		<li>Linux does not bother you with automatic updates.</li>
-		<li>The burden of keeping your system up to date is on the user.</li>
-		<li>You can set up reminders or automate updates yourself.</li>
-	</ul>
-</div>
+    <div class="rulecard">
+        <h2><span class="pop num">7</span>Make your system fit your needs</h2>
+        <ul style="list-style-type:disc;">
+            <li>Linux is very customizable, take advantage of that.</li>
+            <li>
+                Try new desktop environments before installing a whole new
+                system.
+            </li>
+            <li>If that doesn't scratch the itch either, go distrohopping!</li>
+        </ul>
+    </div>
 
-<div class="rulecard">
-	<h2><span class="pop num">7</span>Make your system fit your needs</h2>
-	<ul style="list-style-type:disc;">
-		<li>Linux is very customizable, take advantage of that.</li>
-		<li>Try new desktop environments before installing a whole new system.</li>
-		<li>If that doesn't scratch the itch either, go distrohopping!</li>
-	</ul>
-</div>
-
-<div class="rulecard">
-	<h2><span class="pop num">8</span>Have fun</h2>
-	<ul style="list-style-type:disc;">
-		<li>Linux respects the user, you can do pretty much anything you can imagine.</li>
-		<li>Want windows to explode when closing? You can do that.</li>
-	</ul>
-</div>
-
+    <div class="rulecard">
+        <h2><span class="pop num">8</span>Have fun</h2>
+        <ul style="list-style-type:disc;">
+            <li>
+                Linux respects the user, you can do pretty much anything you can
+                imagine.
+            </li>
+            <li>Want windows to explode when closing? You can do that.</li>
+        </ul>
+    </div>
 </BaseLayout>

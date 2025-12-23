@@ -1,18 +1,20 @@
-const DATA_URL = '/js/json/foss.json';
-const IMG_BASE = '/img/screenshots/';
+const DATA_URL = "/js/json/foss.json";
+const IMG_BASE = "/img/screenshots/";
 
 async function initComparison() {
-    const container = document.getElementById('comparison-list');
-    if (!container) return;
+  const container = document.getElementById("comparison-list");
+  if (!container) return;
 
-    try {
-        const res = await fetch(DATA_URL);
-        const data = await res.json();
+  try {
+    const res = await fetch(DATA_URL);
+    const data = await res.json();
 
-        container.innerHTML = data.map(item => `
+    container.innerHTML = data
+      .map(
+        (item) => `
             <div class="comparison-block">
                 <div class="comparison-row">
-                    
+
                     <div class="comp-card proprietary">
                         <div class="img-wrapper">
                             <img src="${IMG_BASE + item.proprietary.image}" alt="${item.proprietary.name}" onerror="this.src='https://placehold.co/600x400?text=No+Image'">
@@ -32,11 +34,12 @@ async function initComparison() {
                 </div>
                 <p class="comp-description">${item.description}</p>
             </div>
-        `).join('');
-
-    } catch (e) {
-        console.error(e);
-    }
+        `,
+      )
+      .join("");
+  } catch (e) {
+    console.error(e);
+  }
 }
 
-window.addEventListener('DOMContentLoaded', initComparison);
+window.addEventListener("DOMContentLoaded", initComparison);

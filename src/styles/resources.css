@@ -1,141 +1,142 @@
-
 h1 {
-  color: var(--text-dark) !important;
-  margin-bottom: 32px;
+    color: var(--text-dark) !important;
+    margin-bottom: 32px;
 }
 
-
-
 .bentobox {
-  width: 100%;
-  max-width: 960px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 180px;
-  gap: 20px;
-  margin: 0 auto;
-  margin-top:64px;
-  padding:32px;
+    width: 100%;
+    max-width: 960px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 180px;
+    gap: 20px;
+    margin: 0 auto;
+    margin-top: 64px;
+    padding: 32px;
 }
 
 .bentotile {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-big);
-  cursor: pointer;
-  background-color: var(--bg-card);
-  transition: translate 0.30s ease;
-  animation: flyInUp 1.4s forwards, fadeInOut 0.5s forwards;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-big);
+    cursor: pointer;
+    background-color: var(--bg-card);
+    transition: translate 0.3s ease;
+    animation:
+        flyInUp 1.4s forwards,
+        fadeInOut 0.5s forwards;
 }
 
 .bentotile:hover {
-  translate: 0 -4px;
+    translate: 0 -4px;
 }
 .linux4noobs {
-  grid-column: span 2;
-  grid-row: span 1;
+    grid-column: span 2;
+    grid-row: span 1;
 }
-.distrowatch{
-   grid-column: span 1;
-  grid-row: span 1;
-  background-color: #f6efc8;
-  color:white!important;
+.distrowatch {
+    grid-column: span 1;
+    grid-row: span 1;
+    background-color: #f6efc8;
+    color: white !important;
 }
-.distrowatch h1, .distrowatch p
-{
-    color:#0B3B24!important;
+.distrowatch h1,
+.distrowatch p {
+    color: #0b3b24 !important;
 }
-.archwiki{
-  background: #333;
-background: linear-gradient(164deg,rgba(51, 51, 51, 1) 0%, rgba(0, 136, 204, 1) 100%);
+.archwiki {
+    background: #333;
+    background: linear-gradient(
+        164deg,
+        rgba(51, 51, 51, 1) 0%,
+        rgba(0, 136, 204, 1) 100%
+    );
 }
-.archwiki h1, .archwiki p
-{
-    color:white!important;
-}
-
-.protondb{
-  grid-column: span 2;
-  grid-row: span 1;
-  background: #20232B;
-}
-.protondb h1
-{
-    color:#cfb53b!important;
-}
-.protondb p
-{
-    color:white!important;
+.archwiki h1,
+.archwiki p {
+    color: white !important;
 }
 
-
-.endof10{
-  grid-column: span 2;
-  grid-row: span 1;
-  background: #3172C1;
-background: radial-gradient(circle,rgba(49, 114, 193, 1) 0%, rgba(21, 68, 127, 1) 100%);
+.protondb {
+    grid-column: span 2;
+    grid-row: span 1;
+    background: #20232b;
 }
-.endof10 h1, .endof10 p
-{
-    color:white!important;
+.protondb h1 {
+    color: #cfb53b !important;
+}
+.protondb p {
+    color: white !important;
 }
 
-.linux4noobs h1{
-  color:#ff4500!important;
+.endof10 {
+    grid-column: span 2;
+    grid-row: span 1;
+    background: #3172c1;
+    background: radial-gradient(
+        circle,
+        rgba(49, 114, 193, 1) 0%,
+        rgba(21, 68, 127, 1) 100%
+    );
+}
+.endof10 h1,
+.endof10 p {
+    color: white !important;
+}
+
+.linux4noobs h1 {
+    color: #ff4500 !important;
 }
 
 .bentocontent {
-  position: relative;
-  z-index: 4;
-  width: 100%;
-  padding: 24px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    padding: 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-
-
 .bentocontent h1 {
-  font-weight: 800;
-  font-size: var(--font-md);
-  margin-bottom: 8px;
+    font-weight: 800;
+    font-size: var(--font-md);
+    margin-bottom: 8px;
 }
 
 .bentocontent p {
-  font-weight: 500;
-  font-size: var(--font-sm);
-  margin: 0;
+    font-weight: 500;
+    font-size: var(--font-sm);
+    margin: 0;
 }
 
 .bentocontent a {
-  font-weight: 800;
+    font-weight: 800;
 }
- .forcewhite h1, .forcewhite p, .forcewhite a{
-  color:white!important;
-  text-shadow: 0px 1px 1px rgba(0,0,0,0.15);
-}
-
-
-
-.description{
-  grid-column: span 4;
-  grid-row: span 2;
-  box-shadow:none;
-  background-color:transparent;
-}
-.description:hover{
-  translate:none!important;
-  cursor:default;
-}
-.description h1{
-  font-size: var(--font-xl)!important;
+.forcewhite h1,
+.forcewhite p,
+.forcewhite a {
+    color: white !important;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
 }
 
+.description {
+    grid-column: span 4;
+    grid-row: span 2;
+    box-shadow: none;
+    background-color: transparent;
+}
+.description:hover {
+    translate: none !important;
+    cursor: default;
+}
+.description h1 {
+    font-size: var(--font-xl) !important;
+}

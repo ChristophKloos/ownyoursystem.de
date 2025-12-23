@@ -1,31 +1,40 @@
-import { INITIAL_RESULT_COUNT, REVERSE_MAP } from './dp_config.js';
+import { INITIAL_RESULT_COUNT, REVERSE_MAP } from "./dp_config.js";
 
-export function renderQuestion(index, questions, answers, onAnswer, onNav, direction = 'forward') {
-  const container = document.getElementById('quiz-container');
+export function renderQuestion(
+  index,
+  questions,
+  answers,
+  onAnswer,
+  onNav,
+  direction = "forward",
+) {
+  const container = document.getElementById("quiz-container");
   const q = questions[index];
   container.innerHTML = "";
 
   document.getElementById("quiz-title").textContent = q.title;
-  document.getElementById("quiz-subtitle").textContent = `${index + 1} / ${questions.length}`;
+  document.getElementById("quiz-subtitle").textContent =
+    `${index + 1} / ${questions.length}`;
 
-  const part = document.createElement('div');
-  part.classList.add('part');
+  const part = document.createElement("div");
+  part.classList.add("part");
 
-  const frage = document.createElement('div');
-  frage.classList.add('frage');
+  const frage = document.createElement("div");
+  frage.classList.add("frage");
   frage.innerHTML = `<img src="/ui/question/${q.icon}" alt="" class="question-icon"><p>${q.question}</p>`;
 
-  const progress = document.createElement('div');
+  const progress = document.createElement("div");
   progress.className = "progress";
-  const bar = document.createElement('div');
+  const bar = document.createElement("div");
   bar.className = "progressinner";
 
-  const prevIndex = direction === 'forward' ? Math.max(0, index - 1) : index + 1;
+  const prevIndex =
+    direction === "forward" ? Math.max(0, index - 1) : index + 1;
   const startWidth = (prevIndex / questions.length) * 100;
   const targetWidth = (index / questions.length) * 100;
 
   bar.style.width = `${startWidth}%`;
-  
+
   progress.appendChild(bar);
   frage.appendChild(progress);
 
@@ -36,40 +45,46 @@ export function renderQuestion(index, questions, answers, onAnswer, onNav, direc
   });
 
   if (index > 0) {
-    const btn = createNavBtn("/ui/arrow.svg", "back-btn", () => onNav(index - 1, 'back'));
+    const btn = createNavBtn("/ui/arrow.svg", "back-btn", () =>
+      onNav(index - 1, "back"),
+    );
     frage.appendChild(btn);
   }
 
   if (index < questions.length - 1) {
-    const btn = createNavBtn("/ui/arrow.svg", "forward-btn", () => onNav(index + 1, 'forward'));
+    const btn = createNavBtn("/ui/arrow.svg", "forward-btn", () =>
+      onNav(index + 1, "forward"),
+    );
     frage.appendChild(btn);
   }
 
   part.appendChild(frage);
 
-  const choice = document.createElement('div');
-  choice.className = `choice ${direction === 'back' ? 'slide-left' : 'slide-right'}`;
+  const choice = document.createElement("div");
+  choice.className = `choice ${direction === "back" ? "slide-left" : "slide-right"}`;
 
   q.options.forEach((opt, i) => {
-    const input = document.createElement('input');
-    input.type = 'radio';
+    const input = document.createElement("input");
+    input.type = "radio";
     input.name = q.id;
     input.id = `${q.id}_${i}`;
     input.value = opt.value;
-    
+
     const isSelected = answers[q.id] == opt.value;
     input.checked = isSelected;
 
-    const label = document.createElement('label');
+    const label = document.createElement("label");
     label.htmlFor = input.id;
     label.innerHTML = opt.text;
-    if (isSelected) label.classList.add('active');
+    if (isSelected) label.classList.add("active");
 
-    label.addEventListener('mousedown', (e) => {
+    label.addEventListener("mousedown", (e) => {
       e.preventDefault();
       input.checked = true;
-      choice.querySelectorAll('label').forEach(l => l.classList.remove('active'));
-      label.classList.add('active');
+      choice
+        .querySelectorAll("label")
+        .forEach((l) => l.classList.remove("active"));
+      label.classList.add("active");
       onAnswer(q.id, parseInt(input.value));
     });
 
@@ -82,16 +97,22 @@ export function renderQuestion(index, questions, answers, onAnswer, onNav, direc
 }
 
 function createNavBtn(src, cls, onClick) {
-  const btn = document.createElement('button');
-  const img = document.createElement('img');
+  const btn = document.createElement("button");
+  const img = document.createElement("img");
   img.src = src;
   btn.appendChild(img);
-  btn.classList.add('nav-btn', cls);
+  btn.classList.add("nav-btn", cls);
   btn.onclick = onClick;
   return btn;
 }
 
-export function renderResults(results, questions, nameMapping, desktopModifiers, answers) {
+export function renderResults(
+  results,
+  questions,
+  nameMapping,
+  desktopModifiers,
+  answers,
+) {
   const container = document.getElementById("quiz-container");
   container.innerHTML = "";
 
@@ -118,17 +139,27 @@ export function renderResults(results, questions, nameMapping, desktopModifiers,
   container.appendChild(moreBtn);
 
   let shown = INITIAL_RESULT_COUNT;
-  const maxTotal = Math.max(...results.map(r => r.total));
+  const maxTotal = Math.max(...results.map((r) => r.total));
 
   const showRange = (start, end) => {
     results.slice(start, end).forEach((res, idx) => {
-      const card = createResultCard(res, maxTotal, questions, nameMapping, desktopModifiers, answers);
+      const card = createResultCard(
+        res,
+        maxTotal,
+        questions,
+        nameMapping,
+        desktopModifiers,
+        answers,
+      );
       list.appendChild(card);
-      
+
       const bar = card.querySelector(".main-bar");
-      setTimeout(() => {
-        bar.style.width = `${Math.pow(res.total / maxTotal, 8) * 100}%`;
-      }, 50 * (idx + 1));
+      setTimeout(
+        () => {
+          bar.style.width = `${Math.pow(res.total / maxTotal, 8) * 100}%`;
+        },
+        50 * (idx + 1),
+      );
     });
   };
 
@@ -142,7 +173,14 @@ export function renderResults(results, questions, nameMapping, desktopModifiers,
   if (results.length <= shown) moreBtn.remove();
 }
 
-function createResultCard(res, maxTotal, questions, nameMapping, desktopModifiers, answers) {
+function createResultCard(
+  res,
+  maxTotal,
+  questions,
+  nameMapping,
+  desktopModifiers,
+  answers,
+) {
   const card = document.createElement("div");
   card.className = "result-card";
 
@@ -158,7 +196,7 @@ function createResultCard(res, maxTotal, questions, nameMapping, desktopModifier
 
   card.innerHTML = `
     <div class="result-header">
-      ${res.icon ? `<img src="/ui/distro/${res.icon}" class="distro-icon">` : ''}
+      ${res.icon ? `<img src="/ui/distro/${res.icon}" class="distro-icon">` : ""}
       <p class="result-name">${displayName}</p>
       <img src="/ui/arrow.svg" class="arrow-icon">
     </div>
@@ -169,8 +207,13 @@ function createResultCard(res, maxTotal, questions, nameMapping, desktopModifier
   details.className = "stats-container";
   details.style.display = "none";
 
-  const mods = desktopModifiers[res.desktop] || desktopModifiers.desktops?.[res.desktop];
-  const imgSrc = customScreenshot ? `/img/desktops/${customScreenshot}` : (mods?.Screenshot ? `/img/desktops/${mods.Screenshot}` : null);
+  const mods =
+    desktopModifiers[res.desktop] || desktopModifiers.desktops?.[res.desktop];
+  const imgSrc = customScreenshot
+    ? `/img/desktops/${customScreenshot}`
+    : mods?.Screenshot
+      ? `/img/desktops/${mods.Screenshot}`
+      : null;
 
   if (res.description) {
     details.innerHTML += `<p class="result-desc">${res.description}</p>`;
@@ -182,15 +225,17 @@ function createResultCard(res, maxTotal, questions, nameMapping, desktopModifier
     imgCont.innerHTML = `<img src="${imgSrc}" class="gallery-item-image">`;
     imgCont.onclick = (e) => {
       e.stopPropagation();
-      if (window.openModal) window.openModal(imgSrc, "Sourced from wikimedia (creative commons)");
+      if (window.openModal)
+        window.openModal(imgSrc, "Sourced from wikimedia (creative commons)");
     };
     details.appendChild(imgCont);
   }
 
   Object.entries(REVERSE_MAP).forEach(([field, qId]) => {
     const val = res.rawScore[field] || 0;
-    const userVal = (answers[qId] !== undefined && answers[qId] !== null) ? answers[qId] : 2;
-    const qObj = questions.find(q => q.id === qId);
+    const userVal =
+      answers[qId] !== undefined && answers[qId] !== null ? answers[qId] : 2;
+    const qObj = questions.find((q) => q.id === qId);
 
     const row = document.createElement("div");
     row.className = "stat-row";
@@ -204,14 +249,18 @@ function createResultCard(res, maxTotal, questions, nameMapping, desktopModifier
     `;
     details.appendChild(row);
 
-    card.addEventListener('click', () => {
-      const dBar = row.querySelector(".distro-value");
-      const uBar = row.querySelector(".user-value");
-      setTimeout(() => {
-        dBar.style.width = `${20 + (Math.max(0, (val - 1) / 2) * 60)}%`;
-        uBar.style.width = `${20 + (Math.max(0, (userVal - 1) / 2) * 60)}%`;
-      }, 50);
-    }, { once: true });
+    card.addEventListener(
+      "click",
+      () => {
+        const dBar = row.querySelector(".distro-value");
+        const uBar = row.querySelector(".user-value");
+        setTimeout(() => {
+          dBar.style.width = `${20 + Math.max(0, (val - 1) / 2) * 60}%`;
+          uBar.style.width = `${20 + Math.max(0, (userVal - 1) / 2) * 60}%`;
+        }, 50);
+      },
+      { once: true },
+    );
   });
 
   if (res.link) {
@@ -225,7 +274,7 @@ function createResultCard(res, maxTotal, questions, nameMapping, desktopModifier
 
   card.appendChild(details);
   card.onclick = (e) => {
-    if (e.target.tagName === 'A') return;
+    if (e.target.tagName === "A") return;
     const isHidden = details.style.display === "none";
     details.style.display = isHidden ? "block" : "none";
     card.querySelector(".arrow-icon").classList.toggle("rotated", isHidden);

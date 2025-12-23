@@ -11,15 +11,15 @@ const fadeTime = 300;
 async function loadImages() {
   const res = await fetch("/js/json/carousel.json");
   images = await res.json();
-  
+
   if (images.length > 0) {
-      index = Math.floor(Math.random() * images.length);
+    index = Math.floor(Math.random() * images.length);
   }
-  
+
   const filename = images[index];
   updateDisplay(filename);
   fadeIn(img);
-  
+
   loopCarousel();
 }
 
@@ -49,7 +49,7 @@ function preloadImage(url) {
 }
 
 async function loopCarousel() {
-  await new Promise(r => setTimeout(r, duration));
+  await new Promise((r) => setTimeout(r, duration));
 
   let newIndex;
   do {
@@ -62,22 +62,22 @@ async function loopCarousel() {
   await preloadImage(nextUrl);
 
   fadeOut(img);
-  
+
   // Wait slightly longer than CSS transition to be safe
-  await new Promise(r => setTimeout(r, fadeTime + 50));
+  await new Promise((r) => setTimeout(r, fadeTime + 50));
 
   index = newIndex;
   updateDisplay(filename);
-  
+
   // Force browser repaint to ensure new src is ready before showing
-  await new Promise(resolve => {
-      requestAnimationFrame(() => {
-          requestAnimationFrame(resolve);
-      });
+  await new Promise((resolve) => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(resolve);
+    });
   });
-  
+
   fadeIn(img);
-  
+
   loopCarousel();
 }
 

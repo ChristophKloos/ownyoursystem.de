@@ -1,6 +1,6 @@
-import { fetchData } from './dp_api.js';
-import { calculateResults } from './dp_engine.js';
-import { renderQuestion, renderResults } from './dp_uishitter.js';
+import { fetchData } from "./dp_api.js";
+import { calculateResults } from "./dp_engine.js";
+import { renderQuestion, renderResults } from "./dp_uishitter.js";
 
 let state = {
   questions: [],
@@ -8,7 +8,7 @@ let state = {
   desktops: [],
   nameMapping: {},
   currentIndex: 0,
-  answers: {}
+  answers: {},
 };
 
 async function Startquiz() {
@@ -17,17 +17,17 @@ async function Startquiz() {
   showCurrent();
 }
 
-function showCurrent(direction = 'forward') {
+function showCurrent(direction = "forward") {
   renderQuestion(
-    state.currentIndex, 
-    state.questions, 
-    state.answers, 
-    handleAnswer, 
-    (idx, dir) => { 
-      state.currentIndex = idx; 
-      showCurrent(dir); 
+    state.currentIndex,
+    state.questions,
+    state.answers,
+    handleAnswer,
+    (idx, dir) => {
+      state.currentIndex = idx;
+      showCurrent(dir);
     },
-    direction
+    direction,
   );
 }
 
@@ -36,10 +36,20 @@ function handleAnswer(qId, value) {
   setTimeout(() => {
     if (state.currentIndex + 1 < state.questions.length) {
       state.currentIndex++;
-      showCurrent('forward');
+      showCurrent("forward");
     } else {
-      const results = calculateResults(state.distros, state.desktops, state.answers);
-      renderResults(results, state.questions, state.nameMapping, state.desktops, state.answers);
+      const results = calculateResults(
+        state.distros,
+        state.desktops,
+        state.answers,
+      );
+      renderResults(
+        results,
+        state.questions,
+        state.nameMapping,
+        state.desktops,
+        state.answers,
+      );
     }
   }, 250);
 }
@@ -50,4 +60,3 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", Startquiz);
   }
 });
-
