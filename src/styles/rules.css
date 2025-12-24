@@ -4,7 +4,7 @@
     width: 100%;
     max-width: 650px;
     margin: 32px auto 0px auto;
-    padding: 64px 32px 16px 48px;
+    padding: 16px 32px 16px 48px;
     text-align: left;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-hard);
@@ -22,8 +22,6 @@
 }
 
 h2 {
-    position: absolute;
-    padding: 18px 32px 14px 22px;
     margin-bottom: 20px;
     font-size: var(--font-sm);
     color: var(--text-dark);
@@ -44,4 +42,12 @@ ul {
 }
 li {
     margin-bottom: 5px;
+}
+
+h2 {
+    padding: 5px 32px 14px 16px;
+    position: relative;
+
+    margin: 0px;
+    margin-left: -32px;
 }

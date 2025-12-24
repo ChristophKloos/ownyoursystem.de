@@ -40,7 +40,7 @@ video#scrub {
     grid-auto-rows: 180px;
     gap: 20px;
     margin: 0 auto;
-    margin-top: 64px;
+    margin-top: 32px;
     padding: 32px;
 }
 
