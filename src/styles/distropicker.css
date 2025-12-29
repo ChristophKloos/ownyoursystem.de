@@ -273,7 +273,8 @@ label b {
 }
 
 #results-list {
-    margin-bottom: 100px;
+    margin-top: 32px;
+    margin-bottom: 75px;
 }
 
 .arrow-icon {
