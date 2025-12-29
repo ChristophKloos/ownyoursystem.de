@@ -34,7 +34,7 @@ video#scrub {
 
 .bentobox {
     width: 100%;
-    max-width: 960px;
+    max-width: 1300px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 180px;

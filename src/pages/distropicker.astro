@@ -8,6 +8,12 @@ import "../styles/mobile.css";
     title="Linux Distro Picker"
     description="Find the perfect Linux setup based on your workflow and preferences."
 >
+    <div id="image-modal" class="hidden" onclick="closeModal()">
+        <div onclick="event.stopPropagation()">
+            <img id="modal-image" src="" alt="" />
+            <div id="modal-caption"></div>
+        </div>
+    </div>
     <div class="quiz">
         <div id="quiz-header">
             <div id="quiz-subtitle"></div>

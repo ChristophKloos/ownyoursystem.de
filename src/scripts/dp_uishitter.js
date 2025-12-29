@@ -1,5 +1,24 @@
 import { INITIAL_RESULT_COUNT, REVERSE_MAP } from "./dp_config.js";
 
+window.openModal = (src, label) => {
+  const modal = document.getElementById("image-modal");
+  if (!modal) return;
+
+  document.getElementById("modal-image").src = src;
+  document.getElementById("modal-caption").innerText = label;
+
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+};
+
+window.closeModal = () => {
+  const modal = document.getElementById("image-modal");
+  if (modal) {
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  }
+};
+
 export function renderQuestion(
   index,
   questions,
@@ -225,8 +244,7 @@ function createResultCard(
     imgCont.innerHTML = `<img src="${imgSrc}" class="gallery-item-image">`;
     imgCont.onclick = (e) => {
       e.stopPropagation();
-      if (window.openModal)
-        window.openModal(imgSrc, "Sourced from wikimedia (creative commons)");
+      window.openModal(imgSrc, "Sourced from wikimedia (creative commons)");
     };
     details.appendChild(imgCont);
   }
