@@ -224,7 +224,7 @@ label {
 }
 
 label b {
-    margin-right: 3px;
+    margin-right: 8px;
     flex-shrink: 0;
 }
 label:hover {
@@ -311,7 +311,8 @@ label:hover {
 
 .result-desc {
     margin: 10px 0px 20px 0px;
-    padding-bottom: 30px;
+    padding-bottom: 16px;
+    font-size: var(--font-xs);
 }
 
 .user-value {

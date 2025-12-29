@@ -244,7 +244,7 @@ function createResultCard(
     imgCont.innerHTML = `<img src="${imgSrc}" class="gallery-item-image">`;
     imgCont.onclick = (e) => {
       e.stopPropagation();
-      window.openModal(imgSrc, "Recency and accuracy of screenshot may vary.");
+      window.openModal(imgSrc, "Recency and accuracy of screenshots may vary.");
     };
     details.appendChild(imgCont);
   }
@@ -252,8 +252,8 @@ function createResultCard(
   const legend = document.createElement("div");
   legend.className = "stat-legend";
   legend.innerHTML = `
-    <div class="legend-item"><div class="legend-shape user-shape"></div><span>Your Choice</span></div>
     <div class="legend-item"><div class="legend-shape distro-shape"></div><span>${displayName}</span></div>
+    <div class="legend-item"><div class="legend-shape user-shape"></div><span>Your Choice</span></div>
   `;
   details.appendChild(legend);
 
