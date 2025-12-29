@@ -253,7 +253,7 @@ function createResultCard(
   legend.className = "stat-legend";
   legend.innerHTML = `
     <div class="legend-item"><div class="legend-shape distro-shape"></div><span>${displayName}</span></div>
-    <div class="legend-item"><div class="legend-shape user-shape"></div><span>Your Choice</span></div>
+    <div class="legend-item"><div class="legend-shape user-shape"></div><span>Your Answer</span></div>
   `;
   details.appendChild(legend);
 
