@@ -74,5 +74,7 @@
     }
     #gallery-container {
         grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)) !important;
+        padding: 20px !important;
+        padding-top: 80px !important;
     }
 }
