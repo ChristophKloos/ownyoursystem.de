@@ -464,32 +464,35 @@ label:hover {
 }
 
 .stat-legend {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
     gap: 15px;
-    margin: 32px 0 16px 0;
+    margin: 32px 0 8px 0;
+    width: 100%;
     font-size: var(--font-xs);
     opacity: 0.9;
-    width: 100%;
 }
 
 .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    white-space: nowrap;
+    display: inline-flex !important;
+    align-items: center !important;
+    flex-direction: row !important;
+    gap: 8px;
+    white-space: nowrap !important;
 }
 
 .legend-shape {
-    width: 10px;
-    height: 10px;
-    flex-shrink: 0;
+    display: inline-block !important;
+    width: 10px !important;
+    height: 10px !important;
+    flex-shrink: 0 !important;
 }
 
 .user-shape {
     background: var(--text-dark);
-    width: 3px;
+    width: 3px !important;
+    border-radius: 2px;
 }
 
 .distro-shape {
