@@ -465,17 +465,20 @@ label:hover {
 
 .stat-legend {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 15px;
-    margin: 32px 0 10px 16px;
+    margin: 32px 0 16px 0;
     font-size: var(--font-xs);
-
     opacity: 0.9;
+    width: 100%;
 }
 
 .legend-item {
     display: flex;
     align-items: center;
     gap: 6px;
+    white-space: nowrap;
 }
 
 .legend-shape {
