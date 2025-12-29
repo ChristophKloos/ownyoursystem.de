@@ -120,15 +120,15 @@ body {
     animation-delay: 0.2s;
 }
 
+.frage {
+    padding-top: 48px;
+}
+
 .frage img {
     width: auto;
     height: 32px;
     margin: 0 auto 20px auto;
     transform: translate(0, -2px);
-}
-
-.question-icon {
-    margin-top: 24px;
 }
 
 .frage .progress {
