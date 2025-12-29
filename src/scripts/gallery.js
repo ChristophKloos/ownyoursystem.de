@@ -1,7 +1,5 @@
 const JSON_URL = "/js/json/carousel.json";
-const IMG_PATH = "/img/carousel/";
 
-// Modal öffnen (muss global sein für onclick)
 window.openModal = (src, label) => {
   const modal = document.getElementById("image-modal");
   if (!modal) return;
@@ -13,7 +11,6 @@ window.openModal = (src, label) => {
   modal.classList.add("flex");
 };
 
-// Modal schließen
 window.closeModal = () => {
   const modal = document.getElementById("image-modal");
   if (modal) {
@@ -22,31 +19,33 @@ window.closeModal = () => {
   }
 };
 
-// Galerie starten
 window.addEventListener("DOMContentLoaded", async () => {
   const container = document.getElementById("gallery-container");
   if (!container) return;
 
   try {
     const response = await fetch(JSON_URL);
-    const files = await response.json();
+    const groups = await response.json();
 
-    container.innerHTML = files
-      .map((filename) => {
-        const url = IMG_PATH + filename;
-        // Endung entfernen (z.B. "bild.webp" -> "bild")
-        const name = filename.replace(/\.[^/.]+$/, "");
-        const label = `Source: ${name}`;
+    container.innerHTML = groups
+      .map((group) => {
+        return group.files
+          .map((filename) => {
+            const url = group.path + filename;
+            const name = filename.replace(/\.[^/.]+$/, "");
+            const label = `${name}`;
 
-        return `
-                <div class="gallery-item-container" onclick="openModal('${url}', '${label}')">
-                    <img src="${url}" class="gallery-item-image" alt="${name}">
-                    <p>${label}</p>
-                </div>
-            `;
+            return `
+            <div class="gallery-item-container" onclick="openModal('${url}', '${label}')">
+                <img src="${url}" class="gallery-item-image" alt="${name}">
+                <p>${label}</p>
+            </div>
+        `;
+          })
+          .join("");
       })
       .join("");
   } catch (e) {
-    console.error("Fehler:", e);
+    console.error(e);
   }
 });

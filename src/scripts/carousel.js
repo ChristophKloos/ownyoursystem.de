@@ -9,24 +9,31 @@ const duration = 3000;
 const fadeTime = 300;
 
 async function loadImages() {
-  const res = await fetch("/js/json/carousel.json");
-  images = await res.json();
+  try {
+    const res = await fetch("/js/json/carousel.json");
+    const groups = await res.json();
 
-  if (images.length > 0) {
-    index = Math.floor(Math.random() * images.length);
+    images = groups.flatMap((group) =>
+      group.files.map((file) => ({
+        url: group.path + file,
+        name: file.replace(/\.[^/.]+$/, ""),
+      })),
+    );
+
+    if (images.length > 0) {
+      index = Math.floor(Math.random() * images.length);
+      updateDisplay(images[index]);
+      fadeIn(img);
+      loopCarousel();
+    }
+  } catch (e) {
+    console.error(e);
   }
-
-  const filename = images[index];
-  updateDisplay(filename);
-  fadeIn(img);
-
-  loopCarousel();
 }
 
-function updateDisplay(filename) {
-  const source = filename.replace(".webp", "");
-  attrib.textContent = "Source: " + source;
-  img.src = "/img/carousel/" + filename;
+function updateDisplay(item) {
+  attrib.textContent = "Source: " + item.name;
+  img.src = item.url;
 }
 
 function fadeOut(elem) {
@@ -56,20 +63,17 @@ async function loopCarousel() {
     newIndex = Math.floor(Math.random() * images.length);
   } while (newIndex === index && images.length > 1);
 
-  const filename = images[newIndex];
-  const nextUrl = "/img/carousel/" + filename;
+  const nextItem = images[newIndex];
 
-  await preloadImage(nextUrl);
+  await preloadImage(nextItem.url);
 
   fadeOut(img);
 
-  // Wait slightly longer than CSS transition to be safe
   await new Promise((r) => setTimeout(r, fadeTime + 50));
 
   index = newIndex;
-  updateDisplay(filename);
+  updateDisplay(nextItem);
 
-  // Force browser repaint to ensure new src is ready before showing
   await new Promise((resolve) => {
     requestAnimationFrame(() => {
       requestAnimationFrame(resolve);
