@@ -467,7 +467,7 @@ label:hover {
     display: flex !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
-    gap: 15px;
+    gap: 15px !important;
     margin: 32px 0 8px 0;
     width: 100%;
     font-size: var(--font-xs);
@@ -478,7 +478,7 @@ label:hover {
     display: inline-flex !important;
     align-items: center !important;
     flex-direction: row !important;
-    gap: 8px;
+    gap: 8px !important;
     white-space: nowrap !important;
 }
 
