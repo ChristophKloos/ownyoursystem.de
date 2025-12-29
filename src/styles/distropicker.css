@@ -492,7 +492,7 @@ label:hover {
 .user-shape {
     background: var(--text-dark);
     width: 3px !important;
-    border-radius: 2px;
+    border-radius: 0px;
 }
 
 .distro-shape {
