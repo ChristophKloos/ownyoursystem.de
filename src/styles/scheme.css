@@ -25,6 +25,7 @@
     --shadow-hard: 0px 3.5px 12px -10px rgba(0, 0, 0, 0);
     --shadow-big: 0px 14px 15px -13px rgba(0, 0, 0, 0);
     /*--FONT SIZE*/
+    --font-xs: 12.111px;
     --font-sm: 14.555px;
     --font-md: 16.5px;
     --font-lg: 25.6px;

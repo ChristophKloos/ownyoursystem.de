@@ -244,10 +244,18 @@ function createResultCard(
     imgCont.innerHTML = `<img src="${imgSrc}" class="gallery-item-image">`;
     imgCont.onclick = (e) => {
       e.stopPropagation();
-      window.openModal(imgSrc, "Sourced from wikimedia (creative commons)");
+      window.openModal(imgSrc, "Recency and accuracy of screenshot may vary.");
     };
     details.appendChild(imgCont);
   }
+
+  const legend = document.createElement("div");
+  legend.className = "stat-legend";
+  legend.innerHTML = `
+    <div class="legend-item"><div class="legend-shape user-shape"></div><span>Your Choice</span></div>
+    <div class="legend-item"><div class="legend-shape distro-shape"></div><span>${displayName}</span></div>
+  `;
+  details.appendChild(legend);
 
   Object.entries(REVERSE_MAP).forEach(([field, qId]) => {
     const val = res.rawScore[field] || 0;
