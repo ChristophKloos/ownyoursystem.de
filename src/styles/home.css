@@ -54,6 +54,7 @@ video#scrub {
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-big);
     cursor: pointer;
+    /*box-shadow: inset 0px 0px 6px 2px rgba(255, 255, 255, 0.63);*/
     background-color: var(--bg-light);
     transition: translate 0.3s ease;
     animation:
@@ -65,12 +66,12 @@ video#scrub {
     translate: 0 -4px;
 }
 .distropicker {
-    grid-column: span 4;
-    grid-row: span 1;
+    grid-column: span 2;
+    grid-row: span 2;
 }
 
 .carousel {
-    grid-column: span 3;
+    grid-column: span 2;
     grid-row: span 2;
     background-color: black;
 }
@@ -116,10 +117,10 @@ video#scrub {
 
 .resources {
     grid-column: span 1;
-    grid-row: span 1;
+    grid-row: span 2;
 }
 .protondb {
-    grid-column: span 1;
+    grid-column: span 2;
     grid-row: span 1;
 }
 
