@@ -487,13 +487,13 @@ label:hover {
 .legend-shape {
     display: inline-block !important;
     width: 10px !important;
-    height: 10px !important;
+    height: 8px !important;
     flex-shrink: 0 !important;
 }
 
 .user-shape {
     background: var(--text-dark);
-    width: 3px !important;
+    width: 4px !important;
     border-radius: 0px;
 }
 

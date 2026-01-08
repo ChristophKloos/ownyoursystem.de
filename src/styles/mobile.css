@@ -58,7 +58,6 @@
         touch-action: manipulation;
         width: 100% !important;
         padding: 5px !important;
-        min-height: 800px;
     }
     .frage,
     .resultheader {

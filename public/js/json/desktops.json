@@ -1,9 +1,9 @@
 {
   "desktops": {
     "GNOME": {
-      "Screenshot":"gnome.webp",
+      "Screenshot": "gnome.webp",
       "Experience": 0.5,
-      "Gaming": 1.0,
+      "Gaming": 0.8,
       "Modern": 0.9,
       "Options": -0.5,
       "Keyboard": 0.2,
@@ -18,7 +18,7 @@
       "Extra_Score": 2.1
     },
     "Cosmic": {
-      "Screenshot":"cosmic.webp",
+      "Screenshot": "cosmic.webp",
       "Experience": 0.3,
       "Gaming": 0.7,
       "Modern": 1.1,
@@ -33,12 +33,11 @@
       "Upd_Regular": 0.3,
       "Nvidia": 0.1,
       "Extra_Score": 0.9
-      
     },
     "KDE": {
-      "Screenshot":"kde.webp",
+      "Screenshot": "kde.webp",
       "Experience": -0.2,
-      "Gaming": 1.1,
+      "Gaming": 0.8,
       "Modern": 1.2,
       "Options": 0.7,
       "Keyboard": -0.4,
@@ -53,7 +52,7 @@
       "Extra_Score": 2.1
     },
     "XFCE": {
-      "Screenshot":"xfce.webp",
+      "Screenshot": "xfce.webp",
       "Experience": -0.1,
       "Gaming": -0.5,
       "Modern": -0.9,
@@ -70,7 +69,7 @@
       "Extra_Score": 1.7
     },
     "Cinnamon": {
-      "Screenshot":"cinnamon.webp",
+      "Screenshot": "cinnamon.webp",
       "Experience": -0.5,
       "Gaming": -0.2,
       "Modern": -0.5,
@@ -87,7 +86,7 @@
       "Extra_Score": 1.9
     },
     "MATE": {
-      "Screenshot":"mate.webp",
+      "Screenshot": "mate.webp",
       "Experience": -0.3,
       "Gaming": -0.5,
       "Modern": -0.8,
@@ -104,7 +103,7 @@
       "Extra_Score": 0.2
     },
     "LXDE": {
-      "Screenshot":"lxde.webp",
+      "Screenshot": "lxde.webp",
       "Experience": 0.1,
       "Gaming": -0.6,
       "Modern": -0.9,
@@ -121,7 +120,7 @@
       "Extra_Score": 0
     },
     "LXQt": {
-      "Screenshot":"lxqt.webp",
+      "Screenshot": "lxqt.webp",
       "Experience": -0.1,
       "Gaming": -0.5,
       "Modern": -0.7,
@@ -138,7 +137,7 @@
       "Extra_Score": 0.6
     },
     "i3": {
-      "Screenshot":"i3.webp",
+      "Screenshot": "i3.webp",
       "Experience": 0.9,
       "Gaming": -0.4,
       "Modern": -0.9,
@@ -155,9 +154,9 @@
       "Extra_Score": 0.5
     },
     "Hyprland": {
-      "Screenshot":"hyprland.webp",
+      "Screenshot": "hyprland.webp",
       "Experience": 0.9,
-      "Gaming": 0.9,
+      "Gaming": 0.6,
       "Modern": 1.2,
       "Options": 1.0,
       "Keyboard": 1.2,
@@ -172,9 +171,9 @@
       "Extra_Score": 1.1
     },
     "Niri": {
-      "Screenshot":"niri.webp",
+      "Screenshot": "niri.webp",
       "Experience": 0.6,
-      "Gaming": 0.9,
+      "Gaming": 0.7,
       "Modern": 1.0,
       "Options": 1.1,
       "Keyboard": 1.0,
@@ -189,7 +188,7 @@
       "Extra_Score": 1.2
     },
     "DWM": {
-      "Screenshot":"dwm.webp",
+      "Screenshot": "dwm.webp",
       "Experience": 1.2,
       "Gaming": -0.9,
       "Modern": -1.2,
@@ -206,7 +205,7 @@
       "Extra_Score": 0.4
     },
     "Sway": {
-      "Screenshot":"sway.webp",
+      "Screenshot": "sway.webp",
       "Experience": 0.7,
       "Gaming": 0.6,
       "Modern": 0.8,
