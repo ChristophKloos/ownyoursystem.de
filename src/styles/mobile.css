@@ -61,6 +61,7 @@
     }
     .frage,
     .resultheader {
+        min-height: 180px;
         padding: 16px 64px 32px 64px;
         margin-bottom: 32px;
     }
