@@ -486,7 +486,7 @@ label:hover {
 
 .legend-shape {
     display: inline-block !important;
-    width: 10px !important;
+    width: 8px !important;
     height: 8px !important;
     flex-shrink: 0 !important;
 }
