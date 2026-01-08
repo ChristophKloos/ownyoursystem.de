@@ -1,28 +1,52 @@
 const container = document.getElementById("quiz-container");
-let previousHeight = container.offsetHeight;
+let oldHeight = container.offsetHeight;
+
+function attachObserver() {
+  observer.observe(container, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ["style", "class"],
+  });
+}
+
+window.addEventListener("resize", () => {
+  container.style.height = "auto";
+  container.style.overflow = "hidden";
+  container.style.transition = "none";
+  oldHeight = container.offsetHeight;
+});
 
 const observer = new MutationObserver(() => {
+  observer.disconnect();
+
   const newHeight = container.scrollHeight;
 
-  if (newHeight > 0 && newHeight !== previousHeight) {
+  if (oldHeight !== newHeight) {
+    container.style.height = `${oldHeight}px`;
+    container.style.overflow = "hidden";
     container.style.transition = "none";
-    container.style.height = `${previousHeight}px`;
+
+    void container.offsetHeight;
 
     requestAnimationFrame(() => {
-      container.style.transition = "height 0.4s cubic-bezier(0.4, 0, 0.2, 1)";
+      container.style.transition = "height 0.4s ease";
       container.style.height = `${newHeight}px`;
-      previousHeight = newHeight;
     });
+
+    const onEnd = () => {
+      container.style.height = "auto";
+      container.style.overflow = "hidden";
+      container.style.transition = "none";
+      oldHeight = container.offsetHeight;
+      attachObserver();
+    };
+
+    container.addEventListener("transitionend", onEnd, { once: true });
+    setTimeout(onEnd, 450);
+  } else {
+    attachObserver();
   }
 });
 
-observer.observe(container, {
-  childList: true,
-  subtree: true,
-});
-
-container.addEventListener("transitionend", (e) => {
-  if (e.propertyName === "height") {
-    container.style.height = "auto";
-  }
-});
+attachObserver();

@@ -63,6 +63,7 @@
     .arrow-icon,
     .sidebarbtn,
     .frage img,
+    #particle-canvas,
     .distro-icon {
         filter: invert(1) !important;
     }

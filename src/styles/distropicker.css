@@ -16,7 +16,9 @@ html {
     height: auto;
     transition: height 0.3s ease;
 }
-
+#particle-canvas {
+    opacity: 0.5;
+}
 #quiz-header {
     width: min(90%, 650px);
     margin-bottom: 20px;

@@ -1,6 +1,14 @@
 import { QUESTION_MAP } from "./dp_config.js";
 
-export function calculateResults(distros, desktopModifiers, answers) {
+export function calculateResults(
+  distros,
+  desktopModifiers,
+  answers,
+  questions,
+) {
+  const weights = {};
+  questions.forEach((q) => (weights[q.id] = q.weight || 1));
+
   const results = [];
 
   distros.forEach((distro) => {
@@ -34,7 +42,8 @@ export function calculateResults(distros, desktopModifiers, answers) {
               ? answers[qid]
               : 2;
           const diff = Math.abs(userAns - raw[field]);
-          match[field] = Math.max(0, Math.min(3, 3 - diff));
+          const baseScore = Math.max(0, Math.min(3, 3 - diff));
+          match[field] = baseScore * weights[qid];
         }
       });
 

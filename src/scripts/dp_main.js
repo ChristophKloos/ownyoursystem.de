@@ -1,6 +1,7 @@
 import { fetchData } from "./dp_api.js";
 import { calculateResults } from "./dp_engine.js";
 import { renderQuestion, renderResults } from "./dp_uishitter.js";
+import { initParticles } from "./dp_particles.js";
 
 let state = {
   questions: [],
@@ -14,6 +15,13 @@ let state = {
 async function Startquiz() {
   const data = await fetchData();
   state = { ...state, ...data };
+  console.log(
+    "Starte Partikel mit",
+    state.distros ? state.distros.length : 0,
+    "Distros",
+  );
+
+  initParticles(state.distros);
   showCurrent();
 }
 
@@ -42,6 +50,7 @@ function handleAnswer(qId, value) {
         state.distros,
         state.desktops,
         state.answers,
+        state.questions,
       );
       renderResults(
         results,

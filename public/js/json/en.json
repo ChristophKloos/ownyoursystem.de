@@ -1,6 +1,7 @@
 [
   {
     "id": "q1",
+    "weight": 1.7,
     "title": "Experience",
     "icon": "1experience.svg",
     "question": "How much <b>experience</b> using Linux do you have?",
@@ -12,6 +13,7 @@
   },
   {
     "id": "q2",
+    "weight": 1.0,
     "title": "Gaming",
     "icon": "2gaming.svg",
     "question": "How important is <b>gaming</b>?",
@@ -29,6 +31,7 @@
   },
   {
     "id": "q3",
+    "weight": 1.3,
     "title": "Graphical Features",
     "icon": "3graphical.svg",
     "question": "Do you use modern <b>graphical features</b>?",
@@ -40,6 +43,7 @@
   },
   {
     "id": "q4",
+    "weight": 0.8,
     "title": "Customizable",
     "icon": "4customizable.svg",
     "question": "How <b>customizable</b> should the interface be?",
@@ -54,6 +58,7 @@
   },
   {
     "id": "q5",
+    "weight": 0.6,
     "title": "Keyboard Focus",
     "icon": "5keyboard.svg",
     "question": "Do you want to control your system via <b>keyboard</b> or mouse?",
@@ -68,6 +73,7 @@
   },
   {
     "id": "q6",
+    "weight": 1.1,
     "title": "Modern Design",
     "icon": "6modern.svg",
     "question": "Is <b>modern UI design</b> important to you?",
@@ -82,6 +88,7 @@
   },
   {
     "id": "q7",
+    "weight": 0.9,
     "title": "Minimalism",
     "icon": "7minimalism.svg",
     "question": "Is <b>minimalism</b> important to you?",
@@ -99,6 +106,7 @@
   },
   {
     "id": "q8",
+    "weight": 1.5,
     "title": "Program Complexity",
     "icon": "8install.svg",
     "question": "How complex can the <b>installation of programs</b> be?",
@@ -113,6 +121,7 @@
   },
   {
     "id": "q9",
+    "weight": 0.4,
     "title": "Privacy",
     "icon": "9privacy.svg",
     "question": "How important is <b>privacy</b> to you?",
@@ -130,6 +139,7 @@
   },
   {
     "id": "q10",
+    "weight": 1.2,
     "title": "Flexibility",
     "icon": "10flexible.svg",
     "question": "Do you value a bulletproof or a <b>flexible</b> system?",
@@ -147,6 +157,7 @@
   },
   {
     "id": "q11",
+    "weight": 0.5,
     "title": "Interesting",
     "icon": "11interesting.svg",
     "question": "Do you want an <b>interesting</b> system?",
@@ -161,6 +172,7 @@
   },
   {
     "id": "q12",
+    "weight": 0.7,
     "title": "Update Interval",
     "icon": "12update.svg",
     "question": "How regular should <b>updates</b> be?",
@@ -175,6 +187,7 @@
   },
   {
     "id": "q13",
+    "weight": 1,
     "title": "Nvidia Support",
     "icon": "13nvidia.svg",
     "question": "Do you use an <b>Nvidia</b> GPU?",

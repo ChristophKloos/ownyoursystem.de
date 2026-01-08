@@ -63,7 +63,7 @@
     position: absolute;
     bottom: 0;
     color: var(--text-muted);
-    width: 100%;
+    width: auto;
 }
 
 h4 {
