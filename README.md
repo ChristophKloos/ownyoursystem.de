@@ -1,3 +1,6 @@
+<img width="1873" height="1125" alt="image" src="https://github.com/user-attachments/assets/7e52e81e-ebe6-4f0c-bb0a-0397af153e6f" />
+
+Linux Distro Picker in the making. Feel free to contribute or fork if you feel like improving on it.
 
 
 This program is free software: you can redistribute it and/or modify
