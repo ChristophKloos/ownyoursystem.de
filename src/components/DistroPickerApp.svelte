@@ -86,7 +86,8 @@
                 right desktop environment and distribution.<br /><br />
                 It’s a quick 13-question journey.
                 <strong>Privacy-first, no tracking, and no ads</strong>. Just a
-                simple tool to help you discover a setup that feels like home.
+                simple tool to help you discover a setup that feels like home.<br />
+                Keep in mind that the weights are still being optimized so accuracy might vary.
             </p>
             <button on:click={startQuiz} id="start-btn">Start</button>
         </div>
