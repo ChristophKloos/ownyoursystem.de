@@ -1,9 +1,10 @@
 export async function fetchData() {
-  const [qResp, dResp, deResp, nResp] = await Promise.all([
-    fetch("/js/json/en.json"),
-    fetch("/js/json/distros.json"),
-    fetch("/js/json/desktops.json"),
-    fetch("/js/json/nameMapping.json"),
+  const [qResp, dResp, deResp, nResp, tResp] = await Promise.all([
+    fetch("data/questions.json"),
+    fetch("data/distros.json"),
+    fetch("data/desktops.json"),
+    fetch("data/distros_combinations.json"),
+    fetch("data/tags.json"),
   ]);
 
   return {
@@ -11,5 +12,6 @@ export async function fetchData() {
     distros: await dResp.json(),
     desktops: await deResp.json(),
     nameMapping: await nResp.json(),
+    tags: await tResp.json(),
   };
 }

@@ -1,0 +1,42 @@
+   .start-container {
+        margin: 0 auto;
+    }
+
+    .startpage {
+        text-align: center;
+        padding: 55px 64px 0 64px !important;
+        margin-top: 0;
+    }
+
+    .startpage p {
+        font-size: var(--font-sm);
+        
+    }
+
+    #start-btn {
+        background: var(--bg-pop);
+        color: var(--bg-backdrop);
+        box-shadow: var(--shadow-hard);
+        border: none;
+        padding: 12px 32px;
+        border-radius: var(--radius-md);
+        margin: 32px 0;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: var(--font-sm);
+    }
+
+    #start-btn:hover {
+        box-shadow: var(--shadow-hard-hover);
+    }
+
+    .radar {
+        width: 48px !important;
+        height: 48px !important;
+        margin-bottom: 24px;
+        margin-top: 24px;
+        filter: drop-shadow(0rem 0.35rem 1rem rgba(0, 0, 0, 0.1)) !important;
+        animation: fadeInOut 1s forwards ease 0.5s;
+    }
+
+   

@@ -1,0 +1,13 @@
+services:
+  astro:
+    image: node:22-slim
+    working_dir: /app
+    ports:
+      - "4321:4321"
+    volumes:
+      - .:/app
+    command: >
+      sh -c "corepack enable && 
+             pnpm config set ignore-scripts false && 
+             pnpm install && 
+             pnpm run dev --host 0.0.0.0 || tail -f /dev/null"

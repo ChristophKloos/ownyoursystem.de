@@ -2,53 +2,53 @@
 const { title = "Own Your System" } = Astro.props;
 import Header from "../components/Header.astro";
 import Sidebar from "../components/Sidebar.astro";
-import '../styles/scheme.css';
-import '../styles/design.css';
-import '../styles/header.css';
-import '../styles/mobile.css';
-import '../styles/sidebar.css';
 
+import "../styles/global.css";
+import "../styles/theme_light.css";
+import "../styles/theme_dark.css";
+import "../styles/part_sidebar.css";
+import "../styles/part_landingpage.css";
+import "../styles/part_question.css";
+import "../styles/part_results.css";
+import "../styles/part_finetune.css";
+import "../styles/part_header.css";
+import "../styles/mobile.css";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <script>
+        if (history.scrollRestoration) {
+            history.scrollRestoration = "manual";
+        }
 
-  <script>
-    if (history.scrollRestoration) {
-  history.scrollRestoration = 'manual';
-}
+        window.addEventListener("load", function () {
+            window.scrollTo(0, 0);
+        });
+    </script>
 
-window.addEventListener('load', function() {
-  window.scrollTo(0, 0);
-});
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.75" />
+    <title>Own Your System</title>
+    <meta
+        http-equiv="Cache-Control"
+        content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
 
-  </script>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=0.75" />
-  <title>Own Your System</title>
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_US">
-  
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-</head>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 
-<body>
+    <body>
+        <Sidebar />
+        <Header />
 
-  <Sidebar />
-  <Header />
+        <main>
+            <slot />
+        </main>
 
-  <main>
-    <slot />
-  </main>
-
-
-<script>
-      import "../scripts/home.js";
-      import "../scripts/sidebar.js";
-</script>
-</body>
+        <script></script>
+    </body>
 </html>

@@ -1,0 +1,313 @@
+[
+  {
+    "id": "experience",
+    "weight": 0.2,
+    "filter": true,
+    "title": "Experience",
+    "icon": "1experience.svg",
+    "question": "How much <b>experience</b> using Linux do you have?",
+    "options": [
+      {
+        "text": "<b>Beginner: </b> I have never used Linux before and need a user-friendly starting point.",
+        "value": "1"
+      },
+      {
+        "text": "<b>Intermediate: </b> I have some basic knowledge and am highly motivated to learn new things.",
+        "value": "2"
+      },
+      {
+        "text": "<b>Pro: </b> I am highly familiar with Linux systems and comfortable with advanced tasks.",
+        "value": "3"
+      }
+    ]
+  },
+  {
+    "id": "packagemanagement",
+    "weight": 1.5,
+    "filter": false,
+    "title": "Package Management",
+    "icon": "8install.svg",
+    "question": "How complex can the <b>installation of programs</b> be?",
+    "options": [
+      {
+        "text": "<b>Simple: </b> I want an easy-to-use graphical software store, similar to a smartphone.",
+        "value": "1"
+      },
+      {
+        "text": "<b>Neutral: </b> Standard installation methods via package managers or basic terminal commands are fine.",
+        "value": "2"
+      },
+      {
+        "text": "<b>Complex: </b> I am completely comfortable building from source or using advanced terminal tools.",
+        "value": "3"
+      }
+    ]
+  },
+  {
+    "id": "control",
+    "weight": 1.3,
+    "filter": false,
+    "title": "Control",
+    "icon": "10flexible.svg",
+    "question": "Do you value a bulletproof or a <b>flexible</b> system?",
+    "options": [
+      {
+        "text": "<b>Bulletproof: </b> I need a highly stable system that rarely breaks, even if software is older.",
+        "value": "1"
+      },
+      {
+        "text": "<b>Neutral: </b> I want a good balance of system stability and having control over my software.",
+        "value": "2"
+      },
+      {
+        "text": "<b>Flexibility: </b> I want full control over the system, even if it requires manual maintenance.",
+        "value": "3"
+      }
+    ]
+  },
+
+  {
+    "id": "minimalism",
+    "weight": 0.9,
+    "filter": false,
+    "title": "Minimalism",
+    "icon": "7minimalism.svg",
+    "question": "Is <b>minimalism</b> important to you?",
+    "options": [
+      {
+        "text": "<b>No: </b> I prefer a system that comes with many useful programs pre-installed out of the box.",
+        "value": "1"
+      },
+      {
+        "text": "<b>Neutral: </b> A standard selection of everyday software is perfectly fine for me.",
+        "value": "2"
+      },
+      {
+        "text": "<b>Yes: </b> I want a minimal base installation so I can build everything exactly as I want it.",
+        "value": "3"
+      }
+    ]
+  },
+  {
+    "id": "privacy",
+    "weight": 0.4,
+    "filter": false,
+    "title": "Privacy",
+    "icon": "9privacy.svg",
+    "question": "How important is <b>privacy</b> to you?",
+    "options": [
+      {
+        "text": "<b>Not important: </b> Standard data usage and system telemetry are fine with me.",
+        "value": "1"
+      },
+      {
+        "text": "<b>Neutral: </b> I prefer balanced privacy settings without sacrificing too much convenience.",
+        "value": "2"
+      },
+      {
+        "text": "<b>Important: </b> Strict data protection and maximum privacy are absolutely essential to me.",
+        "value": "3"
+      }
+    ]
+  },
+  {
+    "id": "newideas",
+    "weight": 0.5,
+    "filter": false,
+    "title": "New Ideas",
+    "icon": "11interesting.svg",
+    "question": "Do you want an <b>interesting</b> system?",
+    "options": [
+      {
+        "text": "<b>No: </b> I just want a reliable, standard system that gets the job done without surprises.",
+        "value": "1"
+      },
+      {
+        "text": "<b>Neutral: </b> A standard desktop experience without too many experimental features is fine.",
+        "value": "2"
+      },
+      {
+        "text": "<b>Yes: </b> I actively seek out unique, experimental, and cutting-edge features to play with.",
+        "value": "3"
+      }
+    ]
+  },
+  {
+    "id": "updatefrequency",
+    "weight": 0.7,
+    "filter": false,
+    "title": "Update Frequency",
+    "icon": "12update.svg",
+    "question": "How regular should <b>updates</b> be?",
+    "options": [
+      {
+        "text": "<b>Rare: </b> I prefer rare, thoroughly tested updates with fewer changes to ensure maximum stability.",
+        "value": "1"
+      },
+      {
+        "text": "<b>Neutral: </b> A standard, balanced update schedule is perfectly acceptable for my workflow.",
+        "value": "2"
+      },
+      {
+        "text": "<b>Regular: </b> I want a rolling release model to get the absolute newest features and fixes immediately.",
+        "value": "3"
+      }
+    ]
+  },
+  {
+    "id": "keyboardfocus",
+    "weight": 1.1,
+    "filter": false,
+    "title": "Keyboard Focus",
+    "icon": "5keyboard.svg",
+    "question": "Do you want to control your system via <b>keyboard</b> or mouse?",
+    "options": [
+      {
+        "text": "<b>Mouse: </b> I prefer navigating and controlling my system mostly with the mouse.",
+        "value": "1"
+      },
+      {
+        "text": "<b>Neutral: </b> I use a balanced mix of mouse clicks and basic keyboard shortcuts.",
+        "value": "2"
+      },
+      {
+        "text": "<b>Keyboard: </b> I prefer controlling everything via advanced keyboard shortcuts and terminal commands.",
+        "value": "3"
+      }
+    ]
+  },
+  {
+    "id": "moderndesign",
+    "weight": 1.5,
+    "filter": false,
+    "title": "Modern Design",
+    "icon": "6modern.svg",
+    "question": "Is <b>modern UI design</b> important to you?",
+    "options": [
+      {
+        "text": "<b>No: </b> Pure performance and responsiveness are far more important to me than looks.",
+        "value": "1"
+      },
+      {
+        "text": "<b>Neutral: </b> I don't mind either way, as long as the system is functional and clean.",
+        "value": "2"
+      },
+      {
+        "text": "<b>Yes: </b> I highly value a polished, aesthetically pleasing, and highly modern look.",
+        "value": "3"
+      }
+    ]
+  },
+  {
+    "id": "ricing",
+    "weight": 0.8,
+    "filter": false,
+    "title": "Ricing",
+    "icon": "4customizable.svg",
+    "question": "How <b>customizable</b> should the interface be?",
+    "options": [
+      {
+        "text": "<b>Simple: </b> I want a system that is ready to use immediately without tweaking.",
+        "value": "1"
+      },
+      {
+        "text": "<b>Neutral: </b> I don't have a strong preference; basic customization is enough for me.",
+        "value": "2"
+      },
+      {
+        "text": "<b>Many options: </b> I want the freedom to deeply customize every visual and functional detail.",
+        "value": "3"
+      }
+    ]
+  },
+  {
+    "id": "gaming",
+    "weight": 1.0,
+    "filter": false,
+    "title": "Gaming",
+    "icon": "2gaming.svg",
+    "question": "How important is <b>gaming</b>?",
+    "options": [
+      {
+        "text": "<b>Not at all: </b> I have absolutely no interest in gaming on this system.",
+        "value": "1"
+      },
+      {
+        "text": "<b>Light gaming: </b> I occasionally play retro games, indie titles, or less demanding games.",
+        "value": "2"
+      },
+      {
+        "text": "<b>Triple A: </b> I want to play the latest high-performance, resource-heavy games.",
+        "value": "3"
+      }
+    ]
+  },
+  {
+    "id": "displaytech",
+    "weight": 1.3,
+    "filter": false,
+    "title": "Display Tech",
+    "icon": "3graphical.svg",
+    "question": "Do you use modern <b>graphical features</b>?",
+    "options": [
+      {
+        "text": "<b>No: </b> I prefer basic graphics, which is especially useful for older hardware.",
+        "value": "1"
+      },
+      {
+        "text": "<b>Yes: </b> I want high resolution, smooth visuals, and standard modern effects.",
+        "value": "2"
+      },
+      {
+        "text": "<b>Enhanced: </b> I need advanced graphical features like HDR, high refresh rates, and complex animations.",
+        "value": "3"
+      }
+    ]
+  },
+
+  {
+    "id": "hardwarerequired",
+    "weight": 0,
+    "filter": true,
+    "title": "Hardware Required",
+    "icon": "14hardware.svg",
+    "question": "Is your <b>hardware</b> powerful?",
+    "options": [
+      {
+        "text": "<b>No: </b> I am using weak or older hardware that needs a lightweight system (around 2GB RAM minimum).",
+        "value": "1"
+      },
+      {
+        "text": "<b>Neutral: </b> I have capable mid-range hardware that can handle a standard system (over 4GB RAM minimum).",
+        "value": "2"
+      },
+      {
+        "text": "<b>Yes: </b> I have powerful modern hardware with plenty of resources (over 8GB RAM).",
+        "value": "3"
+      }
+    ]
+  },
+
+  {
+    "id": "nvidia",
+    "weight": 1,
+    "filter": false,
+    "title": "Nvidia",
+    "icon": "13nvidia.svg",
+    "question": "Do you use an <b>Nvidia</b> GPU?",
+    "options": [
+      {
+        "text": "<b>No: </b> I am using AMD or Intel graphics, so I don't need proprietary Nvidia drivers.",
+        "value": "1"
+      },
+      {
+        "text": "<b>Yes: </b> I have an older Nvidia card and need reliable legacy driver support.",
+        "value": "2"
+      },
+      {
+        "text": "<b>Yes: </b> I have a modern Nvidia RTX card and need the latest proprietary drivers to work smoothly.",
+        "value": "3"
+      }
+    ]
+  }
+]

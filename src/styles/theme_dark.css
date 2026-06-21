@@ -1,0 +1,22 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-backdrop: #231524;
+        --bg-backdrop-alt: transparent;
+        --bg-cards: #27272a;
+        --bg-alt: #333338;
+        --bg-cards-dark: #2a2a2e;
+        --bg-alt-dark: #333338;
+        --bg-pop: #60a5fa;
+        --bg-translucent: rgba(35, 21, 36, 0.7);
+        --bg-translucent-alt: rgba(42, 42, 46, 0.7);
+        --text-dark: #d4d4d8;
+        --text-muted: #d4d4d8;
+        --text-white: #d4d4d8;
+    }
+    #logo,
+    .distro-icon,
+    .tagimage,
+    .chart-container, .sidebaritem img, .arrow-icon, .small-icon, #sidebarbtn {
+        filter: invert(1);
+    }
+}

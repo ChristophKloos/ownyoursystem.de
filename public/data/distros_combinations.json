@@ -1,0 +1,77 @@
+{
+  "Ubuntu+KDE": {
+    "name": "<b>Kubuntu</b>",
+    "screenshot": "kubuntu.webp",
+    "icon": "kubuntu.webp"
+  },
+  "Ubuntu+XFCE": {
+    "name": "<b>Xubuntu</b>",
+    "screenshot": "xubuntu.webp",
+    "icon": "xubuntu.webp"
+  },
+  "Ubuntu+GNOME": { "name": "<b>Ubuntu</b>", "screenshot": "ubuntu.webp" },
+  "Ubuntu+Cinnamon": {
+    "name": "<b>Ubuntu</b> Cinnamon",
+    "screenshot": "ubuntucinnamon.webp"
+  },
+  "Ubuntu+LXQt": {
+    "name": "<b>Lubuntu</b>",
+    "screenshot": "",
+    "icon": "lubuntu.webp"
+  },
+  "Fedora+GNOME": {
+    "name": "<b>Fedora</b> Workstation",
+    "screenshot": "fedoragnome.webp"
+  },
+  "Fedora+XFCE": { "name": "<b>Fedora</b> XFCE Spin", "screenshot": "" },
+  "Fedora+Cinnamon": {
+    "name": "<b>Fedora</b> Cinnamon Spin",
+    "screenshot": "fedoracinnamon.webp"
+  },
+  "Fedora+MATE": { "name": "<b>Fedora</b> Mate-Compiz Spin", "screenshot": "" },
+  "Fedora Atomic+GNOME": {
+    "name": "<b>Fedora</b> Silverblue",
+    "screenshot": "",
+    "icon": "silverblue.webp"
+  },
+  "Fedora Atomic+KDE": {
+    "name": "<b>Fedora</b> Kionite",
+    "screenshot": "",
+    "icon": "kionite.webp"
+  },
+  "Pop!_OS+Cosmic": { "name": "<b>Pop!_OS</b>", "screenshot": "" },
+  "Zorin OS+GNOME": {
+    "name": "<b>Zorin OS</b> Core",
+    "screenshot": "zorinoscore.webp"
+  },
+  "Zorin OS+XFCE": {
+    "name": "<b>Zorin OS</b> Lite",
+    "screenshot": "zorinoslite.webp"
+  },
+  "OpenSUSE microOS+GNOME": {
+    "name": "<b>Aeon</b> Desktop",
+    "screenshot": "aeon.webp",
+    "icon": "aeon.webp"
+  },
+  "Linux Mint+Cinnamon": {
+    "name": "<b>Linux Mint</b> Cinnamon Edition",
+    "screenshot": ""
+  },
+  "Linux Mint+XFCE": {
+    "name": "<b>Linux Mint</b> XFCE Edition",
+    "screenshot": "mintxfce.webp"
+  },
+  "Linux Mint+MATE": {
+    "name": "<b>Linux Mint</b> MATE Edition",
+    "screenshot": "mintmate.webp"
+  },
+  "Fedora+KDE": {
+    "name": "<b>Fedora</b> KDE Plasma Desktop",
+    "screenshot": ""
+  },
+  "Garuda+KDE": {
+    "name": "<b>Garuda</b> Dr460nized",
+    "screenshot": "dragonized.webp"
+  },
+  "Omarchy+Hyprland": { "name": "<b>Omarchy</b>", "screenshot": "omarchy.webp" }
+}

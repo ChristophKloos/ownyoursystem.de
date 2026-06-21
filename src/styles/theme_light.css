@@ -1,0 +1,40 @@
+:root {
+    --bg-backdrop: #fffef5;
+    --bg-backdrop-alt: transparent;
+    --bg-cards: #ffffff;
+    --bg-alt: #edeef0;
+    --bg-cards-dark: #2a2a2e;
+    --bg-alt-dark: #333338;
+    --bg-pop: #60a5fa;
+    --bg-translucent: rgba(255, 254, 245, 0.7);
+    --bg-translucent-alt: rgba(255, 255, 255, 0.7);
+    --text-dark: #000000;
+    --text-muted: #2a2a2e;
+    --text-white: #d4d4d8;
+
+    --shadow-soft:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --shadow-hard:
+        0 1px 3px rgba(0, 0, 0, 0.03), 0 4px 12px rgba(0, 0, 0, 0.04);
+    --shadow-hard-hover:
+        0 4px 8px rgba(0, 0, 0, 0.04), 0 12px 24px rgba(0, 0, 0, 0.06);
+    --shadow-big: 0px 14px 15px -13px rgba(0, 0, 0, 0.14);
+
+    /* Radius */
+    --radius-lg: 32px;
+    --radius-md: 16px;
+    --radius-sm: 8px;
+    --radius-xs: 4px;
+
+    /* Font Sizes */
+    --font-xs: 13.111px;
+    --font-sm: 15.112px;
+    --font-md: 17.5px;
+    --font-lg: 26.6px;
+    --font-xl: 47.1px;
+
+    --outline-strong: 1px solid rgba(0, 0, 0, 0.4);
+    --outline-weak: 1px solid rgba(0, 0, 0, 0.1);
+
+    interpolate-size: allow-keywords;
+}

@@ -11,11 +11,15 @@
     "ship": "npm run build && npm run deploy && git add . && git commit -m \"Update & Deploy\" && git push"
   },
   "dependencies": {
-    "astro": "^5.16.0",
-    "basic-ftp": "^5.0.5"
+    "@astrojs/svelte": "^8.0.0",
+    "astro": "^6.4.8",
+    "basic-ftp": "^5.0.5",
+    "chart.js": "^4.5.1",
+    "svelte": "^5.56.3",
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
     "dotenv": "^17.2.3",
-    "ftp-deploy": "^2.4.7"
+    "ftp-deploy": "^2.4.3"
   }
 }
