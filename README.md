@@ -1,5 +1,5 @@
 <img width="1873" height="1125" alt="image" src="https://github.com/user-attachments/assets/7e52e81e-ebe6-4f0c-bb0a-0397af153e6f" />
-<img width="750" height="1148" alt="image" src="https://github.com/user-attachments/assets/5eb0d9d6-3af6-4595-adf3-2ab26989a6f0" />
+
 
 Linux Distro Picker in the making. Feel free to contribute or fork if you feel like improving on it.
 
