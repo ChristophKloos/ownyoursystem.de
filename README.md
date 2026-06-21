@@ -1,7 +1,7 @@
 <img width="1877" height="1148" alt="image" src="https://github.com/user-attachments/assets/667c8c45-6283-4811-b634-322c5392b597" />
 
 
-
+Current Version is always hosted at https://distro.ownyoursystem.de/
 
 
 Linux Distro Picker in the making. Feel free to contribute or fork if you feel like improving on it.
