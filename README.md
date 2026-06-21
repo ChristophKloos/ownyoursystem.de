@@ -1,4 +1,5 @@
-<img width="1873" height="1125" alt="image" src="https://github.com/user-attachments/assets/7e52e81e-ebe6-4f0c-bb0a-0397af153e6f" />
+<img width="1854" height="1153" alt="image" src="https://github.com/user-attachments/assets/0df28d62-3d88-4447-9139-018b8866a850" />
+
 
 
 Linux Distro Picker in the making. Feel free to contribute or fork if you feel like improving on it.
