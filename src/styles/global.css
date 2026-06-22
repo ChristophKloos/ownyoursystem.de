@@ -160,7 +160,7 @@ a {
     color: var(--text-muted);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-hard);
-    border: 1px solid rgba(0, 0, 0, 0.4);
+    border: var(--outline-strong);
     padding: 24px 24px;
     background-position: -64px -64px !important;
 }
@@ -168,6 +168,7 @@ a {
 .whitebox.active {
     border: 1px solid var(--bg-pop) !important;
     background-position: 0px 0px !important;
+    box-shadow: var(--shadow-glow);
 }
 
 /*progress bars*/

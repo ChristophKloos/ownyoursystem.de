@@ -58,6 +58,13 @@
     gap: 16px;
     width: 100%;
     margin-top: 128px;
+    padding: 0px 16px;
+}
+
+.result-card:first-child{
+    border: 1px solid var(--bg-pop) !important;
+    box-shadow: var(--shadow-glow);
+ 
 }
 .result-card {
     width: 100%;

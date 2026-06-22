@@ -19,6 +19,7 @@
     --shadow-hard-hover:
         0 4px 8px rgba(0, 0, 0, 0.04), 0 12px 24px rgba(0, 0, 0, 0.06);
     --shadow-big: 0px 14px 15px -13px rgba(0, 0, 0, 0.14);
+    --shadow-glow: 0px 0px 8px 0px color-mix(in srgb, var(--bg-pop) 30%, transparent);
 
     /* Radius */
     --radius-lg: 32px;
