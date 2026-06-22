@@ -16,7 +16,14 @@
     #logo,
     .distro-icon,
     .tagimage,
-    .chart-container, .sidebaritem img, .arrow-icon, .small-icon, #sidebarbtn {
+    .chart-container, .sidebaritem img, .arrow-icon, .small-icon, #sidebarbtn, .placeholder-icon {
         filter: invert(1);
+    }
+    .sidebaritem:hover{
+        background-color: var(--bg-translucent-alt)!important;
+    }
+     .sidebaritem{
+        background-color: var(--bg-translucent)!important;
+        border:var(--outline-strong)
     }
 }
