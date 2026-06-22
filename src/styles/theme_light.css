@@ -36,5 +36,9 @@
     --outline-strong: 1px solid rgba(0, 0, 0, 0.4);
     --outline-weak: 1px solid rgba(0, 0, 0, 0.1);
 
+    /* Transitions */
+    --transition-snappy: .2s cubic-bezier(.08,.52,.52,1);
+    --transition-smooth: .8s cubic-bezier(.08,.52,.52,1);
+
     interpolate-size: allow-keywords;
 }

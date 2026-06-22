@@ -1,6 +1,7 @@
 <script>
     import { flip } from "svelte/animate";
     import { fade, slide } from "svelte/transition";
+    import { baseTransition } from "../scripts/transitionConfig.js";
     import RadarChart from "./RadarChart.svelte";
 
     export let results;
@@ -138,8 +139,8 @@
             class="result-card whitebox"
             on:click={() => toggleCard(res.uid)}
             role="button"
-            animate:flip={{ duration: 400 }}
-            in:fade={{ duration: 300 }}
+            animate:flip={baseTransition}
+            in:fade={baseTransition}
         >
             <div class="result-header">
                 {#if res.displayIcon}
@@ -173,7 +174,7 @@
             {#if expandedCards[res.uid]}
                 <div
                     class="stats-container"
-                    transition:slide={{ duration: 200 }}
+                   transition:slide={baseTransition}
                     on:click|stopPropagation
                 >
                     {#if res.description}

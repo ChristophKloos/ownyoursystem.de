@@ -16,7 +16,8 @@
     #start-btn {
         background: var(--bg-pop);
         color: var(--bg-backdrop);
-        box-shadow: var(--shadow-hard);
+          box-shadow: var(--shadow-hard);
+         transition: var(--transition-snappy);
         border: none;
         padding: 12px 32px;
         border-radius: var(--radius-md);
@@ -24,10 +25,13 @@
         cursor: pointer;
         font-weight: 600;
         font-size: var(--font-sm);
+        border: var(--outline-weak);
     }
 
     #start-btn:hover {
         box-shadow: var(--shadow-hard-hover);
+        transform: translateY(-2px);
+
     }
 
     .radar {

@@ -6,6 +6,7 @@
     import Results from "./Results.svelte";
     import AnswersOverview from "./AnswersOverview.svelte";
     import { fly, fade } from "svelte/transition";
+    import { baseTransition } from "../scripts/transitionConfig.js";
     
     import { 
         sheetY, 
@@ -28,6 +29,7 @@
 
     let step = "start";
     let direction = "forward";
+    let mounted = false;
 
     $: liveResults =
         Object.keys(state.answers).length > 0
@@ -40,6 +42,7 @@
             : [];
 
     onMount(async () => {
+        mounted = true;
         const data = await fetchData();
         state = { ...state, ...data };
     });
@@ -78,19 +81,21 @@
             <img src="/img/radar.webp" class="radar" alt="Radar Icon" />
             <h1>Distro Picker</h1>
         </div>
-        <div class="startpage whitebox" in:fly={{ y: -20, duration: 800 }}>
-            <p>
-                Linux is all about choice, but finding the right start can be
-                overwhelming. This <strong>community project</strong>
-                helps you navigate the ecosystem by matching your workflow with the
-                right desktop environment and distribution.<br /><br />
-                It’s a quick 13-question journey.
-                <strong>Privacy-first, no tracking, and no ads</strong>. Just a
-                simple tool to help you discover a setup that feels like home.<br />
-                Keep in mind that the weights are still being optimized so accuracy might vary.
-            </p>
-            <button on:click={startQuiz} id="start-btn">Start</button>
-        </div>
+        {#if mounted}
+            <div class="startpage whitebox" in:fly={{ y: -20, ...baseTransition }}>
+                <p>
+                    Linux is all about choice, but finding the right start can be
+                    overwhelming. This <strong>community project</strong>
+                    helps you navigate the ecosystem by matching your workflow with the
+                    right desktop environment and distribution.<br /><br />
+                    It’s a quick 13-question journey.
+                    <strong>Privacy-first, no tracking, and no ads</strong>. Just a
+                    simple tool to help you discover a setup that feels like home.<br />
+                    Keep in mind that the weights are still being optimized so accuracy might vary.
+                </p>
+                <button on:click={startQuiz} id="start-btn">Start</button>
+            </div>
+        {/if}
     </div>
 {:else}
     <div class="app-layout">
@@ -107,7 +112,7 @@
                         {direction}
                     />
                 {:else if step === "overview"}
-                    <div in:fly={{ y: 50, duration: 400 }}>
+                    <div in:fly={{ y: 50, ...baseTransition }}>
                         <AnswersOverview
                             questions={state.questions}
                             answers={state.answers}
@@ -128,16 +133,13 @@
             on:click={handleSidebarClick}
             role="presentation"
         >
-          <div
-                class="sheet-handle"
-                on:pointerdown={handlePointerDown}
-            >
+            <div class="sheet-handle" on:pointerdown={handlePointerDown}>
                 <div class="pill"></div>
             </div>
 
             <div class="sidebar-content">
                 {#if liveResults.length > 0}
-                    <div in:fly={{ y: 50, duration: 200 }}>
+                    <div in:fly={{ y: 50, ...baseTransition }}>
                         <Results
                             results={liveResults}
                             questions={state.questions}
