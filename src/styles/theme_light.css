@@ -36,6 +36,7 @@
 
     --outline-strong: 1px solid rgba(0, 0, 0, 0.4);
     --outline-weak: 1px solid rgba(0, 0, 0, 0.1);
+    --outline-pop: 1px solid color-mix(in srgb, var(--bg-pop) 90%, transparent);
 
     /* Transitions */
     --transition-snappy: .2s cubic-bezier(.08,.52,.52,1);

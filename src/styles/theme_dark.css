@@ -12,6 +12,9 @@
         --text-dark: #d4d4d8;
         --text-muted: #d4d4d8;
         --text-white: #d4d4d8;
+    --outline-strong: 1px solid rgba(125, 123, 129, 0.4);
+    --outline-weak: 1px solid rgba(125, 123, 129, 0.1);
+        --outline-pop: 1px solid color-mix(in srgb, var(--bg-pop) 50%, transparent);
     }
     #logo,
     .distro-icon,

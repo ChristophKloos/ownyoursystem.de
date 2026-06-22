@@ -166,7 +166,7 @@ a {
 }
 
 .whitebox.active {
-    border: 1px solid var(--bg-pop) !important;
+     border: var(--outline-pop) !important;
     background-position: 0px 0px !important;
     box-shadow: var(--shadow-glow);
 }

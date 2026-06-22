@@ -1,10 +1,10 @@
 import { writable, get } from "svelte/store";
 
-export const sheetY = writable(85);
+export const sheetY = writable(78);
 export const isDragging = writable(false);
 
 let startClientY = 0;
-let startSheetY = 85;
+let startSheetY = 78;
 let ignoreClick = false;
 
 export function handlePointerDown(e) {
