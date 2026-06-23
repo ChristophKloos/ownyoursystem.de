@@ -54,7 +54,7 @@
     padding: 8px 10px;
     margin-top: 28px;
     border-radius: var(--radius-sm);
-    border: var(--outline-weak);
+    border: var(--outline-strong);
 }
 .warn-icon {
     width: 16px;

@@ -9,7 +9,7 @@
         --bg-pop: #60a5fa;
         --bg-translucent: rgba(35, 21, 36, 0.7);
         --bg-translucent-alt: rgba(42, 42, 46, 0.7);
-        --text-dark: #d4d4d8;
+        --text-dark: #ffffff;
         --text-muted: #d4d4d8;
         --text-white: #d4d4d8;
     --outline-strong: 1px solid rgba(125, 123, 129, 0.4);
@@ -19,7 +19,7 @@
     #logo,
     .distro-icon,
     .tagimage,
-    .chart-container, .sidebaritem img, .arrow-icon, .small-icon, #sidebarbtn, .placeholder-icon {
+    .chart-container, .sidebaritem img, .arrow-icon, .small-icon, #sidebarbtn, .placeholder-icon, .warn-icon {
         filter: invert(1);
     }
     .sidebaritem:hover{
