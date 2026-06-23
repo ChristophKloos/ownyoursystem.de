@@ -91,8 +91,9 @@
                     It’s a quick 13-question journey.
                     <strong>Privacy-first, no tracking, and no ads</strong>. Just a
                     simple tool to help you discover a setup that feels like home.<br />
-                    Keep in mind that the weights are still being optimized so accuracy might vary.
-                </p>
+                    <span class="attention">
+        <img src="/ui/warn.svg" class="warn-icon" alt="attention" /> Keep in mind that the weights are still being optimized so accuracy might vary.
+    </span>
                 <button on:click={startQuiz} id="start-btn">Start</button>
             </div>
         {/if}

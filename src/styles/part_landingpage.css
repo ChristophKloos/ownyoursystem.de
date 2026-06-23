@@ -6,6 +6,7 @@
         text-align: center;
         padding: 55px 64px 0 64px !important;
         margin-top: 0;
+        margin: 0 32px;
     }
 
     .startpage p {
@@ -35,12 +36,30 @@
     }
 
     .radar {
-        width: 48px !important;
-        height: 48px !important;
-        margin-bottom: 24px;
+        width: 64px !important;
+        height: 64px !important;
+        margin-bottom: 16px;
         margin-top: 24px;
         filter: drop-shadow(0rem 0.35rem 1rem rgba(0, 0, 0, 0.1)) !important;
         animation: fadeInOut 1s forwards ease 0.5s;
     }
 
    
+.attention {
+    display: inline-flex;
+    align-items: center;
+    text-align: left;
+    gap: 8px;
+    background-color: var(--bg-alt);
+    padding: 8px 10px;
+    margin-top: 28px;
+    border-radius: var(--radius-sm);
+    border: var(--outline-weak);
+}
+.warn-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    margin-top: -1px;
+    opacity: 0.8;
+}

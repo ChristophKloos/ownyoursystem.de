@@ -186,3 +186,10 @@ a {
     transition: var(--transition-smooth);
     border-radius: 32px;
 }
+
+.attention{
+    background-color: var(--bg-alt);
+    padding:8px;
+    margin-top:8px;
+    border-radius: var(--radius-sm);
+}
