@@ -10,6 +10,15 @@ let startClientY = 0;
 let startSheetY = SHEET_CLOSED_Y;
 let ignoreClick = false;
 
+export function triggerBounce() {
+    setTimeout(() => {
+        sheetY.set(SHEET_CLOSED_Y - 4);
+        setTimeout(() => {
+            sheetY.set(SHEET_CLOSED_Y);
+        }, 300);
+    }, 800);
+}
+
 export function handlePointerDown(e) {
     isDragging.set(true);
     startClientY = e.clientY;

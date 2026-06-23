@@ -14,7 +14,8 @@
         handlePointerDown, 
         handlePointerMove, 
         handlePointerUp, 
-        handleSidebarClick 
+        handleSidebarClick,
+        triggerBounce
     } from "../scripts/slide.js";
 
     let state = {
@@ -49,6 +50,7 @@
 
     function startQuiz() {
         step = "quiz";
+        triggerBounce();
     }
 
     function handleAnswer(qId, value) {
@@ -68,7 +70,6 @@
         state.currentIndex = idx;
     }
 </script>
-
 <svelte:window
     on:pointermove={handlePointerMove}
     on:pointerup={handlePointerUp}

@@ -1,13 +1,18 @@
-@import url("/css/switzer.css");
+@import url("/css/atkinson.css");
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Switzer-Variable", sans-serif;
+    font-family: sans-serif, 'Atkinson Hyperlegible Next', serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-optical-sizing: auto;
     -webkit-tap-highlight-color: transparent;
     animation-timing-function: cubic-bezier(0.3, 0, 0.8, 0.15);
+    letter-spacing: -0.2px;
+    
 }
 
 main {
@@ -71,7 +76,7 @@ p {
 }
 
 b {
-    font-weight: 800 !important;
+    font-weight: 700 !important;
 }
 sub {
     font-size: var(--font-sm);
@@ -185,11 +190,4 @@ a {
     background: var(--bg-pop);
     transition: var(--transition-smooth);
     border-radius: 32px;
-}
-
-.attention{
-    background-color: var(--bg-alt);
-    padding:8px;
-    margin-top:8px;
-    border-radius: var(--radius-sm);
 }
