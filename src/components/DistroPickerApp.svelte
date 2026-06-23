@@ -50,10 +50,13 @@
 
     function startQuiz() {
         step = "quiz";
-        triggerBounce();
     }
 
     function handleAnswer(qId, value) {
+        if (state.currentIndex === 0) {
+            triggerBounce();
+        }
+
         state.answers[qId] = value;
         state.answers = { ...state.answers };
 
@@ -70,6 +73,7 @@
         state.currentIndex = idx;
     }
 </script>
+
 <svelte:window
     on:pointermove={handlePointerMove}
     on:pointerup={handlePointerUp}
@@ -93,8 +97,9 @@
                     <strong>Privacy-first, no tracking, and no ads</strong>. Just a
                     simple tool to help you discover a setup that feels like home.<br />
                     <span class="attention">
-        <img src="/ui/warn.svg" class="warn-icon" alt="attention" /> Keep in mind that the weights are still being optimized so accuracy might vary.
-    </span><br />
+                        <img src="/ui/warn.svg" class="warn-icon" alt="attention" /> Keep in mind that the weights are still being optimized so accuracy might vary.
+                    </span><br />
+                </p>
                 <button on:click={startQuiz} id="start-btn">Start</button>
             </div>
         {/if}
