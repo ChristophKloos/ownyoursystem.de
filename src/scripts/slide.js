@@ -1,10 +1,13 @@
 import { writable, get } from "svelte/store";
 
-export const sheetY = writable(78);
+export const SHEET_CLOSED_Y = 78;
+export const SNAP_THRESHOLD = 20;
+
+export const sheetY = writable(SHEET_CLOSED_Y);
 export const isDragging = writable(false);
 
 let startClientY = 0;
-let startSheetY = 78;
+let startSheetY = SHEET_CLOSED_Y;
 let ignoreClick = false;
 
 export function handlePointerDown(e) {
@@ -37,15 +40,15 @@ export function handlePointerUp(e) {
     }, 50);
 
     if (dragDistanceAbs < 5) {
-        sheetY.set(startSheetY > 50 ? 5 : 85);
+        sheetY.set(startSheetY > 50 ? 5 : SHEET_CLOSED_Y);
         return;
     }
 
     const currentY = get(sheetY);
     if (startSheetY > 50) {
-        sheetY.set(currentY < 70 ? 5 : 85);
+        sheetY.set(currentY < 70 ? 5 : SHEET_CLOSED_Y);
     } else {
-        sheetY.set(currentY > 20 ? 85 : 5);
+        sheetY.set(currentY > SNAP_THRESHOLD ? SHEET_CLOSED_Y : 5);
     }
 }
 
