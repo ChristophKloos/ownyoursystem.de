@@ -93,7 +93,7 @@
                     simple tool to help you discover a setup that feels like home.<br />
                     <span class="attention">
         <img src="/ui/warn.svg" class="warn-icon" alt="attention" /> Keep in mind that the weights are still being optimized so accuracy might vary.
-    </span>
+    </span><br />
                 <button on:click={startQuiz} id="start-btn">Start</button>
             </div>
         {/if}
