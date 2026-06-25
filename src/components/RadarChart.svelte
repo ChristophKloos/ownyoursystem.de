@@ -21,7 +21,7 @@
         Tooltip,
     );
 
-    Chart.defaults.font.family = "'Switzer-Variable', 'Switzer', sans-serif";
+    Chart.defaults.font.family = "'Atkinson Hyperlegible Next', sans-serif";
 
     export let labels = [];
     export let datasets = [];

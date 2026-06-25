@@ -51,7 +51,7 @@
 <div class="overview-list">
     {#each questions as q}
         <div class="whitebox overview-item">
-            <div class="item-top-row">
+            <div class="item-header">
                 <div class="question-tag">
                     <img
                         src="/ui/question/{q.icon}"
@@ -60,21 +60,20 @@
                     />
                     <span class="title-text">{q.title}</span>
                 </div>
-
-                <input
-                    type="range"
-                    class="slider"
-                    min={getMin(q.options)}
-                    max={getMax(q.options)}
-                    step="0.01"
-                    bind:value={localValues[q.id]}
-                    on:change={(e) => updateGlobal(q.id, e.target.value)}
-                />
+                <p class="answer-text">
+                    {@html getClosestText(q.options, localValues[q.id])}
+                </p>
             </div>
 
-            <p class="answer-text">
-                {@html getClosestText(q.options, localValues[q.id])}
-            </p>
+            <input
+                type="range"
+                class="slider"
+                min={getMin(q.options)}
+                max={getMax(q.options)}
+                step="0.01"
+                bind:value={localValues[q.id]}
+                on:change={(e) => updateGlobal(q.id, e.target.value)}
+            />
         </div>
     {/each}
 </div>
