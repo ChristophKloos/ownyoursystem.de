@@ -1,32 +1,41 @@
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg-backdrop: #231524;
+        --bg-backdrop: oklch(0.206 0.038 322.4);
         --bg-backdrop-alt: transparent;
-        --bg-cards: #27272a;
-        --bg-alt: #333338;
-        --bg-cards-dark: #2a2a2e;
-        --bg-alt-dark: #333338;
-        --bg-pop: #60a5fa;
-        --bg-translucent: rgba(35, 21, 36, 0.7);
-        --bg-translucent-alt: rgba(42, 42, 46, 0.7);
-        --text-dark: #ffffff;
-        --text-muted: #d4d4d8;
-        --text-white: #d4d4d8;
-    --outline-strong: 1px solid rgba(125, 123, 129, 0.4);
-    --outline-weak: 1px solid rgba(125, 123, 129, 0.1);
-        --outline-pop: 1px solid color-mix(in srgb, var(--bg-pop) 50%, transparent);
+        --bg-cards: oklch(0.278 0.006 281);
+        --bg-alt: oklch(0.321 0.006 281);
+        --bg-cards-dark: oklch(0.283 0.006 281);
+        --bg-alt-dark: oklch(0.321 0.006 281);
+        --bg-pop: oklch(0.718 0.13 252);
+        --bg-translucent: oklch(0.206 0.038 322.4 / 0.7);
+        --bg-translucent-alt: oklch(0.283 0.006 281 / 0.7);
+        --text-dark: oklch(1 0 0);
+        --text-muted: oklch(0.864 0.004 281);
+        --text-white: oklch(0.864 0.004 281);
+        --outline-strong: 1px solid oklch(0.56 0.007 300 / 0.4);
+        --outline-weak: 1px solid oklch(0.56 0.007 300 / 0.1);
+        --outline-pop: 1px solid color-mix(in oklch, var(--bg-pop) 50%, transparent);
     }
+
     #logo,
     .distro-icon,
     .tagimage,
-    .chart-container, .sidebaritem img, .arrow-icon, .small-icon, #sidebarbtn, .placeholder-icon, .warn-icon {
+    .chart-container,
+    .sidebaritem img,
+    .arrow-icon,
+    .small-icon,
+    #sidebarbtn,
+    .placeholder-icon,
+    .warn-icon {
         filter: invert(1);
     }
-    .sidebaritem:hover{
-        background-color: var(--bg-translucent-alt)!important;
+
+    .sidebaritem:hover {
+        background-color: var(--bg-translucent-alt) !important;
     }
-     .sidebaritem{
-        background-color: var(--bg-translucent)!important;
-        border:var(--outline-strong)
+
+    .sidebaritem {
+        background-color: var(--bg-translucent) !important;
+        border: var(--outline-strong);
     }
 }
