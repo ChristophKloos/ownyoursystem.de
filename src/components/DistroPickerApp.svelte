@@ -170,3 +170,53 @@
         </div>
     </div>
 {/if}
+
+<style>
+        /*not actually the sidebar, it's the result page*/
+.sidebar {
+    width: 100%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-backdrop-alt);
+    overflow-y: auto;
+    display: block;
+    scrollbar-width: none;
+}
+.sidebar-content {
+    display: block;
+    min-height: 100%;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar::after {
+    content: "";
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, rgba(52, 52, 52, 0.04));
+    pointer-events: none;
+    z-index: 100;
+}
+/*placeholder icon that shows before resutls show*/
+.sidebar-placeholder {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.2;
+}
+
+.placeholder-icon {
+    width: 64px;
+    height: auto;
+    margin-bottom: 16px;
+}
+</style>
