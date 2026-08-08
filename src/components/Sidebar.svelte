@@ -205,48 +205,6 @@ h4 {
     margin-top: auto;
 }
 
-.toggle-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 50px;
-    color: var(--text-muted);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: color 0.2s;
-    border-radius: var(--radius-md);
-    margin-right: 8px;
-}
-
-.toggle-btn:hover {
-    background-color: var(--bg-alt);
-    color: var(--text-dark);
-}
-
-.toggle-btn::after {
-    content: "";
-    border: solid var(--text-dark);
-    border-width: 0 2px 2px 0;
-    padding: 3px;
-    transform: rotate(45deg);
-    transition: transform 0.3s ease;
-    margin-bottom: 2px;
-}
-
-.nav-group.active .toggle-btn::after {
-    transform: rotate(-135deg);
-}
-
-.sub-menu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-out;
-}
-
-.nav-group.active .sub-menu {
-    max-height: 300px;
-}
 
 .item-text .title {
     color: var(--text-dark);
