@@ -1,17 +1,9 @@
 ---
 const { title = "Distropicker" } = Astro.props;
-import Header from "../components/Header.astro";
-import Sidebar from "../components/Sidebar.astro";
+
 
 import "../styles/global.css";
-import "../styles/theme_light.css";
-import "../styles/theme_dark.css";
-import "../styles/part_sidebar.css";
-import "../styles/part_landingpage.css";
-import "../styles/part_question.css";
-import "../styles/part_results.css";
-import "../styles/part_finetune.css";
-import "../styles/part_header.css";
+import "../styles/variables.css";
 import "../styles/mobile.css";
 ---
 
@@ -42,8 +34,7 @@ import "../styles/mobile.css";
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
 
     <body>
-        <Sidebar />
-        <Header />
+       
 
         <main>
             <slot />

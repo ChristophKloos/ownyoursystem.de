@@ -3,6 +3,8 @@
 
 Linux Distro Picker in the making. Feel free to contribute or fork if you feel like improving on it.
 
+It's currently transitioning from Astro.js & Javascript to Svelte & Typescript. LLMs were used for prototyping, no LLM code was committed into the repo.
+
 Current Version is always hosted at https://distro.ownyoursystem.de/
 
 

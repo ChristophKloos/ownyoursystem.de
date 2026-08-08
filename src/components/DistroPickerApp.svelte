@@ -1,11 +1,14 @@
-<script>
+<script lang="ts">
     import { onMount } from "svelte";
-    import { fetchData } from "../scripts/dp_api.js";
+    import { fetchData } from "../scripts/api.ts";
     import { processDistroPicker } from "../scripts/logic.ts"; 
     import Question from "./Question.svelte";
     import Results from "./Results.svelte";
     import AnswersOverview from "./AnswersOverview.svelte";
-    import { fly, fade } from "svelte/transition";
+    import Header from "./Header.svelte";
+    import NavSidebar from "./Sidebar.svelte"; 
+    import LandingPage from "./LandingPage.svelte";
+    import { fly } from "svelte/transition";
     import { baseTransition } from "../scripts/transitionConfig.js";
     
     import { 
@@ -16,7 +19,7 @@
         handlePointerUp, 
         handleSidebarClick,
         triggerBounce
-    } from "../scripts/slide.js";
+    } from "../scripts/slide.ts";
 
     let state = {
         questions: [],
@@ -32,6 +35,7 @@
     let step = "start";
     let direction = "forward";
     let mounted = false;
+    let isNavSidebarOpen = false;
 
     $: liveResults =
         Object.keys(state.answers).length > 0
@@ -43,7 +47,7 @@
               )
             : [];
 
-  onMount(async () => {
+    onMount(async () => {
         const data = await fetchData();
         
         const rules = {};
@@ -63,6 +67,7 @@
 
         mounted = true;
     });
+
     function startQuiz() {
         step = "quiz";
     }
@@ -95,30 +100,11 @@
     on:pointercancel={handlePointerUp}
 />
 
+<NavSidebar bind:isOpen={isNavSidebarOpen} />
+<Header on:openSidebar={() => (isNavSidebarOpen = true)} />
+
 {#if step === "start"}
-    <div class="quiz-container start-container" id="quiz-container">
-        <div class="frage darkbox">
-            <img src="/img/radar.webp" class="radar" alt="Radar Icon" />
-            <h1>Distro Picker</h1>
-        </div>
-        {#if mounted}
-            <div class="startpage whitebox" in:fly={{ y: -20, ...baseTransition }}>
-                <p>
-                    Linux is all about choice, but finding the right start can be
-                    overwhelming. This <strong>community project</strong>
-                    helps you navigate the ecosystem by matching your workflow with the
-                    right desktop environment and distribution.<br /><br />
-                    It’s a quick 13-question journey.
-                    <strong>Privacy-first, no tracking, and no ads</strong>. Just a
-                    simple tool to help you discover a setup that feels like home.<br />
-                    <span class="attention">
-                        <img src="/ui/warn.svg" class="warn-icon" alt="attention" /> Keep in mind that the weights are still being optimized so accuracy might vary.
-                    </span><br />
-                </p>
-                <button on:click={startQuiz} id="start-btn">Start</button>
-            </div>
-        {/if}
-    </div>
+    <LandingPage {mounted} on:start={startQuiz} />
 {:else}
     <div class="app-layout">
         <div class="main-content">
