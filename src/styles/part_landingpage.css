@@ -17,7 +17,7 @@
     #start-btn {
         background: var(--bg-pop);
         color: var(--bg-backdrop);
-          box-shadow: var(--shadow-hard);
+          box-shadow: var(--shadow-harder);
          transition: var(--transition-snappy);
         border: none;
         padding: 12px 32px;
@@ -30,8 +30,8 @@
     }
 
     #start-btn:hover {
-        box-shadow: var(--shadow-hard-hover);
-        transform: translateY(-2px);
+        box-shadow: var(--shadow-hard);
+        transform: translateY(-1.5px);
 
     }
 

@@ -9,53 +9,62 @@
     export let onNav;
     export let direction;
 
-    $: progressWidth = (index / total) * 100;
+    $: progressWidth = total > 0 ? (index / total) * 100 : 0;
     $: flyX = direction === "forward" ? 30 : -30;
+
+    function formatValue(val) {
+        if (typeof val === 'boolean') return val;
+        if (val === 'true') return true;
+        if (val === 'false') return false;
+        return Number(val);
+    }
 </script>
 
-<div class="part">
-    <div class="frage darkbox">
-        <img src="/ui/question/{q.icon}" alt="" class="question-icon" />
-        <p>{@html q.question}</p>
+{#if q}
+    <div class="part">
+        <div class="frage darkbox">
+            <img src="/ui/question/{q.icon}" alt="" class="question-icon" />
+            <p>{@html q.question}</p>
 
-        <div class="progress">
-            <div class="progressinner" style="width: {progressWidth}%"></div>
-        </div>
+            <div class="progress">
+                <div class="progressinner" style="width: {progressWidth}%"></div>
+            </div>
 
-        {#if index > 0}
-            <button class="nav-btn back-btn" on:click={() => onNav(index - 1)}>
-                <img src="/ui/arrow.svg" alt="back" />
-            </button>
-        {/if}
+            {#if index > 0}
+                <button class="nav-btn back-btn" on:click={() => onNav(index - 1)}>
+                    <img src="/ui/arrow.svg" alt="back" />
+                </button>
+            {/if}
 
-        {#if index < total - 1}
-            <button
-                class="nav-btn forward-btn"
-                on:click={() => onNav(index + 1)}
-            >
-                <img src="/ui/arrow.svg" alt="forward" />
-            </button>
-        {/if}
-    </div>
-
-    {#key q.id}
-        <div class="choice" in:fly={{ x: flyX, duration: 300, opacity: 0 }}>
-            {#each q.options as opt}
-                <label
-                    class="whitebox"
-                    class:active={answers[q.id] === parseInt(opt.value)}
-                    on:mousedown|preventDefault={() =>
-                        onAnswer(q.id, parseInt(opt.value))}
+            {#if index < total - 1}
+                <button
+                    class="nav-btn forward-btn"
+                    on:click={() => onNav(index + 1)}
                 >
-                    <input
-                        type="radio"
-                        name={q.id}
-                        value={opt.value}
-                        checked={answers[q.id] === parseInt(opt.value)}
-                    />
-                    {@html opt.text}
-                </label>
-            {/each}
+                    <img src="/ui/arrow.svg" alt="forward" />
+                </button>
+            {/if}
         </div>
-    {/key}
-</div>
+
+        {#key q.id}
+            <div class="choice" in:fly={{ x: flyX, duration: 300, opacity: 0 }}>
+                {#each q.options as opt}
+                    <label
+                        class="whitebox"
+                        class:active={answers[q.id] === formatValue(opt.value)}
+                        on:mousedown|preventDefault={() =>
+                            onAnswer(q.id, formatValue(opt.value))}
+                    >
+                        <input
+                            type="radio"
+                            name={q.id}
+                            value={opt.value}
+                            checked={answers[q.id] === formatValue(opt.value)}
+                        />
+                        {@html opt.text}
+                    </label>
+                {/each}
+            </div>
+        {/key}
+    </div>
+{/if}

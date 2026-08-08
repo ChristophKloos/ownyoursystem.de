@@ -13,6 +13,7 @@
     --text-white: oklch(0.864 0.004 281);
     --shadow-soft: 0 20px 25px -5px oklch(0 0 0 / 0.1), 0 8px 10px -6px oklch(0 0 0 / 0.1);
     --shadow-hard: 0 1px 3px oklch(0 0 0 / 0.03), 0 4px 12px oklch(0 0 0 / 0.04);
+    --shadow-harder: 0 2px 2px oklch(0 0 0 / 0.01), 0 2px 6px oklch(0 0 0 / 0.02);
     --shadow-hard-hover: 0 4px 8px oklch(0 0 0 / 0.04), 0 12px 24px oklch(0 0 0 / 0.06);
     --shadow-big: 0px 14px 15px -13px oklch(0 0 0 / 0.14);
     --shadow-glow: 0px 0px 8px 0px color-mix(in oklch, var(--bg-pop) 30%, transparent);

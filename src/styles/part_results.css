@@ -58,7 +58,7 @@
     gap: 16px;
     width: 100%;
     margin-top: 128px;
-    padding: 0px 16px;
+    padding: 0px 0px!important;
 }
 
 .result-card:first-child{
@@ -335,4 +335,25 @@
     color: var(--text-dark);
     margin-top: 15px;
     font-size: var(--font-md);
+}
+
+
+.penalized{
+    opacity:0.5;
+}
+
+.hardware-warn{
+     
+    width: max-content;
+    max-width: 100%;
+    background-color: var(--bg-alt);
+    border-radius: var(--radius-sm);
+    padding: 6px 10px ;
+    margin-left:16px;
+    font-size: var(--font-xs);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+ 
+    outline: var(--outline-weak);
 }

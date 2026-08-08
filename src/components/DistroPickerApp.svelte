@@ -1,7 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import { fetchData } from "../scripts/dp_api.js";
-    import { calculateResults } from "../scripts/dp_engine.js";
+    import { processDistroPicker } from "../scripts/logic.ts"; 
     import Question from "./Question.svelte";
     import Results from "./Results.svelte";
     import AnswersOverview from "./AnswersOverview.svelte";
@@ -20,6 +20,7 @@
 
     let state = {
         questions: [],
+        rules: {}, 
         distros: [],
         desktops: [],
         nameMapping: {},
@@ -34,20 +35,34 @@
 
     $: liveResults =
         Object.keys(state.answers).length > 0
-            ? calculateResults(
+            ? processDistroPicker(
                   state.distros,
                   state.desktops,
                   state.answers,
-                  state.questions,
+                  state.rules 
               )
             : [];
 
-    onMount(async () => {
-        mounted = true;
+  onMount(async () => {
         const data = await fetchData();
-        state = { ...state, ...data };
-    });
+        
+        const rules = {};
+        data.questions.forEach(q => {
+            rules[q.id] = { type: q._ruleType, weight: q.weight };
+        });
 
+        state = { 
+            ...state, 
+            distros: data.distros,
+            desktops: data.desktops,
+            nameMapping: data.nameMapping,
+            tags: data.tags,
+            questions: data.questions,
+            rules: rules 
+        };
+
+        mounted = true;
+    });
     function startQuiz() {
         step = "quiz";
     }

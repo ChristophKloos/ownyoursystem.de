@@ -40,22 +40,7 @@
         }, 300);
     }
 
-    $: filtered = results.filter((res) => {
-        for (let i = 0; i < questions.length; i++) {
-            const q = questions[i];
-            if (!q.filter) continue;
-
-            const userVal = delayedAnswers[q.id];
-            if (userVal === undefined || userVal === null) continue;
-
-            if (userVal < (res.rawScore[q.id] || 0)) {
-                return false;
-            }
-        }
-        return true;
-    });
-
-    $: visibleResults = filtered.slice(0, shown).map((res) => {
+    $: visibleResults = (results || []).slice(0, shown).map((res) => {
         const key = `${res.distro}+${res.desktop}`;
         const mapping = nameMapping?.[key];
 
@@ -81,7 +66,7 @@
         let resTags = [];
         if (res.tags && Array.isArray(res.tags) && tags) {
             resTags = res.tags
-                .map((tId) => tags.find((x) => x.id === tId))
+                .map((tId) => (tags || []).find((x) => x.id === tId))
                 .filter(Boolean);
         }
 
@@ -89,24 +74,16 @@
             .replace(/<span.*<\/span>/, "")
             .replace(/<[^>]*>/g, "");
 
-        const chartLabels = questions.map((q) => q.title || q.id);
+        const chartQuestions = (questions || []).filter((q) => q._ruleType === "match");
+        const chartLabels = chartQuestions.map((q) => q.title || q.id);
 
-        const chartDatasets = [
-            {
-                label: cleanName,
-                data: questions.map((q) => res.rawScore[q.id] || 0),
-                backgroundColor: "rgba(23, 147, 209, 0.2)",
-                borderColor: "rgb(23, 147, 209)",
-                pointBackgroundColor: "rgb(23, 147, 209)",
-            },
-            {
-                label: "Your Answer",
-                data: questions.map((q) => delayedAnswers[q.id] ?? 2),
-                backgroundColor: "rgba(233, 84, 32, 0.2)",
-                borderColor: "rgb(233, 84, 32)",
-                pointBackgroundColor: "rgb(23, 147, 209)",
-            },
-        ];
+        const distroDataset = {
+            label: cleanName,
+            data: chartQuestions.map((q) => res.sysDetails?.[q.id] || 0),
+            backgroundColor: "rgba(23, 147, 209, 0.2)",
+            borderColor: "rgb(23, 147, 209)",
+            pointBackgroundColor: "rgb(23, 147, 209)",
+        };
 
         return {
             ...res,
@@ -117,12 +94,12 @@
             legendName: cleanName,
             uid: key,
             chartLabels,
-            chartDatasets,
+            chartQuestions,
+            distroDataset,
         };
     });
 
-    $: maxTotal =
-        filtered.length > 0 ? Math.max(...filtered.map((r) => r.total)) : 1;
+    $: maxTotal = results.length > 0 ? Math.max(results[0].totalScore, 1) : 1;
 
     function toggleCard(uid) {
         expandedCards[uid] = !expandedCards[uid];
@@ -137,6 +114,7 @@
     {#each visibleResults as res, index (res.uid)}
         <div
             class="result-card whitebox"
+            class:penalized={res.isPenalized}
             on:click={() => toggleCard(res.uid)}
             role="button"
             animate:flip={baseTransition}
@@ -152,8 +130,11 @@
                 {/if}
                 <p class="result-name">
                     {@html res.displayName}
-                    {#if index === 0}
+                    {#if index === 0 && !res.isPenalized}
                         <span class="best-match">Best Match</span>
+                    {/if}
+                    {#if res.isPenalized}
+                        <span class="hardware-warn">Punished</span>
                     {/if}
                 </p>
                 <img
@@ -167,14 +148,14 @@
             <div class="progress white">
                 <div
                     class="progressinner main-bar"
-                    style="width: {Math.pow(res.total / maxTotal, 8) * 100}%"
+                    style="width: {res.totalScore > 0 ? Math.pow(res.totalScore / maxTotal, 4) * 100 : 0}%"
                 ></div>
             </div>
 
             {#if expandedCards[res.uid]}
                 <div
                     class="stats-container"
-                   transition:slide={baseTransition}
+                    transition:slide={baseTransition}
                     on:click|stopPropagation
                 >
                     {#if res.description}
@@ -227,7 +208,16 @@
 
                     <RadarChart
                         labels={res.chartLabels}
-                        datasets={res.chartDatasets}
+                        datasets={[
+                            res.distroDataset,
+                            {
+                                label: "Your Answer",
+                                data: res.chartQuestions.map((q) => (delayedAnswers || {})[q.id] ?? 50),
+                                backgroundColor: "rgba(233, 84, 32, 0.2)",
+                                borderColor: "rgb(233, 84, 32)",
+                                pointBackgroundColor: "rgb(23, 147, 209)",
+                            }
+                        ]}
                     />
 
                     {#if res.link}

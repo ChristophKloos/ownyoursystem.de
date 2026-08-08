@@ -71,8 +71,8 @@
                 scales: {
                     r: {
                         min: 0,
-                        max: 3,
-                        ticks: { stepSize: 1 },
+                        max: 100,
+                        ticks: { stepSize: 25 },
                     },
                 },
             },

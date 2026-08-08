@@ -5,7 +5,7 @@ services:
     ports:
       - "4321:4321"
     volumes:
-      - .:/app
+      - .:/app:z
     command: >
       sh -c "corepack enable && 
              pnpm config set ignore-scripts false && 
