@@ -29,15 +29,25 @@
     let canvas;
     let chart;
 
+    function applyStyles(ds, i) {
+        const styledDs = { ...ds, data: [...ds.data] };
+        if (i === 0) {
+            styledDs.borderColor = "oklch(81.5% 0.137 163.1)";
+            styledDs.backgroundColor = "oklch(81.5% 0.137 163.1 / 0.2)";
+            styledDs.pointBackgroundColor = "oklch(81.5% 0.137 163.1)";
+        }
+        return styledDs;
+    }
+
     $: if (chart && datasets && labels) {
         chart.data.labels = labels;
         
-        datasets.forEach((newDs, i) => {
+        datasets.forEach((rawDs, i) => {
+            const newDs = applyStyles(rawDs, i);
             if (chart.data.datasets[i]) {
-                chart.data.datasets[i].data = [...newDs.data];
-                chart.data.datasets[i].label = newDs.label;
+                Object.assign(chart.data.datasets[i], newDs);
             } else {
-                chart.data.datasets[i] = { ...newDs, data: [...newDs.data] };
+                chart.data.datasets[i] = newDs;
             }
         });
 
@@ -49,7 +59,7 @@
             type: "radar",
             data: { 
                 labels, 
-                datasets: datasets.map(ds => ({ ...ds, data: [...ds.data] })) 
+                datasets: datasets.map(applyStyles)
             },
             options: {
                 responsive: true,
@@ -90,6 +100,6 @@
     .chart-container {
         position: relative;
         width: 100%;
-        height: 300px;
+        height: 220px;
     }
 </style>

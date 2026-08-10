@@ -272,8 +272,10 @@
 }
 
 .result-card:first-child{
-    border: var(--outline-pop) !important;
+ 
     box-shadow: var(--shadow-glow);
+  
+
  
 }
 .result-card {
@@ -284,6 +286,7 @@
     box-sizing: border-box;
     align-self: stretch;
     padding: 16px 24px !important;
+    transition: var(--transition-snappy);
 }
 
 .result-header {
