@@ -66,24 +66,24 @@
     #logo {
         cursor: pointer;
     }
-
-    .github-pill {
-        position: absolute;
-        right: 20px;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background-color: var(--bg-alt);
-        color: inherit;
-        text-decoration: none;
-        padding: 6px 14px;
-        border-radius: 50px;
-        font-size: 13px;
-        font-weight: 600;
-        border: var(--outline-weak);
-        transition: var(--transition-snappy);
-        color: var(--text-muted);
-    }
+.github-pill {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--bg-alt);
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: var(--text-weight-normal);
+    border: var(--outline-weak);
+    transition: var(--transition-snappy);
+}
 
     .github-pill:hover {
         color: var(--text-dark);

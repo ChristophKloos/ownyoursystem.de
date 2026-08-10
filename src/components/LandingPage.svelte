@@ -75,7 +75,7 @@
         border-radius: var(--radius-md);
         margin: 32px 0;
         cursor: pointer;
-        font-weight: 600;
+        font-weight: var(--text-weight-fat);
         font-size: var(--font-sm);
         border: var(--outline-weak);
     }

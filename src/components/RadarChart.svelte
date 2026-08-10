@@ -21,38 +21,36 @@
         Tooltip,
     );
 
-    Chart.defaults.font.family = "'Atkinson Hyperlegible Next', sans-serif";
+    Chart.defaults.font.family = "'Gabarito', sans-serif";
 
     export let labels = [];
     export let datasets = [];
 
     let canvas;
     let chart;
-    let initialRender = true;
 
     $: if (chart && datasets && labels) {
-        if (initialRender) {
-            initialRender = false;
-        } else {
-            chart.data.labels = labels;
+        chart.data.labels = labels;
+        
+        datasets.forEach((newDs, i) => {
+            if (chart.data.datasets[i]) {
+                chart.data.datasets[i].data = [...newDs.data];
+                chart.data.datasets[i].label = newDs.label;
+            } else {
+                chart.data.datasets[i] = { ...newDs, data: [...newDs.data] };
+            }
+        });
 
-            datasets.forEach((newDataset, index) => {
-                if (chart.data.datasets[index]) {
-                    chart.data.datasets[index].data = newDataset.data;
-                    chart.data.datasets[index].label = newDataset.label;
-                } else {
-                    chart.data.datasets[index] = newDataset;
-                }
-            });
-
-            chart.update();
-        }
+        chart.update(); 
     }
 
     onMount(() => {
         chart = new Chart(canvas, {
             type: "radar",
-            data: { labels, datasets },
+            data: { 
+                labels, 
+                datasets: datasets.map(ds => ({ ...ds, data: [...ds.data] })) 
+            },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,

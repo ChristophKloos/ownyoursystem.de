@@ -40,42 +40,39 @@
         }, 300);
     }
 
+    function toggleCard(uid) {
+        expandedCards[uid] = !expandedCards[uid];
+    }
+
+    function toggleTag(tagKey) {
+        expandedTags[tagKey] = !expandedTags[tagKey];
+    }
+
+    function handleKeydown(e, action, param) {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            action(param);
+        }
+    }
+
+    $: chartQuestions = (questions || []).filter((q) => q._ruleType === "match");
+    $: chartLabels = chartQuestions.map((q) => q.title || q.id);
+    $: maxTotal = results?.length > 0 ? Math.max(results[0].totalScore, 1) : 1;
+
     $: visibleResults = (results || []).slice(0, shown).map((res) => {
         const key = `${res.distro}+${res.desktop}`;
-        const mapping = nameMapping?.[key];
+        const mapping = nameMapping?.[key] || {};
+        const mods = desktopModifiers?.[res.desktop] || desktopModifiers?.desktops?.[res.desktop];
 
-        let displayName = `<strong>${res.distro}</strong> ${res.desktop}`;
-        let displayIcon = res.icon;
-        let screenshot = null;
+        const displayName = mapping.name || `<strong>${res.distro}</strong> ${res.desktop}`;
+        const displayIcon = mapping.icon || res.icon;
+        const screenshot = mapping.screenshot ? `/img/desktops/${mapping.screenshot}` : (mods?.Screenshot ? `/img/desktops/${mods.Screenshot}` : null);
 
-        if (mapping) {
-            if (mapping.name) displayName = mapping.name;
-            if (mapping.icon) displayIcon = mapping.icon;
-            if (mapping.screenshot)
-                screenshot = `/img/desktops/${mapping.screenshot}`;
-        }
+        const resTags = (res.tags && Array.isArray(res.tags) && tags)
+            ? res.tags.map((tId) => tags.find((x) => x.id === tId)).filter(Boolean)
+            : [];
 
-        const mods =
-            desktopModifiers?.[res.desktop] ||
-            desktopModifiers?.desktops?.[res.desktop];
-
-        if (!screenshot && mods?.Screenshot) {
-            screenshot = `/img/desktops/${mods.Screenshot}`;
-        }
-
-        let resTags = [];
-        if (res.tags && Array.isArray(res.tags) && tags) {
-            resTags = res.tags
-                .map((tId) => (tags || []).find((x) => x.id === tId))
-                .filter(Boolean);
-        }
-
-        const cleanName = displayName
-            .replace(/<span.*<\/span>/, "")
-            .replace(/<[^>]*>/g, "");
-
-        const chartQuestions = (questions || []).filter((q) => q._ruleType === "match");
-        const chartLabels = chartQuestions.map((q) => q.title || q.id);
+        const cleanName = displayName.replace(/<span.*<\/span>/, "").replace(/<[^>]*>/g, "");
 
         const distroDataset = {
             label: cleanName,
@@ -98,16 +95,6 @@
             distroDataset,
         };
     });
-
-    $: maxTotal = results.length > 0 ? Math.max(results[0].totalScore, 1) : 1;
-
-    function toggleCard(uid) {
-        expandedCards[uid] = !expandedCards[uid];
-    }
-
-    function toggleTag(tagKey) {
-        expandedTags[tagKey] = !expandedTags[tagKey];
-    }
 </script>
 
 <div id="results-list">
@@ -116,7 +103,9 @@
             class="result-card whitebox"
             class:penalized={res.isPenalized}
             on:click={() => toggleCard(res.uid)}
+            on:keydown={(e) => handleKeydown(e, toggleCard, res.uid)}
             role="button"
+            tabindex="0"
             animate:flip={baseTransition}
             in:fade={baseTransition}
         >
@@ -157,6 +146,8 @@
                     class="stats-container"
                     transition:slide={baseTransition}
                     on:click|stopPropagation
+                    on:keydown|stopPropagation
+                    role="presentation"
                 >
                     {#if res.description}
                         <p class="result-desc">{res.description}</p>
@@ -167,8 +158,10 @@
                             <div
                                 class="tag-item"
                                 class:open={expandedTags[`${res.uid}-${t.id}`]}
-                                on:click|stopPropagation={() =>
-                                    toggleTag(`${res.uid}-${t.id}`)}
+                                on:click|stopPropagation={() => toggleTag(`${res.uid}-${t.id}`)}
+                                on:keydown|stopPropagation={(e) => handleKeydown(e, toggleTag, `${res.uid}-${t.id}`)}
+                                role="button"
+                                tabindex="0"
                             >
                                 <div class="tag-head">
                                     <img
@@ -195,8 +188,10 @@
                     {#if res.screenshot}
                         <div
                             class="gallery-item-container"
-                            on:click|stopPropagation={() =>
-                                openModal(res.screenshot)}
+                            on:click|stopPropagation={() => openModal(res.screenshot)}
+                            on:keydown|stopPropagation={(e) => handleKeydown(e, openModal, res.screenshot)}
+                            role="button"
+                            tabindex="0"
                         >
                             <img
                                 src={res.screenshot}
@@ -241,8 +236,11 @@
     class:flex={isModalOpen}
     class:hidden={!isModalOpen}
     on:click={closeModal}
+    on:keydown={(e) => e.key === 'Escape' && closeModal()}
+    role="button"
+    tabindex="0"
 >
-    <div on:click|stopPropagation>
+    <div on:click|stopPropagation on:keydown|stopPropagation role="presentation">
         {#if modalImage}
             <img
                 id="modal-image"
@@ -255,7 +253,6 @@
         </div>
     </div>
 </div>
-
 <style>
 
 
@@ -316,7 +313,7 @@
     border-radius: var(--radius-sm);
     padding: 6px 12px;
     font-size: var(--font-xs);
-    font-weight: 600;
+    font-weight: var(--text-weight-normal);
     cursor: pointer;
     transition: background-color 0.2s;
     margin: 0;
@@ -424,7 +421,7 @@
     display: flex;
     width: fit-content;
     margin: 32px auto 10px auto;
-    font-weight: 600;
+    font-weight: var(--text-weight-normal);
     opacity: 0.8;
     padding: 16px 32px;
     border-radius: var(--radius-lg);
@@ -564,10 +561,12 @@
     padding: 6px 10px ;
     margin-left:16px;
     font-size: var(--font-xs);
-    font-weight: 600;
+    font-weight: var(--text-weight-normal);
     cursor: pointer;
     transition: background-color 0.2s;
  
     outline: var(--outline-weak);
 }
+
+
 </style>

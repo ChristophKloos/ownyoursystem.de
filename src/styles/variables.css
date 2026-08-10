@@ -1,18 +1,20 @@
 :root {
-    --bg-backdrop: oklch(0.996 0.006 102.6);
+    --bg-backdrop: oklch(99.972% 0.00121 107.853);
     --bg-backdrop-alt: transparent;
     --bg-cards: oklch(1 0 0);
     --bg-alt: oklch(0.938 0.005 264);
     --bg-cards-dark: oklch(0.283 0.006 281);
     --bg-alt-dark: oklch(0.321 0.006 281);
-    --bg-pop: oklch(0.718 0.13 252);
+    --bg-pop: oklch(81.5% 0.137 163.1);
     --bg-translucent: oklch(0.996 0.006 102.6 / 0.7);
     --bg-translucent-alt: oklch(1 0 0 / 0.7);
     --text-dark: oklch(0 0 0);
     --text-muted: oklch(0.283 0.006 281);
     --text-white: oklch(0.864 0.004 281);
+    --text-weight-fat: 800;
+    --text-weight-normal: 400;
     --shadow-soft: 0 20px 25px -5px oklch(0 0 0 / 0.1), 0 8px 10px -6px oklch(0 0 0 / 0.1);
-    --shadow-hard: 0 1px 3px oklch(0 0 0 / 0.03), 0 4px 12px oklch(0 0 0 / 0.04);
+    --shadow-hard: 0 1px 3px oklch(0 0 0 / 0.03), 0 4px 12px oklch(11.121% 0.02684 22.413 / 0.04);
     --shadow-harder: 0 2px 2px oklch(0 0 0 / 0.01), 0 2px 6px oklch(0 0 0 / 0.02);
     --shadow-hard-hover: 0 4px 8px oklch(0 0 0 / 0.04), 0 12px 24px oklch(0 0 0 / 0.06);
     --shadow-big: 0px 14px 15px -13px oklch(0 0 0 / 0.14);
@@ -21,9 +23,9 @@
     --radius-md: 16px;
     --radius-sm: 8px;
     --radius-xs: 4px;
-    --font-xs: 13.111px;
-    --font-sm: 15.112px;
-    --font-md: 17.5px;
+    --font-xs: 14.111px;
+    --font-sm: 16.112px;
+    --font-md: 18.5px;
     --font-lg: 26.6px;
     --font-xl: 47.1px;
     --outline-strong: 1px solid oklch(0 0 0 / 0.4);
@@ -43,7 +45,7 @@
         --bg-alt: oklch(0.321 0.006 281);
         --bg-cards-dark: oklch(0.283 0.006 281);
         --bg-alt-dark: oklch(0.321 0.006 281);
-        --bg-pop: oklch(0.718 0.13 252);
+        --bg-pop: oklch(81.5% 0.137 163.1);
         --bg-translucent: oklch(0.206 0.038 322.4 / 0.7);
         --bg-translucent-alt: oklch(0.283 0.006 281 / 0.7);
         --text-dark: oklch(1 0 0);

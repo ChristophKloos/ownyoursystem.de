@@ -172,6 +172,9 @@
 {/if}
 
 <style>
+
+
+
         /*not actually the sidebar, it's the result page*/
 .sidebar {
     width: 100%;

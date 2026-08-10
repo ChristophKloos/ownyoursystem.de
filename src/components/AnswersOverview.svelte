@@ -213,14 +213,10 @@
     padding-bottom:20vh;
 }
 .overview-item {
-    padding: 16px 24px 10px 24px;
+    padding: 20px 24px 16px 24px;
     min-height: auto;
-
     margin-top: 8px;
     margin-bottom: 8px;
-
-   
-
 
 }
 
@@ -233,19 +229,12 @@
     opacity: 0.7;
     text-align: right;
 }
-.question-text {
-    color: var(--text-muted);
-    font-weight: 600;
-    margin-bottom: 8px;
-    margin-top:-16px;
-    font-size: var(--font-xs)!important;
 
-}
 .question-tag {
     display: flex;
     align-items: center;
     gap: 6px;
-    font-weight: 600;
+    font-weight: var(--text-weight-normal);
 
     border-radius: var(--radius-sm);
     padding: 0px 0px 0px 0px;
@@ -259,20 +248,19 @@
     flex-shrink: 0;
 }
 
-.resultheader .question-icon {
-    margin-top: 13px;
-}
+
 
 .title-text {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.item-top-row {
+.boolean-toggles {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: 4px;
+    margin: 16px 0px;
 
 }
 .item-header {
@@ -286,29 +274,50 @@ input[type="radio"] {
     display: none;
 }
 
-.boolean-toggles{
-    margin-top: 16px;
-}
 .radioanswer {
-    background-color: var(--bg-bright);
+    background-color: var(--bg-alt);
     color: var(--text-muted);
     border-radius: var(--radius-md);
     border: var(--outline-weak)!important;
     padding: 8px 8px;
-    margin: 8px 4px;
+    width:100%;
     font-size: var(--font-xs);
     min-height: 0;
     border-radius: var(--radius-sm);
+    opacity: 0.5;
 }
 .radioanswer:hover{
-
+    cursor: pointer;
     border: var(--outline-strong)!important;
     transform: translateY(-0.5px);
     box-shadow: var(--shadow-hard);
+     opacity: 1;
+     background-color: var(--bg-bright);
 }
 .active{
-
+    background-color: var(--bg-bright);
     border: var(--outline-strong)!important;
-    border-color: var(--bg-pop)!important;
+    color: var(--text-dark);
+    opacity: 1;
+}
+
+.resultheader {
+    padding: 32px 64px 42px 64px;
+    margin-top: 18vh;
+    overflow: visible;
+    text-align: center;
+}
+
+.resultheader img {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.resultheader .question-icon {
+    height: 48px;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 </style>

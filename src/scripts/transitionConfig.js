@@ -1,6 +1,6 @@
-import { cubicOut } from "svelte/easing";
+import { cubicInOut } from "svelte/easing";
 
 export const baseTransition = { 
     duration: 400, 
-    easing: cubicOut 
+    easing: cubicInOut 
 };

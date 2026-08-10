@@ -109,6 +109,7 @@ label {
     margin: 0 16px 16px 16px;
     border: var(--outline-strong) !important;
     transition: var(--transition-snappy);
+    font-weight: var(--text-weight-normal);
 }
 
 
@@ -186,6 +187,11 @@ label:hover {
     overflow: hidden;
     margin-top: 32px;
     margin-bottom: 24px;
+}
+
+.frage p :global(b),
+.choice label :global(b) {
+    font-weight: var(--text-weight-fat);
 }
 
 </style>

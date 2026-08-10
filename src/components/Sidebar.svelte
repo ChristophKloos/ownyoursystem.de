@@ -128,7 +128,7 @@
 
 h4 {
     display: block;
-    font-weight: 800;
+    font-weight: var(--text-weight-fat);
     text-align: center;
     font-size: var(--font-md);
     margin: 35px 0 25px 0;
@@ -189,7 +189,7 @@ h4 {
 .item-text .title {
     color: var(--text-dark);
     font-size: var(--font-sm);
-    font-weight: 600;
+    font-weight: var(--text-weight-normal);
     line-height: 1.1;
 }
 
@@ -209,7 +209,7 @@ h4 {
 .item-text .title {
     color: var(--text-dark);
     font-size: var(--font-sm);
-    font-weight: 600;
+    font-weight: var(--text-weight-normal);
     line-height: 1.1;
     display: flex;
     align-items: center;
@@ -222,7 +222,7 @@ h4 {
 }
 
 h4{
-    font-weight: 600;
+    font-weight: var(--text-weight-normal);
     margin-top: 40px;
 }
 </style>

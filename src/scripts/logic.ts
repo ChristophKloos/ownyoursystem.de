@@ -25,7 +25,6 @@ export function processDistroPicker(
   
   const { bias: rawBias, ...actualAnswers } = answers || {};
   const biasMultiplier = (rawBias !== undefined ? Number(rawBias) : DEFAULT_BIAS) / 100;
-  const answerEntries = Object.entries(actualAnswers);
 
   return distros.flatMap(distro =>
     (distro.desktops || [])
@@ -48,7 +47,8 @@ export function processDistroPicker(
         let weightSum = 0;
         let penaltyMultiplier = 1.0;
 
-        for (const [key, userVal] of answerEntries) {
+
+        for (const key of Object.keys(ruleMap)) {
           const rule = ruleMap[key];
           const rawDVal = distro.scores?.[key];
           const rawDkVal = desktop.scores?.[key];
@@ -59,19 +59,25 @@ export function processDistroPicker(
           const dkVal = typeof rawDkVal === 'boolean' ? (rawDkVal ? 100 : 0) : rawDkVal;
           const sysVal = clamp((dVal ?? 50) + (dkVal !== undefined ? dkVal - 50 : 0));
           
+
           result.sysDetails[key] = sysVal;
 
-          if (rule.type === 'match') {
-            const points = clamp(100 - Math.abs(Number(userVal) - sysVal));
-            matchSum += points * rule.weight;
-            weightSum += rule.weight;
-            result.matchDetails[key] = points;
-          } 
-          else if (
-            (rule.type === 'limit' && sysVal > Number(userVal)) ||
-            (rule.type === 'boolean' && userVal === true && sysVal < 50)
-          ) {
-            penaltyMultiplier *= 0.5;
+
+          if (actualAnswers.hasOwnProperty(key)) {
+            const userVal = actualAnswers[key];
+
+            if (rule.type === 'match') {
+              const points = clamp(100 - Math.abs(Number(userVal) - sysVal));
+              matchSum += points * rule.weight;
+              weightSum += rule.weight;
+              result.matchDetails[key] = points;
+            } 
+            else if (
+              (rule.type === 'limit' && sysVal > Number(userVal)) ||
+              (rule.type === 'boolean' && userVal === true && sysVal < 50)
+            ) {
+              penaltyMultiplier *= 0.5;
+            }
           }
         }
 
