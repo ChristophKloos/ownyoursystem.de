@@ -4,7 +4,7 @@
       "id": "experience",
       "icon": "1experience.svg",
       "title": "Experience",
-      "question": "How much experience do you have with Linux?",
+      "question": "How much <b>experience</b> do you have with Linux?",
       "options": [
         { "text": "<b>Beginner:</b> I have never used Linux and need a system that is very easy to learn.", "value": 0 },
         { "text": "<b>Intermediate:</b> I know the basics of Linux and I am eager to learn more.", "value": 50 },
@@ -15,7 +15,7 @@
       "id": "ram",
       "icon": "14hardware.svg",
       "title": "Hardware",
-      "question": "How much RAM does your computer have?",
+      "question": "How much <b>RAM</b> does your computer have?",
       "options": [
         { "text": "<b>Low:</b> Under 4GB. I have an older computer and need a system that runs lightly.", "value": 45 },
         { "text": "<b>Standard:</b> Between 4GB and 8GB. I have a normal, everyday computer.", "value": 60 },
@@ -28,7 +28,7 @@
       "id": "nvidia",
       "icon": "13nvidia.svg",
       "title": "Nvidia",
-      "question": "Do you need the system to handle Nvidia graphics drivers automatically?",
+      "question": "Do you need the system to handle <b>Nvidia</b> graphics drivers automatically?",
       "options": [
         { "text": "<b>No:</b> I do not use Nvidia, or I prefer to install the drivers myself.", "value": false },
         { "text": "<b>Yes:</b> I have an Nvidia graphics card and need the drivers ready from the start.", "value": true }
@@ -38,9 +38,9 @@
       "id": "wayland",
       "icon": "3graphical.svg",
       "title": "Wayland",
-      "question": "Do you need modern screen features like HDR or smooth display scaling?",
+      "question": "Do you need modern <b>display features</b> like HDR or advanced scaling?",
       "options": [
-        { "text": "<b>No:</b> I just want maximum compatibility and a standard screen setup.", "value": false },
+        { "text": "<b>No:</b> I have a very simple screen setup and don't need fancy features.", "value": false },
         { "text": "<b>Yes:</b> I want modern visual features like HDR or different refresh rates for my monitors.", "value": true }
       ]
     }
@@ -51,9 +51,9 @@
       "icon": "8install.svg",
       "weight": 1.5,
       "title": "Preinstalled Software",
-      "question": "How much software should be installed from the start?",
+      "question": "How much <b>software</b> should be installed from the start?",
       "options": [
-        { "text": "<b>Minimal:</b> I want an empty base system so I can install only what I need.", "value": 0 },
+        { "text": "<b>Minimal:</b> I want an minimal base system so I can install only what I need.", "value": 0 },
         { "text": "<b>Balanced:</b> I want the standard everyday apps installed for me.", "value": 50 },
         { "text": "<b>Everything:</b> I want all apps, drivers, and video players ready to go immediately.", "value": 100 }
       ]
@@ -63,7 +63,7 @@
       "icon": "10flexible.svg",
       "weight": 1.3,
       "title": "Full Control",
-      "question": "Do you prefer having full control or a system that cannot break?",
+      "question": "Do you prefer having <b>full control</b> or a system that cannot break?",
       "options": [
         { "text": "<b>Full Control:</b> I want to change anything I want, even if I have to fix it myself.", "value": 0 },
         { "text": "<b>Balanced:</b> I want a normal system that is stable but still lets me change things.", "value": 50 },

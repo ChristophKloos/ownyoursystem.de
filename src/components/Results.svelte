@@ -439,14 +439,7 @@
     text-align: center;
 }
 
-.asnwer-text {
-    color: var(--text-dark);
-}
-.distro-link:hover,
-.more-btn:hover {
-    background-color: var(--bg-alt);
-    opacity: 1;
-}
+
 
 .gallery-item-image {
     width: 100%;

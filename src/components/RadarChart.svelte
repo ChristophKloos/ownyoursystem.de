@@ -80,7 +80,8 @@
                     r: {
                         min: 0,
                         max: 100,
-                        ticks: { stepSize: 25 },
+                        ticks: { stepSize: 25, backdropColor: "transparent" },
+                        
                     },
                 },
             },
@@ -90,6 +91,10 @@
             if (chart) chart.destroy();
         };
     });
+
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    Chart.defaults.color = isDark ? '#ffffff' : '#666666';
+    Chart.defaults.borderColor = isDark ? '#333333' : '#e0e0e0';
 </script>
 
 <div class="chart-container">
@@ -100,6 +105,7 @@
     .chart-container {
         position: relative;
         width: 100%;
-        height: 220px;
+        height: 300px;
     }
 </style>
+

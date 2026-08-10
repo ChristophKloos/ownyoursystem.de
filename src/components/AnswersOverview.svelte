@@ -261,6 +261,7 @@
     align-items: flex-start;
     gap: 4px;
     margin: 16px 0px;
+    transition: var(--transition-snappy);
 
 }
 .item-header {
@@ -285,6 +286,7 @@ input[type="radio"] {
     min-height: 0;
     border-radius: var(--radius-sm);
     opacity: 0.5;
+    transition: var(--transition-snappy);
 }
 .radioanswer:hover{
     cursor: pointer;
