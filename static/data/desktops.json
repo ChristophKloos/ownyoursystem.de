@@ -1,0 +1,256 @@
+{
+  "desktops": {
+    "GNOME": {
+      "Screenshot": "gnome.webp",
+      "tags": ["wayland", "wstacking", "unconventional"],
+      "scores": {
+        "experience": 48,
+        "ram": 60,
+        "nvidia": 50,
+        "wayland": true,
+        "fullinstall": 70,
+        "bulletproof": 71,
+        "updates": 50,
+        "community": 65,
+        "customization": 31,
+        "keyboard": 58,
+        "gaming": 68,
+        "bias": 68
+      }
+    },
+    "Budgie": {
+      "Screenshot": "budgie.webp",
+      "tags": ["wayland", "wstacking"],
+      "scores": {
+        "experience": 35,
+        "ram": 45,
+        "nvidia": 50,
+        "wayland": true,
+        "fullinstall": 55,
+        "bulletproof": 69,
+        "updates": 50,
+        "community": 45,
+        "customization": 25,
+        "keyboard": 40,
+        "gaming": 63,
+        "bias": 35
+      }
+    },
+    "Cosmic": {
+      "Screenshot": "cosmic.webp",
+      "tags": ["wayland", "wstacking", "wtiling"],
+      "scores": {
+        "experience": 53,
+        "ram": 50,
+        "nvidia": 50,
+        "wayland": true,
+        "fullinstall": 60,
+        "bulletproof": 64,
+        "updates": 50,
+        "community": 54,
+        "customization": 40,
+        "keyboard": 65,
+        "gaming": 63,
+        "bias": 25
+      }
+    },
+    "KDE": {
+      "Screenshot": "kde.webp",
+      "tags": ["wayland", "wstacking"],
+      "scores": {
+        "experience": 30,
+        "ram": 50,
+        "nvidia": 50,
+        "wayland": true,
+        "fullinstall": 74,
+        "bulletproof": 66,
+        "updates": 55,
+        "community": 69,
+        "customization": 78,
+        "keyboard": 31,
+        "gaming": 73,
+        "bias": 81
+      }
+    },
+    "XFCE": {
+      "Screenshot": "xfce.webp",
+      "tags": ["x11", "wstacking", "lightweight"],
+      "scores": {
+        "experience": 60,
+        "ram": 5,
+        "nvidia": 50,
+        "wayland": false,
+        "fullinstall": 60,
+        "bulletproof": 43,
+        "updates": 50,
+        "community": 41,
+        "customization": 64,
+        "keyboard": 29,
+        "gaming": 33,
+        "bias": 61
+      }
+    },
+    "Cinnamon": {
+      "Screenshot": "cinnamon.webp",
+      "tags": ["x11", "wstacking"],
+      "scores": {
+        "experience": 25,
+        "ram": 30,
+        "nvidia": 50,
+        "wayland": false,
+        "fullinstall": 68,
+        "bulletproof": 70,
+        "updates": 50,
+        "community": 66,
+        "customization": 69,
+        "keyboard": 25,
+        "gaming": 51,
+        "bias": 69
+      }
+    },
+    "MATE": {
+      "Screenshot": "mate.webp",
+      "tags": ["x11", "wstacking", "lightweight"],
+      "scores": {
+        "experience": 58,
+        "ram": 36,
+        "nvidia": 50,
+        "wayland": false,
+        "fullinstall": 43,
+        "bulletproof": 44,
+        "updates": 50,
+        "community": 40,
+        "customization": 51,
+        "keyboard": 26,
+        "gaming": 29,
+        "bias": 28
+      }
+    },
+    "LXDE": {
+      "Screenshot": "lxde.webp",
+      "tags": ["x11", "wstacking", "lightweight"],
+      "scores": {
+        "experience": 60,
+        "ram": 25,
+        "nvidia": 50,
+        "wayland": false,
+        "fullinstall": 38,
+        "bulletproof": 42,
+        "updates": 50,
+        "community": 35,
+        "customization": 49,
+        "keyboard": 25,
+        "gaming": 28,
+        "bias": 10
+      }
+    },
+    "LXQt": {
+      "Screenshot": "lxqt.webp",
+      "tags": ["wayland", "wstacking", "lightweight"],
+      "scores": {
+        "experience": 62,
+        "ram": 38,
+        "nvidia": 50,
+        "wayland": true,
+        "fullinstall": 42,
+        "bulletproof": 40,
+        "updates": 50,
+        "community": 39,
+        "customization": 53,
+        "keyboard": 28,
+        "gaming": 45,
+        "bias": 43
+      }
+    },
+    "i3": {
+      "Screenshot": "i3.webp",
+      "tags": ["x11", "wtiling", "lightweight"],
+      "scores": {
+        "experience": 75,
+        "ram": 12,
+        "nvidia": 50,
+        "wayland": false,
+        "fullinstall": 19,
+        "bulletproof": 33,
+        "updates": 50,
+        "community": 45,
+        "customization": 65,
+        "keyboard": 85,
+        "gaming": 30,
+        "bias": 39
+      }
+    },
+    "Hyprland": {
+      "Screenshot": "hyprland.webp",
+      "tags": ["wayland", "wtiling", "scrolling"],
+      "scores": {
+        "experience": 70,
+        "ram": 42,
+        "nvidia": 50,
+        "wayland": true,
+        "fullinstall": 21,
+        "bulletproof": 31,
+        "updates": 50,
+        "community": 65,
+        "customization": 86,
+        "keyboard": 86,
+        "gaming": 65,
+        "bias": 76
+      }
+    },
+    "Niri": {
+      "Screenshot": "niri.webp",
+      "tags": ["wayland", "scrolling"],
+      "scores": {
+        "experience": 73,
+        "ram": 50,
+        "nvidia": 50,
+        "wayland": true,
+        "fullinstall": 26,
+        "bulletproof": 38,
+        "updates": 50,
+        "community": 63,
+        "customization": 84,
+        "keyboard": 83,
+        "gaming": 64,
+        "bias": 65
+      }
+    },
+    "DWM": {
+      "Screenshot": "dwm.webp",
+      "tags": ["x11", "wtiling", "lightweight"],
+      "scores": {
+        "experience": 91,
+        "ram": 20,
+        "nvidia": 50,
+        "wayland": false,
+        "fullinstall": 11,
+        "bulletproof": 61,
+        "updates": 50,
+        "community": 31,
+        "customization": 53,
+        "keyboard": 90,
+        "gaming": 20,
+        "bias": 21
+      }
+    },
+    "Sway": {
+      "Screenshot": "sway.webp",
+      "tags": ["wayland", "wtiling", "lightweight"],
+      "scores": {
+        "experience": 85,
+        "ram": 21,
+        "nvidia": 50,
+        "wayland": true,
+        "fullinstall": 18,
+        "bulletproof": 51,
+        "updates": 50,
+        "community": 30,
+        "customization": 68,
+        "keyboard": 89,
+        "gaming": 19,
+        "bias": 19
+      }
+    }
+  }
+}

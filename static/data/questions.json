@@ -1,0 +1,134 @@
+{
+  "filters": [
+    {
+      "id": "experience",
+      "icon": "1experience.svg",
+      "title": "Experience",
+      "question": "How much <b>experience</b> do you have with Linux?",
+      "options": [
+        { "text": "<b>Beginner:</b> I have never used Linux and need a system that is very easy to learn.", "value": 0 },
+        { "text": "<b>Intermediate:</b> I know the basics of Linux and I am eager to learn more.", "value": 50 },
+        { "text": "<b>Pro:</b> I am very comfortable with Linux and know how to do advanced tasks.", "value": 100 }
+      ]
+    },
+    {
+      "id": "ram",
+      "icon": "14hardware.svg",
+      "title": "Hardware",
+      "question": "How much <b>RAM</b> does your computer have?",
+      "options": [
+        { "text": "<b>Low:</b> Under 4GB. I have an older computer and need a system that runs lightly.", "value": 45 },
+        { "text": "<b>Standard:</b> Between 4GB and 8GB. I have a normal, everyday computer.", "value": 60 },
+        { "text": "<b>High:</b> Over 8GB. I have a strong computer with plenty of power.", "value": 75 }
+      ]
+    }
+  ],
+  "booleans": [
+    {
+      "id": "nvidia",
+      "icon": "13nvidia.svg",
+      "title": "Nvidia",
+      "question": "Do you need the system to handle <b>Nvidia</b> graphics drivers automatically?",
+      "options": [
+        { "text": "<b>No:</b> I do not use Nvidia, or I prefer to install the drivers myself.", "value": false },
+        { "text": "<b>Yes:</b> I have an Nvidia graphics card and need the drivers ready from the start.", "value": true }
+      ]
+    },
+    {
+      "id": "wayland",
+      "icon": "3graphical.svg",
+      "title": "Wayland",
+      "question": "Do you need modern <b>display features</b> like HDR or advanced scaling?",
+      "options": [
+        { "text": "<b>No:</b> I have a very simple screen setup and don't need fancy features.", "value": false },
+        { "text": "<b>Yes:</b> I want modern visual features like HDR or different refresh rates for my monitors.", "value": true }
+      ]
+    }
+  ],
+  "matches": [
+    {
+      "id": "fullinstall",
+      "icon": "8install.svg",
+      "weight": 1.5,
+      "title": "Preinstalled Software",
+      "question": "How much <b>software</b> should be installed from the start?",
+      "options": [
+        { "text": "<b>Minimal:</b> I want an minimal base system so I can install only what I need.", "value": 0 },
+        { "text": "<b>Balanced:</b> I want the standard everyday apps installed for me.", "value": 50 },
+        { "text": "<b>Everything:</b> I want all apps, drivers, and video players ready to go immediately.", "value": 100 }
+      ]
+    },
+    {
+      "id": "bulletproof",
+      "icon": "10flexible.svg",
+      "weight": 1.3,
+      "title": "Full Control",
+      "question": "Do you prefer having <b>full control</b> or a system that cannot break?",
+      "options": [
+        { "text": "<b>Full Control:</b> I want to change anything I want, even if I have to fix it myself.", "value": 0 },
+        { "text": "<b>Balanced:</b> I want a normal system that is stable but still lets me change things.", "value": 50 },
+        { "text": "<b>Unbreakable:</b> I want a locked system that prevents me from accidentally breaking it.", "value": 100 }
+      ]
+    },
+    {
+      "id": "updates",
+      "icon": "12update.svg",
+      "weight": 0.7,
+      "title": "Update Frequency",
+      "question": "How often do you want your system to update?",
+      "options": [
+        { "text": "<b>Rare:</b> I want thoroughly tested updates to ensure my computer never breaks.", "value": 0 },
+        { "text": "<b>Regular:</b> A standard update schedule is perfectly fine for me.", "value": 50 },
+        { "text": "<b>Constant:</b> I want to receive the absolute newest features as soon as possible.", "value": 100 }
+      ]
+    },
+    {
+      "id": "community",
+      "icon": "11interesting.svg",
+      "weight": 1.0,
+      "title": "Ecosystem",
+      "question": "What kind of community do you want behind your system?",
+      "options": [
+        { "text": "<b>Specialized:</b> I am fine with a smaller, newer project that does one thing very well.", "value": 0 },
+        { "text": "<b>Established:</b> I want a popular system with good support and a proven history.", "value": 50 },
+        { "text": "<b>Massive:</b> I want a huge, historic project with endless guides and documentation.", "value": 100 }
+      ]
+    },
+    {
+      "id": "customization",
+      "icon": "4customizable.svg",
+      "weight": 1.3,
+      "title": "Customization",
+      "question": "How much do you want to change how your system looks?",
+      "options": [
+        { "text": "<b>None:</b> I want a system that looks great immediately without any extra work.", "value": 0 },
+        { "text": "<b>Basic:</b> I only want to make a few small visual changes here and there.", "value": 50 },
+        { "text": "<b>Extensive:</b> I want to deeply change every single detail of how it looks and works.", "value": 100 }
+      ]
+    },
+    {
+      "id": "keyboard",
+      "icon": "5keyboard.svg",
+      "weight": 1.1,
+      "title": "Input Focus",
+      "question": "How do you prefer to control your computer?",
+      "options": [
+        { "text": "<b>Mouse:</b> I prefer to click around and use my mouse for almost everything.", "value": 0 },
+        { "text": "<b>Mixed:</b> I use a normal mix of mouse clicks and basic keyboard shortcuts.", "value": 50 },
+        { "text": "<b>Keyboard:</b> I want to control everything quickly using advanced keyboard shortcuts.", "value": 100 }
+      ]
+    },
+    {
+      "id": "gaming",
+      "icon": "2gaming.svg",
+      "weight": 1.0,
+      "title": "Gaming",
+      "question": "How important is gaming on this system?",
+      "options": [
+        { "text": "<b>No:</b> I have absolutely no interest in playing games on this computer.", "value": 0 },
+        { "text": "<b>Light:</b> I only play simple games that do not need a lot of power.", "value": 50 },
+        { "text": "<b>Heavy:</b> I want a system that is fully set up to play the newest, biggest games.", "value": 100 }
+      ]
+    }
+  ]
+}

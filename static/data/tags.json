@@ -1,0 +1,122 @@
+[
+  {
+    "id": "rolling",
+    "name": "Rolling Release",
+    "icon": "cycle.svg",
+    "description": "Updates pushed continuously as soon as available"
+  },
+  {
+    "id": "lts",
+    "name": "Long Term Support",
+    "icon": "lts.svg",
+    "description": "Stable version supported for several years"
+  },
+  {
+    "id": "wayland",
+    "name": "Wayland Protocol",
+    "icon": "display.svg",
+    "description": "Modern protocol with features like HDR and VRR in mind"
+  },
+  {
+    "id": "x11",
+    "name": "X11 Protocol",
+    "icon": "display.svg",
+    "description": "Legacy protocol that lacks support for modern features"
+  },
+  {
+    "id": "irregular",
+    "name": "Irregular",
+    "icon": "cycle.svg",
+    "description": "Major updates every few years"
+  },
+  {
+    "id": "24m",
+    "name": "24 Months",
+    "icon": "release.svg",
+    "description": "Major updates every 24 months"
+  },
+  {
+    "id": "12m",
+    "name": "12 Months",
+    "icon": "release.svg",
+    "description": "Major updates every 12 months"
+  },
+  {
+    "id": "6m",
+    "name": "6 Months",
+    "icon": "release.svg",
+    "description": "Major updates every 6 months"
+  },
+  {
+    "id": "wstacking",
+    "name": "Floating Windows",
+    "icon": "stack.svg",
+    "description": "Windows float freely and overlap"
+  },
+  {
+    "id": "wtiling",
+    "name": "Tiling Windows",
+    "icon": "tile.svg",
+    "description": "Windows snap to a grid without gaps"
+  },
+  {
+    "id": "wip",
+    "name": "WIP",
+    "icon": "wip.svg",
+    "description": "Distro is not ready for production yet"
+  },
+  {
+    "id": "scrolling",
+    "name": "Scrolling Windows",
+    "icon": "scroll.svg",
+    "description": "Windows placed on a scrollable strip"
+  },
+  {
+    "id": "immutable",
+    "name": "Immutable",
+    "icon": "immutable.svg",
+    "description": "Core system is read-only to prevent breakage"
+  },
+  {
+    "id": "source",
+    "name": "Source Based",
+    "icon": "source.svg",
+    "description": "Software compiled locally to optimize for hardware"
+  },
+  {
+    "id": "declarative",
+    "name": "Declarative",
+    "icon": "immutable.svg",
+    "description": "Entire system defined by a single configuration file"
+  },
+  {
+    "id": "community",
+    "name": "Community Maintained",
+    "icon": "community.svg",
+    "description": "Maintained by volunteers without corporate ownership"
+  },
+  {
+    "id": "corporate",
+    "name": "Corporate Maintained",
+    "icon": "corporate.svg",
+    "description": "Maintained by a commercial company"
+  },
+  {
+    "id": "foss",
+    "name": "FOSS Focus",
+    "icon": "foss.svg",
+    "description": "Prioritizes open-source and doesn't include proprietary drivers"
+  },
+  {
+    "id": "lightweight",
+    "name": "Lightweight",
+    "icon": "lightweight.svg",
+    "description": "Optimized for low resource usage"
+  },
+  {
+    "id": "unconventional",
+    "name": "Unconventional Workflow",
+    "icon": "bottle.svg",
+    "description": "Workflow differs from tranditional desktops (like Windows)"
+  }
+]

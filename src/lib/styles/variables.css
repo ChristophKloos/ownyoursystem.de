@@ -1,0 +1,78 @@
+:root {
+	--bg-backdrop: oklch(99.972% 0.00121 107.853);
+	--bg-backdrop-alt: transparent;
+	--bg-cards: oklch(1 0 0);
+	--bg-alt: oklch(0.938 0.005 264);
+	--bg-cards-dark: oklch(0.283 0.006 281);
+	--bg-alt-dark: oklch(0.321 0.006 281);
+	--bg-pop: oklch(81.5% 0.137 163.1);
+	--bg-translucent: oklch(99.565% 0.00646 106.79 / 0.358);
+	--bg-translucent-alt: oklch(1 0 0 / 0.7);
+	--text-dark: oklch(0 0 0);
+	--text-muted: oklch(0.283 0.006 281);
+	--text-white: oklch(0.864 0.004 281);
+	--text-weight-fat: 800;
+	--text-weight-normal: 400;
+	--shadow-soft: 0 20px 25px -5px oklch(0 0 0 / 0.1), 0 8px 10px -6px oklch(0 0 0 / 0.1);
+	--shadow-hard: 0 1px 3px oklch(0 0 0 / 0.03), 0 4px 12px oklch(11.121% 0.02684 22.413 / 0.04);
+	--shadow-harder: 0 2px 2px oklch(0 0 0 / 0.01), 0 2px 6px oklch(0 0 0 / 0.02);
+	--shadow-hard-hover: 0 4px 8px oklch(0 0 0 / 0.04), 0 12px 24px oklch(0 0 0 / 0.06);
+	--shadow-big: 0px 14px 15px -13px oklch(0 0 0 / 0.14);
+	--shadow-glow: 0px 0px 8px 0px color-mix(in oklch, var(--bg-pop) 30%, transparent);
+	--radius-lg: 32px;
+	--radius-md: 16px;
+	--radius-sm: 8px;
+	--radius-xs: 4px;
+	--font-xs: 14px;
+	--font-sm: 16px;
+	--font-md: 18px;
+	--font-lg: 27px;
+	--font-xl: 47px;
+	--outline-strong: 1px solid oklch(0 0 0 / 0.4);
+	--outline-weak: 1px solid oklch(0 0 0 / 0.1);
+	--outline-pop: 1px solid color-mix(in oklch, var(--bg-pop) 90%, transparent);
+	--transition-snappy: 0.2s cubic-bezier(0.08, 0.52, 0.52, 1);
+	--transition-smooth: 0.8s cubic-bezier(0.08, 0.52, 0.52, 1);
+	interpolate-size: allow-keywords;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg-backdrop: oklch(0.206 0.038 322.4);
+		--bg-backdrop-alt: transparent;
+		--bg-cards: oklch(0.278 0.006 281);
+		--bg-alt: oklch(0.321 0.006 281);
+		--bg-cards-dark: oklch(0.283 0.006 281);
+		--bg-alt-dark: oklch(0.321 0.006 281);
+		--bg-pop: oklch(81.5% 0.137 163.1);
+		--bg-translucent: oklch(0.206 0.038 322.4 / 0.7);
+		--bg-translucent-alt: oklch(0.283 0.006 281 / 0.7);
+		--text-dark: oklch(1 0 0);
+		--text-muted: oklch(0.864 0.004 281);
+		--text-white: oklch(0.864 0.004 281);
+		--outline-strong: 1px solid oklch(0.56 0.007 300 / 0.4);
+		--outline-weak: 1px solid oklch(0.56 0.007 300 / 0.1);
+		--outline-pop: 1px solid color-mix(in oklch, var(--bg-pop) 50%, transparent);
+	}
+
+	#logo,
+	.distro-icon,
+	.tagimage,
+	.sidebaritem img,
+	.arrow-icon,
+	.small-icon,
+	#sidebarbtn,
+	.placeholder-icon,
+	.warn-icon {
+		filter: invert(1);
+	}
+
+	.sidebaritem:hover {
+		background-color: var(--bg-translucent-alt) !important;
+	}
+
+	.sidebaritem {
+		background-color: var(--bg-translucent) !important;
+		border: var(--outline-strong);
+	}
+}
